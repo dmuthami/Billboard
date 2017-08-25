@@ -1,0 +1,222 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
+using Billboard.DAL;
+using Billboard.Models;
+using Billboard.ViewModels;
+using PagedList;
+
+namespace Billboard.Controllers
+{
+    public class StructureController : Controller
+    {
+        private BillboardContext db = new BillboardContext();
+
+        // GET: Face
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
+        {
+            ViewBag.StructureTypeSortParm = String.IsNullOrEmpty(sortOrder) ? "type_desc" : "";
+            ViewBag.OwnerSortParm = sortOrder == "Owner" ? "owner_desc" : "Owner";
+            //var structures = from s in  (db.Structures.Include(s => s.StructureBound).Include(s => s.StructureClustering).Include(s => s.StructureCondition).Include(s => s.StructureFace).Include(s => s.StructureOccupancy).Include(s => s.StructureOwner).Include(s => s.StructurePosition).Include(s => s.StructureSize).Include(s => s.StructureVisibility))
+            //                     select s;
+            var structures = db.Structures.Include(s => s.StructureBound).Include(s => s.StructureCluster).Include(s => s.StructureCondition).Include(s => s.StructureFace).Include(s => s.StructureOccupancy).Include(s => s.StructureOwner).Include(s => s.StructurePosition).Include(s => s.StructureSize).Include(s => s.StructureVisibility);
+            IQueryable<StructureView> data = from structures2 in structures                                             
+                                             select new StructureView()
+                                                   {
+                                                       StructureType = structures2.StructureType,
+                                                       StructureOwnerName = structures2.StructureOwner.StructureOwnerName,
+                                                       StructureFaceNumber = structures2.StructureFace.StructureFaceNumber,
+                                                       Occupancy = structures2.StructureOccupancy.Occupancy,
+                                                       ActualHeight = structures2.StructureSize.ActualHeight,
+                                                       ActualWidth = structures2.StructureSize.ActualWidth,
+                                                       VisibilityType = structures2.StructureVisibility.VisibilityType,
+                                                       StructureClusterType = structures2.StructureCluster.StructureClusterType,
+                                                       StructureBoundType = structures2.StructureBound.StructureBoundType,
+                                                       Position = structures2.StructurePosition.Position,
+                                                       ConditionStatus = structures2.StructureCondition.ConditionStatus,
+                                                       StructureLatitude = structures2.StructureLatitude,
+                                                       StructureLongitude = structures2.StructureLatitude
+                                                   };
+            //Paging
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else { searchString = currentFilter; }
+
+            ViewBag.CurrentFilter = searchString;
+
+            //Filtering
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                data = data.Where
+                    (s => s.StructureType.ToString().ToUpper().Contains(searchString.ToUpper())
+                    || s.StructureOwnerName.ToString().ToUpper().Contains(searchString.ToUpper())
+                    );
+            }
+            switch (sortOrder)
+            {
+                case "type_desc":
+                    data = data.OrderByDescending(s => s.StructureType);
+                    break;
+                case "Owner":
+                    data = data.OrderBy(s => s.StructureOwnerName);
+                    break;
+                case "owner_desc":
+                    data = data.OrderByDescending(s => s.StructureOwnerName);
+                    break;
+                default:
+                    data = data.OrderBy(s => s.StructureType);
+                    break;
+            }
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+            return View(data.ToPagedList(pageNumber, pageSize));  
+        }
+
+        // GET: Face/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Structure structure = db.Structures.Find(id);
+            if (structure == null)
+            {
+                return HttpNotFound();
+            }
+            return View(structure);
+        }
+
+        // GET: Face/Create
+        public ActionResult Create()
+        {
+            ViewBag.StructureBoundID = new SelectList(db.StructureBounds, "StructureBoundID", "StructureBoundType");
+            ViewBag.StructureClusterID = new SelectList(db.StructureClusters, "StructureClusterID", "StructureClusterType");
+            ViewBag.StructureConditionID = new SelectList(db.StructureConditions, "StructureConditionID", "ConditionStatus");
+            ViewBag.StructureFaceID = new SelectList(db.StructureFaces, "StructureFaceID", "StructureFaceID");
+            ViewBag.StructureOccupancyID = new SelectList(db.StructureOccupancys, "StructureOccupancyID", "Occupancy");
+            ViewBag.StructureOwnerID = new SelectList(db.StructureOwners, "StructureOwnerID", "StructureOwnerName");
+            ViewBag.StructurePositionID = new SelectList(db.StructurePositions, "StructurePositionID", "Position");
+            ViewBag.StructureSizeID = new SelectList(db.StructureSizes, "StructureSizeID", "StructureSizeID");
+            ViewBag.StructureVisibilityID = new SelectList(db.StructureVisibilitys, "StructureVisibilityID", "VisibilityType");
+            return View();
+        }
+
+        // POST: Face/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "StructureID,StructureType,StructureOwnerID,StructureFaceID,StructureOccupancyID,StructureSizeID,StructureVisibilityID,StructureClusterID,StructureBoundID,StructurePositionID,StructureConditionID,StructureLatitude,StructureLongitude,StructureLocation")] Structure structure)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Structures.Add(structure);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.StructureBoundID = new SelectList(db.StructureBounds, "StructureBoundID", "StructureBoundType", structure.StructureBoundID);
+            ViewBag.StructureClusterID = new SelectList(db.StructureClusters, "StructureClusterID", "StructureClusterType", structure.StructureClusterID);
+            ViewBag.StructureConditionID = new SelectList(db.StructureConditions, "StructureConditionID", "ConditionStatus", structure.StructureConditionID);
+            ViewBag.StructureFaceID = new SelectList(db.StructureFaces, "StructureFaceID", "StructureFaceID", structure.StructureFaceID);
+            ViewBag.StructureOccupancyID = new SelectList(db.StructureOccupancys, "StructureOccupancyID", "Occupancy", structure.StructureOccupancyID);
+            ViewBag.StructureOwnerID = new SelectList(db.StructureOwners, "StructureOwnerID", "StructureOwnerName", structure.StructureOwnerID);
+            ViewBag.StructurePositionID = new SelectList(db.StructurePositions, "StructurePositionID", "Position", structure.StructurePositionID);
+            ViewBag.StructureSizeID = new SelectList(db.StructureSizes, "StructureSizeID", "StructureSizeID", structure.StructureSizeID);
+            ViewBag.StructureVisibilityID = new SelectList(db.StructureVisibilitys, "StructureVisibilityID", "VisibilityType", structure.StructureVisibilityID);
+            return View(structure);
+        }
+
+        // GET: Face/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Structure structure = db.Structures.Find(id);
+            if (structure == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.StructureBoundID = new SelectList(db.StructureBounds, "StructureBoundID", "StructureBoundType", structure.StructureBoundID);
+            ViewBag.StructureClusterID = new SelectList(db.StructureClusters, "StructureClusterID", "StructureClusterType", structure.StructureClusterID);
+            ViewBag.StructureConditionID = new SelectList(db.StructureConditions, "StructureConditionID", "ConditionStatus", structure.StructureConditionID);
+            ViewBag.StructureFaceID = new SelectList(db.StructureFaces, "StructureFaceID", "StructureFaceID", structure.StructureFaceID);
+            ViewBag.StructureOccupancyID = new SelectList(db.StructureOccupancys, "StructureOccupancyID", "Occupancy", structure.StructureOccupancyID);
+            ViewBag.StructureOwnerID = new SelectList(db.StructureOwners, "StructureOwnerID", "StructureOwnerName", structure.StructureOwnerID);
+            ViewBag.StructurePositionID = new SelectList(db.StructurePositions, "StructurePositionID", "Position", structure.StructurePositionID);
+            ViewBag.StructureSizeID = new SelectList(db.StructureSizes, "StructureSizeID", "StructureSizeID", structure.StructureSizeID);
+            ViewBag.StructureVisibilityID = new SelectList(db.StructureVisibilitys, "StructureVisibilityID", "VisibilityType", structure.StructureVisibilityID);
+            return View(structure);
+        }
+
+        // POST: Face/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "StructureID,StructureType,StructureOwnerID,StructureFaceID,StructureOccupancyID,StructureSizeID,StructureVisibilityID,StructureClusterID,StructureBoundID,StructurePositionID,StructureConditionID,StructureLatitude,StructureLongitude,StructureLocation")] Structure structure)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(structure).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.StructureBoundID = new SelectList(db.StructureBounds, "StructureBoundID", "StructureBoundType", structure.StructureBoundID);
+            ViewBag.StructureClusterID = new SelectList(db.StructureClusters, "StructureClusterID", "StructureClusterType", structure.StructureClusterID);
+            ViewBag.StructureConditionID = new SelectList(db.StructureConditions, "StructureConditionID", "ConditionStatus", structure.StructureConditionID);
+            ViewBag.StructureFaceID = new SelectList(db.StructureFaces, "StructureFaceID", "StructureFaceID", structure.StructureFaceID);
+            ViewBag.StructureOccupancyID = new SelectList(db.StructureOccupancys, "StructureOccupancyID", "Occupancy", structure.StructureOccupancyID);
+            ViewBag.StructureOwnerID = new SelectList(db.StructureOwners, "StructureOwnerID", "StructureOwnerName", structure.StructureOwnerID);
+            ViewBag.StructurePositionID = new SelectList(db.StructurePositions, "StructurePositionID", "Position", structure.StructurePositionID);
+            ViewBag.StructureSizeID = new SelectList(db.StructureSizes, "StructureSizeID", "StructureSizeID", structure.StructureSizeID);
+            ViewBag.StructureVisibilityID = new SelectList(db.StructureVisibilitys, "StructureVisibilityID", "VisibilityType", structure.StructureVisibilityID);
+            return View(structure);
+        }
+
+        // GET: Face/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Structure structure = db.Structures.Find(id);
+            if (structure == null)
+            {
+                return HttpNotFound();
+            }
+            return View(structure);
+        }
+
+        // POST: Face/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Structure structure = db.Structures.Find(id);
+            db.Structures.Remove(structure);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+    }
+}

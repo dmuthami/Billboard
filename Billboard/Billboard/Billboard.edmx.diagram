@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1bb4abbf8a0d4422b264f9c2dfbb8b9d" Name="Diagram1" ZoomLevel="100">
+        <EntityTypeShape EntityType="BillboardModel.Advert" Width="1.5" PointX="10.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.Advertiser" Width="1.5" PointX="7.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.Agency" Width="1.5" PointX="4.625" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.Backlight" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.Campaign" Width="1.875" PointX="7.125" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.CampaignDevice" Width="1.75" PointX="12.25" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.CampaignRoute" Width="1.5" PointX="9.75" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.Clutter" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.Constituency" Width="1.5" PointX="0.875" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.County" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.Device" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.DeviceStatus" Width="1.5" PointX="7.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.Face" Width="2.625" PointX="7" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.FaceAvailability" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.FaceBound" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.FaceCondition" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.FaceImage" Width="1.5" PointX="10.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.FaceOccupancy" Width="1.5" PointX="4.375" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.FacePosition" Width="1.5" PointX="7.375" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.FaceSize" Width="1.5" PointX="6.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.FaceVisibilityRating" Width="1.875" PointX="9.875" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.Industry" Width="1.5" PointX="5.25" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.Product" Width="1.5" PointX="9.5" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.Route" Width="1.5" PointX="7.5" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.SiteLighting" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.Street" Width="1.5" PointX="11.875" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.Structure" Width="1.5" PointX="2.5" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.StructureOwner" Width="1.5" PointX="5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.StructureType" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.Subscription" Width="1.5" PointX="4.625" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.Sweep" Width="1.5" PointX="2.375" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.SweepStructure" Width="1.5" PointX="4.875" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.Traffic" Width="1.5" PointX="2.875" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.VegetationCover" Width="1.75" PointX="10.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.Ward" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Advert_dbo_Advertiser_AdvertiserID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Advert_dbo_Campaign_CampaignID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Advert_dbo_Face_FaceID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Advertiser_Advertiser_AdvertiserID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Agency_AgencyID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Subscription_dbo_Agency_SubscriptionID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Industry_Industry_IndustryID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Product_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_CampaignDevice_dbo_Campaign_CampaignID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_CampaignRoute_dbo_Campaign_CampaignID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_CampaignDevice_dbo_Device_DeviceID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_CampaignRoute_dbo_Route_RouteID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Device_dbo_DeviceStatus_DeviceStatusID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceAvailability_FaceAvailabilityID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceBound_FaceBoundID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceCondition_FaceConditionID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID1" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceOccupancy_FaceOccupancyID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FacePosition_FacePositionID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceSize_FaceSizeID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceVisibilityRating_FaceVisibilityRatingID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_Structure_StructureID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureOwner_StructureOwner_StructureOwnerID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureType_StructureType_StructureTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID1" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Structure_dbo_StructureType_StructureTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_StructureOwner_dbo_Structure_StructureID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_SweepStructure_dbo_Structure_StructureID" ManuallyRouted="false" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_SweepStructure_dbo_Sweep_SweepID" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
