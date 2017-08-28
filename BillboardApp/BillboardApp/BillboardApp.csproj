@@ -155,102 +155,198 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Advert.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Advertiser.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Agency.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Backlight.cs">
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DAL\BillboardContext.cs" />
+    <Compile Include="DAL\BillboardInitializer.cs" />
+    <Compile Include="Diagram\Advert.cs">
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="BillboardApp.Context.cs">
+    <Compile Include="Diagram\Advertiser.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Agency.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Backlight.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\BillboardApp.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BillboardApp.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="BillboardApp.cs">
+    <Compile Include="Diagram\BillboardApp.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="BillboardApp.Designer.cs">
+    <Compile Include="Diagram\BillboardApp.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BillboardApp.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Campaign.cs">
+    <Compile Include="Diagram\Campaign.cs">
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="CampaignDevice.cs">
+    <Compile Include="Diagram\CampaignDevice.cs">
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="CampaignRoute.cs">
+    <Compile Include="Diagram\CampaignRoute.cs">
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="Clutter.cs">
+    <Compile Include="Diagram\Clutter.cs">
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="Constituency.cs">
+    <Compile Include="Diagram\conauth.cs">
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="County.cs">
+    <Compile Include="Diagram\concompany.cs">
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\BillboardContext.cs" />
-    <Compile Include="DAL\BillboardInitializer.cs" />
-    <Compile Include="Device.cs">
+    <Compile Include="Diagram\conconfiguration.cs">
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="DeviceStatu.cs">
+    <Compile Include="Diagram\conconfigurationtype.cs">
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="Face.cs">
+    <Compile Include="Diagram\conindustry.cs">
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="FaceAvailability.cs">
+    <Compile Include="Diagram\conlife.cs">
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="FaceBound.cs">
+    <Compile Include="Diagram\connotification.cs">
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="FaceCondition.cs">
+    <Compile Include="Diagram\conobject.cs">
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="FaceImage.cs">
+    <Compile Include="Diagram\conobjectright.cs">
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="FaceOccupancy.cs">
+    <Compile Include="Diagram\conobjectscaption.cs">
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="FaceOrientation.cs">
+    <Compile Include="Diagram\conprofile.cs">
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="FacePosition.cs">
+    <Compile Include="Diagram\conrole.cs">
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="FaceSize.cs">
+    <Compile Include="Diagram\Constituency.cs">
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
-    <Compile Include="FaceVisibilityRating.cs">
+    <Compile Include="Diagram\conuser.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\conuserrecovery.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\conuserrecoverytype.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\conuserrole.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\County.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Device.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\DeviceStatus.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Face.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FaceAvailability.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FaceBound.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FaceCondition.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FaceImage.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FaceOccupancy.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FaceOrientation.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FacePosition.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FaceSize.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FaceVisibilityRating.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Industry.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Product.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Role.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Route.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\SiteLighting.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\SiteRunUp.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Street.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Structure.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\StructureOwner.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\StructureType.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Subscription.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Sweep.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\SweepStructure.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Traffic.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\User.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\VegetationCover.cs">
+      <DependentUpon>BillboardApp.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Ward.cs">
       <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Industry.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201708281155548_Initial.cs" />
     <Compile Include="Migrations\201708281155548_Initial.Designer.cs">
@@ -259,6 +355,10 @@
     <Compile Include="Migrations\201708281217466_DB-Structure-Revision_v0.cs" />
     <Compile Include="Migrations\201708281217466_DB-Structure-Revision_v0.Designer.cs">
       <DependentUpon>201708281217466_DB-Structure-Revision_v0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708282132074_User-Management.cs" />
+    <Compile Include="Migrations\201708282132074_User-Management.Designer.cs">
+      <DependentUpon>201708282132074_User-Management.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -270,7 +370,23 @@
     <Compile Include="Models\CampaignDevice.cs" />
     <Compile Include="Models\CampaignRoute.cs" />
     <Compile Include="Models\Clutter.cs" />
+    <Compile Include="Models\conauth.cs" />
+    <Compile Include="Models\concompany.cs" />
+    <Compile Include="Models\conconfigurations.cs" />
+    <Compile Include="Models\conconfigurationtype.cs" />
+    <Compile Include="Models\conindustry.cs" />
+    <Compile Include="Models\conlife.cs" />
+    <Compile Include="Models\connotifications.cs" />
+    <Compile Include="Models\conobjectrights.cs" />
+    <Compile Include="Models\conobjects.cs" />
+    <Compile Include="Models\conobjectscaption.cs" />
+    <Compile Include="Models\conprofiles.cs" />
+    <Compile Include="Models\conroles.cs" />
     <Compile Include="Models\Constituency.cs" />
+    <Compile Include="Models\conuser.cs" />
+    <Compile Include="Models\conuserrecovery.cs" />
+    <Compile Include="Models\conuserrecoverytype.cs" />
+    <Compile Include="Models\conuserroles.cs" />
     <Compile Include="Models\County.cs" />
     <Compile Include="Models\Device.cs" />
     <Compile Include="Models\DeviceStatus.cs" />
@@ -304,70 +420,22 @@
     <Compile Include="Models\VegetationCover.cs" />
     <Compile Include="Models\Ward.cs" />
     <Compile Include="Model_Logic\StructureLogic.cs" />
-    <Compile Include="Product.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Role.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Route.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SiteLighting.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SiteRunUp.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="Street.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Structure.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="StructureOwner.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="StructureType.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Subscription.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Sweep.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SweepStructure.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Traffic.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="User.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="VegetationCover.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Ward.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BillboardApp.Context.tt">
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Diagram\BillboardApp.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BillboardApp.edmx</DependentUpon>
       <LastGenOutput>BillboardApp.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="BillboardApp.tt">
+    <Content Include="Diagram\BillboardApp.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BillboardApp.edmx</DependentUpon>
       <LastGenOutput>BillboardApp.cs</LastGenOutput>
     </Content>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -375,11 +443,11 @@
     <Content Include="ReadMe.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="BillboardApp.edmx">
+    <EntityDeploy Include="Diagram\BillboardApp.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BillboardApp.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="BillboardApp.edmx.diagram">
+    <Content Include="Diagram\BillboardApp.edmx.diagram">
       <DependentUpon>BillboardApp.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2-vsdoc.js" />
@@ -446,6 +514,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708281217466_DB-Structure-Revision_v0.resx">
       <DependentUpon>201708281217466_DB-Structure-Revision_v0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708282132074_User-Management.resx">
+      <DependentUpon>201708282132074_User-Management.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

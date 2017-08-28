@@ -59,10 +59,27 @@ namespace BillboardApp.DAL
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<FaceOrientation> FaceOrientations { get; set; }
-
         public DbSet<SiteRunUp> SiteRunUps { get; set; }
+        public DbSet<conauth> conauths { get; set; }
 
-       
+
+        public DbSet<concompany> concompanys { get; set; }
+        public DbSet<conconfigurations> conconfigurationz { get; set; }
+        public DbSet<conconfigurationtype> conconfigurationtypes { get; set; }
+        public DbSet<conindustry> conindustrys { get; set; }
+        public DbSet<conlife> conlife { get; set; }
+        public DbSet<connotifications> connotificationz { get; set; }
+        public DbSet<conobjectrights> conobjectrightz { get; set; }
+        public DbSet<conobjects> conobjectz { get; set; }
+        public DbSet<conobjectscaption> conobjectscaptionz { get; set; }
+        public DbSet<conprofiles> conprofilez { get; set; }
+
+        public DbSet<conroles> conrolez { get; set; }
+        public DbSet<conuser> conusers { get; set; }
+        public DbSet<conuserrecovery> conuserrecoverys { get; set; }
+        public DbSet<conuserrecoverytype> conuserrecoverytypes { get; set; }
+        public DbSet<conuserroles> conuserroles { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //base.OnModelCreating(modelBuilder);
