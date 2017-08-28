@@ -15,6 +15,7 @@ namespace Billboard.Models
         }
 
         public int FaceBoundID { get; set; }
+
         [DisplayName("Bound")]
         public string Bound { get; set; }
 

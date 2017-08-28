@@ -28,8 +28,5 @@ namespace Billboard.Models
 
         public virtual ICollection<Face> Structures { get; set; }
 
-        //Structure  Owners Relationship and Navigation Property
-        public int StructureID { get; set; }
-        public virtual Structure Structure { get; set; }
     }
 }

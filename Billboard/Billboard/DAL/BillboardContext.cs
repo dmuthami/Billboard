@@ -1,6 +1,7 @@
 ﻿using Billboard.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
@@ -26,8 +27,7 @@ namespace Billboard.DAL
         public DbSet<CampaignRoute> CampaignRoutes { get; set; }
         public DbSet<Clutter> Clutters { get; set; }
         public DbSet<Constituency> Constituencys { get; set; }
-        //public DbSet<County> Countys { get; set; }
-
+        public DbSet<County> Countys { get; set; }
 
         public DbSet<Device> Devices { get; set; }
         public DbSet<DeviceStatus> DeviceStatuses { get; set; }
@@ -40,7 +40,6 @@ namespace Billboard.DAL
         public DbSet<FacePosition> FacePosition { get; set; }        
         public DbSet<FaceSize> FaceSize { get; set; }
 
-
         public DbSet<FaceVisibilityRating> FaceVisibilityRatings { get; set; }
         public DbSet<Industry> Industrys { get; set; }
         public DbSet<Product> Products { get; set; }
@@ -52,19 +51,17 @@ namespace Billboard.DAL
         public DbSet<StructureType> StructureTypes { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
 
-
- 
         public DbSet<Sweep> Sweeps { get; set; }
         public DbSet<SweepStructure> SweepStructures { get; set; }
         public DbSet<Traffic> Traffics { get; set; }
         public DbSet<VegetationCover> VegetationCovers { get; set; }
         public DbSet<Ward> Wards { get; set; }
-
-        public DbSet<User> Userss { get; set; }
+        public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
+        public DbSet<FaceOrientation> FaceOrientations { get; set; }
 
+        public DbSet<SiteRunUp> SiteRunUps { get; set; }
 
-       
        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -72,11 +69,25 @@ namespace Billboard.DAL
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
 
-            // Configure Agency & Subscription entity
+            // Configure Agency & Subscription entity one to one
             modelBuilder.Entity<Agency>()
                         .HasOptional(s => s.Subscription) // Mark Subscription property optional in Agency entity
-                        .WithRequired(subscription => subscription.Agency); // mark Agency property as required in Subscription entity. Cannot save Subscription without Agency
+                        // mark Agency property as required in Subscription entity. 
+                        //Cannot save Subscription without Agency
+                        .WithRequired(subscription => subscription.Agency);
+
+            // Configure Face & Face visibility entity one to one
+            modelBuilder.Entity<Face>()
+                        .HasOptional(f => f.FaceVisibilityRating) // Mark Subscription property optional in Agency entity
+                        // mark Agency property as required in Subscription entity. 
+                        //Cannot save Subscription without Agency
+                        .WithRequired(t => t.Face); 
         
+            //County 
+            modelBuilder.Entity<County>().HasKey(t => t.Code)
+                .Property(t=>t.Code)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None); 
+
         }
     }
 }

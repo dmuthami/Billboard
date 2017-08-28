@@ -24,24 +24,22 @@ namespace Billboard.Models
         //Face Occupancy Relationship
         public int FaceOccupancyID { get; set; }
         public virtual FaceOccupancy FaceOccupancy { get; set; }
+
         //Face Size Relationship
         public int FaceSizeID { get; set; }
         public virtual FaceSize FaceSize { get; set; }
-        //Face Image Relationship
-        public int FaceImageID { get; set; }
-        public virtual FaceImage FaceImage { get; set; }
+
         //Face Condition Relationship
         public int FaceConditionID { get; set; }
         public virtual FaceCondition FaceCondition { get; set; }
+
         //Face bound Relationship
         public int FaceBoundID { get; set; }
         public virtual FaceBound FaceBound { get; set; }
+
         //Face Position Relationship
         public int FacePositionID { get; set; }
         public virtual FacePosition FacePosition { get; set; }
-        //Face visibility Rating Relationship
-        public int FaceVisibilityRatingID { get; set; }
-        public virtual FaceVisibilityRating FaceVisibilityRating { get; set; }
 
         //Face availability Relationship
         public int FaceAvailabilityID { get; set; }
@@ -50,6 +48,13 @@ namespace Billboard.Models
         //Structure Relationship
         public int StructureID { get; set; }
         public virtual Structure Structure { get; set; }
+
+        //Face Orientation Relationship and navigation property
+        public int FaceOrientationID { get; set; }
+        public virtual FaceOrientation FaceOrientation { get; set; }
+
+        //one to one 
+        public FaceVisibilityRating FaceVisibilityRating { get; set; }
 
     }
 }

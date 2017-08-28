@@ -38,6 +38,30 @@ namespace Billboard
         public Nullable<int> Industry1_IndustryID { get; set; }
         public Nullable<int> Advertiser_AdvertiserID3 { get; set; }
         public Nullable<int> Advertiser_AdvertiserID4 { get; set; }
+        public Nullable<int> Advertiser_AdvertiserID5 { get; set; }
+        public Nullable<int> Advertiser1_AdvertiserID1 { get; set; }
+        public Nullable<int> Advertiser11_AdvertiserID { get; set; }
+        public Nullable<int> Advertiser2_AdvertiserID { get; set; }
+        public Nullable<int> Advertiser21_AdvertiserID { get; set; }
+        public Nullable<int> Advertiser3_AdvertiserID { get; set; }
+        public Nullable<int> Industry_IndustryID5 { get; set; }
+        public Nullable<int> Industry_IndustryID6 { get; set; }
+        public Nullable<int> Industry_IndustryID7 { get; set; }
+        public Nullable<int> Industry_IndustryID8 { get; set; }
+        public Nullable<int> Industry_IndustryID9 { get; set; }
+        public Nullable<int> Industry_IndustryID10 { get; set; }
+        public Nullable<int> Industry_IndustryID11 { get; set; }
+        public Nullable<int> Industry1_IndustryID1 { get; set; }
+        public Nullable<int> Industry11_IndustryID { get; set; }
+        public Nullable<int> Industry2_IndustryID { get; set; }
+        public Nullable<int> Industry21_IndustryID { get; set; }
+        public Nullable<int> Industry3_IndustryID { get; set; }
+        public Nullable<int> Advertiser_AdvertiserID6 { get; set; }
+        public Nullable<int> Advertiser_AdvertiserID7 { get; set; }
+        public Nullable<int> Advertiser_AdvertiserID8 { get; set; }
+        public Nullable<int> Advertiser_AdvertiserID9 { get; set; }
+        public Nullable<int> Advertiser_AdvertiserID10 { get; set; }
+        public Nullable<int> Advertiser_AdvertiserID11 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Advert> Adverts { get; set; }
@@ -59,5 +83,29 @@ namespace Billboard
         public virtual Industry Industry11 { get; set; }
         public virtual Industry Industry21 { get; set; }
         public virtual Industry Industry3 { get; set; }
+        public virtual Advertiser Advertiser4 { get; set; }
+        public virtual Advertiser Advertiser12 { get; set; }
+        public virtual Advertiser Advertiser22 { get; set; }
+        public virtual Advertiser Advertiser31 { get; set; }
+        public virtual Advertiser Advertiser41 { get; set; }
+        public virtual Advertiser Advertiser5 { get; set; }
+        public virtual Advertiser Advertiser6 { get; set; }
+        public virtual Advertiser Advertiser7 { get; set; }
+        public virtual Advertiser Advertiser8 { get; set; }
+        public virtual Advertiser Advertiser9 { get; set; }
+        public virtual Advertiser Advertiser10 { get; set; }
+        public virtual Advertiser Advertiser111 { get; set; }
+        public virtual Industry Industry4 { get; set; }
+        public virtual Industry Industry12 { get; set; }
+        public virtual Industry Industry22 { get; set; }
+        public virtual Industry Industry31 { get; set; }
+        public virtual Industry Industry41 { get; set; }
+        public virtual Industry Industry5 { get; set; }
+        public virtual Industry Industry6 { get; set; }
+        public virtual Industry Industry7 { get; set; }
+        public virtual Industry Industry8 { get; set; }
+        public virtual Industry Industry9 { get; set; }
+        public virtual Industry Industry10 { get; set; }
+        public virtual Industry Industry111 { get; set; }
     }
 }

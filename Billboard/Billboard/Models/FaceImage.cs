@@ -10,19 +10,21 @@ namespace Billboard.Models
     {
         public FaceImage()
         {
-            this.Faces = new HashSet<Face>();
+            
         }
         public int FaceImageID { get; set; }
 
         [DisplayName("Advert Image")]
-        public byte[] Image { get; set; }
+        public string Image { get; set; }
 
         [DisplayName("Date")]
         public System.DateTime TimeStamp { get; set; }
-        
+
+        //Face relationship and navigation property
+        public int FaceID { get; set; }
         public virtual Face Face { get; set; }
 
-        public virtual ICollection<Face> Faces { get; set; }
+        
         
     }
 }

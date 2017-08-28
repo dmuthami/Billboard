@@ -23,6 +23,18 @@ namespace Billboard
             this.Campaigns11 = new HashSet<Campaign>();
             this.Campaigns21 = new HashSet<Campaign>();
             this.Campaigns3 = new HashSet<Campaign>();
+            this.Campaigns4 = new HashSet<Campaign>();
+            this.Campaigns12 = new HashSet<Campaign>();
+            this.Campaigns22 = new HashSet<Campaign>();
+            this.Campaigns31 = new HashSet<Campaign>();
+            this.Campaigns41 = new HashSet<Campaign>();
+            this.Campaigns5 = new HashSet<Campaign>();
+            this.Campaigns6 = new HashSet<Campaign>();
+            this.Campaigns7 = new HashSet<Campaign>();
+            this.Campaigns8 = new HashSet<Campaign>();
+            this.Campaigns9 = new HashSet<Campaign>();
+            this.Campaigns10 = new HashSet<Campaign>();
+            this.Campaigns111 = new HashSet<Campaign>();
         }
     
         public int IndustryID { get; set; }
@@ -40,5 +52,29 @@ namespace Billboard
         public virtual ICollection<Campaign> Campaigns21 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Campaign> Campaigns3 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Campaign> Campaigns4 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Campaign> Campaigns12 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Campaign> Campaigns22 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Campaign> Campaigns31 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Campaign> Campaigns41 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Campaign> Campaigns5 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Campaign> Campaigns6 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Campaign> Campaigns7 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Campaign> Campaigns8 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Campaign> Campaigns9 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Campaign> Campaigns10 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Campaign> Campaigns111 { get; set; }
     }
 }

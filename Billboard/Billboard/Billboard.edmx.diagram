@@ -14,8 +14,8 @@
         <EntityTypeShape EntityType="BillboardModel.CampaignRoute" Width="1.5" PointX="9.75" PointY="23.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BillboardModel.Clutter" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BillboardModel.Constituency" Width="1.5" PointX="0.875" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BillboardModel.Device" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="BillboardModel.DeviceStatus" Width="1.5" PointX="7.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.Device" Width="1.5" PointX="9.375" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillboardModel.DeviceStatus" Width="1.5" PointX="7" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BillboardModel.Face" Width="2.625" PointX="7" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="BillboardModel.FaceAvailability" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BillboardModel.FaceBound" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
@@ -125,6 +125,127 @@
         <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face21_FaceID" />
         <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face3_FaceID" />
         <AssociationConnector Association="BillboardModel.FK_dbo_User_dbo_Role_RoleID" />
+        <EntityTypeShape EntityType="BillboardModel.County" Width="1.5" PointX="12.375" PointY="9.75" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Advertiser_Advertiser_AdvertiserID10" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Advertiser_Advertiser_AdvertiserID11" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Advertiser_Advertiser_AdvertiserID5" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Advertiser_Advertiser_AdvertiserID6" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Advertiser_Advertiser_AdvertiserID7" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Advertiser_Advertiser_AdvertiserID8" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Advertiser_Advertiser_AdvertiserID9" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Advertiser_Advertiser1_AdvertiserID1" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Advertiser_Advertiser11_AdvertiserID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Advertiser_Advertiser2_AdvertiserID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Advertiser_Advertiser21_AdvertiserID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Advertiser_Advertiser3_AdvertiserID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Industry_Industry_IndustryID10" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Industry_Industry_IndustryID11" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Industry_Industry_IndustryID5" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Industry_Industry_IndustryID6" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Industry_Industry_IndustryID7" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Industry_Industry_IndustryID8" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Industry_Industry_IndustryID9" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Industry_Industry1_IndustryID1" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Industry_Industry11_IndustryID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Industry_Industry2_IndustryID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Industry_Industry21_IndustryID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Campaign_dbo_Industry_Industry3_IndustryID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID12" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID13" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID14" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID15" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID16" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID17" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID18" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID19" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID20" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID21" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID22" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID23" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID24" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID25" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID26" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID27" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID28" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID29" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage_FaceImageID30" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage1_FaceImageID2" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage10_FaceImageID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage11_FaceImageID1" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage111_FaceImageID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage12_FaceImageID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage2_FaceImageID1" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage21_FaceImageID1" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage22_FaceImageID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage3_FaceImageID1" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage31_FaceImageID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage4_FaceImageID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage41_FaceImageID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage5_FaceImageID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage6_FaceImageID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage7_FaceImageID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage8_FaceImageID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_FaceImage_FaceImage9_FaceImageID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureOwner_StructureOwner_StructureOwnerID10" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureOwner_StructureOwner_StructureOwnerID11" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureOwner_StructureOwner_StructureOwnerID5" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureOwner_StructureOwner_StructureOwnerID6" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureOwner_StructureOwner_StructureOwnerID7" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureOwner_StructureOwner_StructureOwnerID8" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureOwner_StructureOwner_StructureOwnerID9" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureOwner_StructureOwner1_StructureOwnerID1" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureOwner_StructureOwner11_StructureOwnerID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureOwner_StructureOwner2_StructureOwnerID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureOwner_StructureOwner21_StructureOwnerID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureOwner_StructureOwner3_StructureOwnerID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureType_StructureType_StructureTypeID10" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureType_StructureType_StructureTypeID11" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureType_StructureType_StructureTypeID5" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureType_StructureType_StructureTypeID6" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureType_StructureType_StructureTypeID7" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureType_StructureType_StructureTypeID8" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureType_StructureType_StructureTypeID9" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureType_StructureType1_StructureTypeID1" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureType_StructureType11_StructureTypeID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureType_StructureType2_StructureTypeID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureType_StructureType21_StructureTypeID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_Face_dbo_StructureType_StructureType3_StructureTypeID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID12" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID13" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID14" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID15" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID16" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID17" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID18" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID19" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID20" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID21" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID22" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID23" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID24" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID25" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID26" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID27" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID28" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID29" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face_FaceID30" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face1_FaceID2" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face10_FaceID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face11_FaceID1" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face111_FaceID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face12_FaceID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face2_FaceID1" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face21_FaceID1" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face22_FaceID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face3_FaceID1" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face31_FaceID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face4_FaceID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face41_FaceID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face5_FaceID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face6_FaceID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face7_FaceID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face8_FaceID" />
+        <AssociationConnector Association="BillboardModel.FK_dbo_FaceImage_dbo_Face_Face9_FaceID" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

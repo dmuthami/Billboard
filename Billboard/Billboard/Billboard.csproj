@@ -223,6 +223,9 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="County.cs">
+      <DependentUpon>Billboard.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\BillboardContext.cs" />
     <Compile Include="DAL\BillboardInitializer.cs" />
     <Compile Include="Device.cs">
@@ -264,17 +267,9 @@
     <Compile Include="Industry.cs">
       <DependentUpon>Billboard.tt</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708280634212_Initial.cs" />
-    <Compile Include="Migrations\201708280634212_Initial.Designer.cs">
-      <DependentUpon>201708280634212_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708280638411_Add-County.cs" />
-    <Compile Include="Migrations\201708280638411_Add-County.Designer.cs">
-      <DependentUpon>201708280638411_Add-County.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708280643219_Add-Users-V0.cs" />
-    <Compile Include="Migrations\201708280643219_Add-Users-V0.Designer.cs">
-      <DependentUpon>201708280643219_Add-Users-V0.cs</DependentUpon>
+    <Compile Include="Migrations\201708281039576_Initial.cs" />
+    <Compile Include="Migrations\201708281039576_Initial.Designer.cs">
+      <DependentUpon>201708281039576_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -296,6 +291,7 @@
     <Compile Include="Models\FaceCondition.cs" />
     <Compile Include="Models\FaceImage.cs" />
     <Compile Include="Models\FaceOccupancy.cs" />
+    <Compile Include="Models\FaceOrientation.cs" />
     <Compile Include="Models\FacePosition.cs" />
     <Compile Include="Models\FaceSize.cs" />
     <Compile Include="Models\FaceVisibilityRating.cs" />
@@ -306,6 +302,7 @@
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Route.cs" />
     <Compile Include="Models\SiteLighting.cs" />
+    <Compile Include="Models\SiteRunUp.cs" />
     <Compile Include="Models\Street.cs" />
     <Compile Include="Models\Structure.cs" />
     <Compile Include="Models\StructureOwner.cs" />
@@ -480,14 +477,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201708280634212_Initial.resx">
-      <DependentUpon>201708280634212_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708280638411_Add-County.resx">
-      <DependentUpon>201708280638411_Add-County.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708280643219_Add-Users-V0.resx">
-      <DependentUpon>201708280643219_Add-Users-V0.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708281039576_Initial.resx">
+      <DependentUpon>201708281039576_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

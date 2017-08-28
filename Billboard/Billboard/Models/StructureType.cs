@@ -9,12 +9,12 @@ namespace Billboard.Models
     {
         public StructureType()
         {
-            this.Faces = new HashSet<Face>();
+            this.Structures = new HashSet<Structure>();
         }
         public int StructureTypeID { get; set; }
 
         public string Type { get; set; }
 
-        public virtual ICollection<Face> Faces { get; set; }
+        public virtual ICollection<Structure> Structures { get; set; }
     }
 }
