@@ -19,6 +19,11 @@ namespace Billboard
         {
             this.Adverts = new HashSet<Advert>();
             this.Campaigns = new HashSet<Campaign>();
+            this.Campaigns1 = new HashSet<Campaign>();
+            this.Campaigns2 = new HashSet<Campaign>();
+            this.Campaigns11 = new HashSet<Campaign>();
+            this.Campaigns21 = new HashSet<Campaign>();
+            this.Campaigns3 = new HashSet<Campaign>();
         }
     
         public int AdvertiserID { get; set; }
@@ -32,5 +37,15 @@ namespace Billboard
         public virtual ICollection<Advert> Adverts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Campaign> Campaigns { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Campaign> Campaigns1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Campaign> Campaigns2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Campaign> Campaigns11 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Campaign> Campaigns21 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Campaign> Campaigns3 { get; set; }
     }
 }

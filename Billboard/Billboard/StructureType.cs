@@ -19,6 +19,11 @@ namespace Billboard
         {
             this.Faces = new HashSet<Face>();
             this.Structures = new HashSet<Structure>();
+            this.Faces1 = new HashSet<Face>();
+            this.Faces2 = new HashSet<Face>();
+            this.Faces11 = new HashSet<Face>();
+            this.Faces21 = new HashSet<Face>();
+            this.Faces3 = new HashSet<Face>();
         }
     
         public int StructureTypeID { get; set; }
@@ -28,5 +33,15 @@ namespace Billboard
         public virtual ICollection<Face> Faces { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Structure> Structures { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces11 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces21 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces3 { get; set; }
     }
 }

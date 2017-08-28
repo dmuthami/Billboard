@@ -20,6 +20,22 @@ namespace Billboard
             this.Adverts = new HashSet<Advert>();
             this.FaceImages = new HashSet<FaceImage>();
             this.FaceImages1 = new HashSet<FaceImage>();
+            this.FaceImages2 = new HashSet<FaceImage>();
+            this.FaceImages11 = new HashSet<FaceImage>();
+            this.FaceImages21 = new HashSet<FaceImage>();
+            this.FaceImages3 = new HashSet<FaceImage>();
+            this.FaceImages4 = new HashSet<FaceImage>();
+            this.FaceImages12 = new HashSet<FaceImage>();
+            this.FaceImages22 = new HashSet<FaceImage>();
+            this.FaceImages31 = new HashSet<FaceImage>();
+            this.FaceImages41 = new HashSet<FaceImage>();
+            this.FaceImages5 = new HashSet<FaceImage>();
+            this.FaceImages6 = new HashSet<FaceImage>();
+            this.FaceImages7 = new HashSet<FaceImage>();
+            this.FaceImages8 = new HashSet<FaceImage>();
+            this.FaceImages9 = new HashSet<FaceImage>();
+            this.FaceImages10 = new HashSet<FaceImage>();
+            this.FaceImages111 = new HashSet<FaceImage>();
         }
     
         public int FaceID { get; set; }
@@ -36,6 +52,32 @@ namespace Billboard
         public Nullable<int> FaceImage_FaceImageID1 { get; set; }
         public Nullable<int> StructureOwner_StructureOwnerID { get; set; }
         public Nullable<int> StructureType_StructureTypeID { get; set; }
+        public Nullable<int> FaceImage_FaceImageID2 { get; set; }
+        public Nullable<int> FaceImage_FaceImageID3 { get; set; }
+        public Nullable<int> FaceImage_FaceImageID4 { get; set; }
+        public Nullable<int> FaceImage1_FaceImageID { get; set; }
+        public Nullable<int> StructureOwner_StructureOwnerID1 { get; set; }
+        public Nullable<int> StructureType_StructureTypeID1 { get; set; }
+        public Nullable<int> FaceImage_FaceImageID5 { get; set; }
+        public Nullable<int> FaceImage_FaceImageID6 { get; set; }
+        public Nullable<int> FaceImage_FaceImageID7 { get; set; }
+        public Nullable<int> FaceImage_FaceImageID8 { get; set; }
+        public Nullable<int> FaceImage_FaceImageID9 { get; set; }
+        public Nullable<int> FaceImage_FaceImageID10 { get; set; }
+        public Nullable<int> FaceImage_FaceImageID11 { get; set; }
+        public Nullable<int> FaceImage1_FaceImageID1 { get; set; }
+        public Nullable<int> FaceImage11_FaceImageID { get; set; }
+        public Nullable<int> FaceImage2_FaceImageID { get; set; }
+        public Nullable<int> FaceImage21_FaceImageID { get; set; }
+        public Nullable<int> FaceImage3_FaceImageID { get; set; }
+        public Nullable<int> StructureOwner_StructureOwnerID2 { get; set; }
+        public Nullable<int> StructureOwner_StructureOwnerID3 { get; set; }
+        public Nullable<int> StructureType_StructureTypeID2 { get; set; }
+        public Nullable<int> StructureType_StructureTypeID3 { get; set; }
+        public Nullable<int> StructureOwner_StructureOwnerID4 { get; set; }
+        public Nullable<int> StructureOwner1_StructureOwnerID { get; set; }
+        public Nullable<int> StructureType_StructureTypeID4 { get; set; }
+        public Nullable<int> StructureType1_StructureTypeID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Advert> Adverts { get; set; }
@@ -55,5 +97,63 @@ namespace Billboard
         public virtual ICollection<FaceImage> FaceImages { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FaceImage> FaceImages1 { get; set; }
+        public virtual FaceImage FaceImage2 { get; set; }
+        public virtual FaceImage FaceImage11 { get; set; }
+        public virtual FaceImage FaceImage21 { get; set; }
+        public virtual FaceImage FaceImage3 { get; set; }
+        public virtual StructureOwner StructureOwner1 { get; set; }
+        public virtual StructureType StructureType1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FaceImage> FaceImages2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FaceImage> FaceImages11 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FaceImage> FaceImages21 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FaceImage> FaceImages3 { get; set; }
+        public virtual FaceImage FaceImage4 { get; set; }
+        public virtual FaceImage FaceImage12 { get; set; }
+        public virtual FaceImage FaceImage22 { get; set; }
+        public virtual FaceImage FaceImage31 { get; set; }
+        public virtual FaceImage FaceImage41 { get; set; }
+        public virtual FaceImage FaceImage5 { get; set; }
+        public virtual FaceImage FaceImage6 { get; set; }
+        public virtual FaceImage FaceImage7 { get; set; }
+        public virtual FaceImage FaceImage8 { get; set; }
+        public virtual FaceImage FaceImage9 { get; set; }
+        public virtual FaceImage FaceImage10 { get; set; }
+        public virtual FaceImage FaceImage111 { get; set; }
+        public virtual StructureOwner StructureOwner2 { get; set; }
+        public virtual StructureOwner StructureOwner11 { get; set; }
+        public virtual StructureOwner StructureOwner21 { get; set; }
+        public virtual StructureOwner StructureOwner3 { get; set; }
+        public virtual StructureType StructureType2 { get; set; }
+        public virtual StructureType StructureType11 { get; set; }
+        public virtual StructureType StructureType21 { get; set; }
+        public virtual StructureType StructureType3 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FaceImage> FaceImages4 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FaceImage> FaceImages12 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FaceImage> FaceImages22 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FaceImage> FaceImages31 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FaceImage> FaceImages41 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FaceImage> FaceImages5 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FaceImage> FaceImages6 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FaceImage> FaceImages7 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FaceImage> FaceImages8 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FaceImage> FaceImages9 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FaceImage> FaceImages10 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FaceImage> FaceImages111 { get; set; }
     }
 }

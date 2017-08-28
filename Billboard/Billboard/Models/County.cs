@@ -11,8 +11,9 @@ namespace Billboard.Models
 {
     public class County
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int CountyID { get; set; }
+        //[Key]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Code { get; set; }
 
         [DisplayName("Date Created")]

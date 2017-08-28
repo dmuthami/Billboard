@@ -34,7 +34,6 @@ namespace Billboard
         public virtual DbSet<CampaignRoute> CampaignRoutes { get; set; }
         public virtual DbSet<Clutter> Clutters { get; set; }
         public virtual DbSet<Constituency> Constituencies { get; set; }
-        public virtual DbSet<County> Counties { get; set; }
         public virtual DbSet<Device> Devices { get; set; }
         public virtual DbSet<DeviceStatus> DeviceStatus1 { get; set; }
         public virtual DbSet<Face> Faces { get; set; }
@@ -60,5 +59,7 @@ namespace Billboard
         public virtual DbSet<Traffic> Traffic { get; set; }
         public virtual DbSet<VegetationCover> VegetationCovers { get; set; }
         public virtual DbSet<Ward> Wards { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

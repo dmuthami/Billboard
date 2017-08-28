@@ -19,6 +19,22 @@ namespace Billboard
         {
             this.Faces = new HashSet<Face>();
             this.Faces1 = new HashSet<Face>();
+            this.Faces2 = new HashSet<Face>();
+            this.Faces11 = new HashSet<Face>();
+            this.Faces21 = new HashSet<Face>();
+            this.Faces3 = new HashSet<Face>();
+            this.Faces4 = new HashSet<Face>();
+            this.Faces12 = new HashSet<Face>();
+            this.Faces22 = new HashSet<Face>();
+            this.Faces31 = new HashSet<Face>();
+            this.Faces41 = new HashSet<Face>();
+            this.Faces5 = new HashSet<Face>();
+            this.Faces6 = new HashSet<Face>();
+            this.Faces7 = new HashSet<Face>();
+            this.Faces8 = new HashSet<Face>();
+            this.Faces9 = new HashSet<Face>();
+            this.Faces10 = new HashSet<Face>();
+            this.Faces111 = new HashSet<Face>();
         }
     
         public int FaceImageID { get; set; }
@@ -26,6 +42,22 @@ namespace Billboard
         public System.DateTime TimeStamp { get; set; }
         public Nullable<int> Face_FaceID { get; set; }
         public Nullable<int> Face_FaceID1 { get; set; }
+        public Nullable<int> Face_FaceID2 { get; set; }
+        public Nullable<int> Face1_FaceID { get; set; }
+        public Nullable<int> Face_FaceID3 { get; set; }
+        public Nullable<int> Face_FaceID4 { get; set; }
+        public Nullable<int> Face_FaceID5 { get; set; }
+        public Nullable<int> Face1_FaceID1 { get; set; }
+        public Nullable<int> Face11_FaceID { get; set; }
+        public Nullable<int> Face2_FaceID { get; set; }
+        public Nullable<int> Face21_FaceID { get; set; }
+        public Nullable<int> Face3_FaceID { get; set; }
+        public Nullable<int> Face_FaceID6 { get; set; }
+        public Nullable<int> Face_FaceID7 { get; set; }
+        public Nullable<int> Face_FaceID8 { get; set; }
+        public Nullable<int> Face_FaceID9 { get; set; }
+        public Nullable<int> Face_FaceID10 { get; set; }
+        public Nullable<int> Face_FaceID11 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Face> Faces { get; set; }
@@ -33,5 +65,53 @@ namespace Billboard
         public virtual ICollection<Face> Faces1 { get; set; }
         public virtual Face Face { get; set; }
         public virtual Face Face1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces11 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces21 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces3 { get; set; }
+        public virtual Face Face2 { get; set; }
+        public virtual Face Face11 { get; set; }
+        public virtual Face Face21 { get; set; }
+        public virtual Face Face3 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces4 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces12 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces22 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces31 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces41 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces5 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces6 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces7 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces8 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces9 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces10 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Face> Faces111 { get; set; }
+        public virtual Face Face4 { get; set; }
+        public virtual Face Face12 { get; set; }
+        public virtual Face Face22 { get; set; }
+        public virtual Face Face31 { get; set; }
+        public virtual Face Face41 { get; set; }
+        public virtual Face Face5 { get; set; }
+        public virtual Face Face6 { get; set; }
+        public virtual Face Face7 { get; set; }
+        public virtual Face Face8 { get; set; }
+        public virtual Face Face9 { get; set; }
+        public virtual Face Face10 { get; set; }
+        public virtual Face Face111 { get; set; }
     }
 }

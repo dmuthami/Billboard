@@ -7,13 +7,13 @@ namespace Billboard.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Initial : IMigrationMetadata
+    public sealed partial class AddUsersV0 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddUsersV0));
         
         string IMigrationMetadata.Id
         {
-            get { return "201708251816371_Initial"; }
+            get { return "201708280643219_Add-Users-V0"; }
         }
         
         string IMigrationMetadata.Source

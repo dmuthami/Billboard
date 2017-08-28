@@ -12,13 +12,18 @@ namespace Billboard
     using System;
     using System.Collections.Generic;
     
-    public partial class County
+    public partial class Role
     {
-        public int Code { get; set; }
-        public Nullable<System.DateTime> DateCreated { get; set; }
-        public Nullable<System.DateTime> DateRetired { get; set; }
-        public string Name { get; set; }
-        public string Abbreviation { get; set; }
-        public System.Data.Entity.Spatial.DbGeometry Geom { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Role()
+        {
+            this.Users = new HashSet<User>();
+        }
+    
+        public int RoleID { get; set; }
+        public int Name { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> Users { get; set; }
     }
 }

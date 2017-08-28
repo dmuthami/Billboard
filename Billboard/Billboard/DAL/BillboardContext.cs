@@ -26,7 +26,7 @@ namespace Billboard.DAL
         public DbSet<CampaignRoute> CampaignRoutes { get; set; }
         public DbSet<Clutter> Clutters { get; set; }
         public DbSet<Constituency> Constituencys { get; set; }
-        public DbSet<County> Countys { get; set; }
+        //public DbSet<County> Countys { get; set; }
 
 
         public DbSet<Device> Devices { get; set; }
@@ -59,6 +59,9 @@ namespace Billboard.DAL
         public DbSet<Traffic> Traffics { get; set; }
         public DbSet<VegetationCover> VegetationCovers { get; set; }
         public DbSet<Ward> Wards { get; set; }
+
+        public DbSet<User> Userss { get; set; }
+        public DbSet<Role> Roles { get; set; }
 
 
        

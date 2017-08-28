@@ -28,6 +28,16 @@ namespace Billboard
         public int AgencyID { get; set; }
         public Nullable<int> Advertiser_AdvertiserID { get; set; }
         public Nullable<int> Industry_IndustryID { get; set; }
+        public Nullable<int> Advertiser_AdvertiserID1 { get; set; }
+        public Nullable<int> Industry_IndustryID1 { get; set; }
+        public Nullable<int> Advertiser_AdvertiserID2 { get; set; }
+        public Nullable<int> Advertiser1_AdvertiserID { get; set; }
+        public Nullable<int> Industry_IndustryID2 { get; set; }
+        public Nullable<int> Industry_IndustryID3 { get; set; }
+        public Nullable<int> Industry_IndustryID4 { get; set; }
+        public Nullable<int> Industry1_IndustryID { get; set; }
+        public Nullable<int> Advertiser_AdvertiserID3 { get; set; }
+        public Nullable<int> Advertiser_AdvertiserID4 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Advert> Adverts { get; set; }
@@ -39,5 +49,15 @@ namespace Billboard
         public virtual ICollection<CampaignDevice> CampaignDevices { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CampaignRoute> CampaignRoutes { get; set; }
+        public virtual Advertiser Advertiser1 { get; set; }
+        public virtual Industry Industry1 { get; set; }
+        public virtual Advertiser Advertiser2 { get; set; }
+        public virtual Advertiser Advertiser11 { get; set; }
+        public virtual Advertiser Advertiser21 { get; set; }
+        public virtual Advertiser Advertiser3 { get; set; }
+        public virtual Industry Industry2 { get; set; }
+        public virtual Industry Industry11 { get; set; }
+        public virtual Industry Industry21 { get; set; }
+        public virtual Industry Industry3 { get; set; }
     }
 }
