@@ -12,7 +12,7 @@ namespace BillboardApp.Models
     {
         public StructureOwner()
         {
-            this.Structures = new HashSet<Face>();
+            this.Structures = new HashSet<Structure>();
         }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -26,7 +26,7 @@ namespace BillboardApp.Models
         [DisplayName("Mobile No.")]
         public string MobileNumber { get; set; }
 
-        public virtual ICollection<Face> Structures { get; set; }
+        public virtual ICollection<Structure> Structures { get; set; }
 
     }
 }

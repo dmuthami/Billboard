@@ -11,8 +11,7 @@ namespace BillboardApp.Models
     public class Structure
     {
         public Structure()
-        {
-            this.StructureOwners = new HashSet<StructureOwner>();
+        {            
             this.Faces = new HashSet<Face>();
         }
         public int StructureID { get; set; }
@@ -38,8 +37,7 @@ namespace BillboardApp.Models
             }
             set { }
         }
-
-        public virtual ICollection<StructureOwner> StructureOwners { get; set; }
+        
         public virtual ICollection<Face> Faces { get; set; }
 
         //Structure TypeRelationship and Navigation Property

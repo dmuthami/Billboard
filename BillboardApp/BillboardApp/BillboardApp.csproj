@@ -360,6 +360,22 @@
     <Compile Include="Migrations\201708282132074_User-Management.Designer.cs">
       <DependentUpon>201708282132074_User-Management.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708301015478_Structure.cs" />
+    <Compile Include="Migrations\201708301015478_Structure.Designer.cs">
+      <DependentUpon>201708301015478_Structure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708301020110_Structure-to-Face-Relationship.cs" />
+    <Compile Include="Migrations\201708301020110_Structure-to-Face-Relationship.Designer.cs">
+      <DependentUpon>201708301020110_Structure-to-Face-Relationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708301023181_Structure-to-StructureOwner-Relationship.cs" />
+    <Compile Include="Migrations\201708301023181_Structure-to-StructureOwner-Relationship.Designer.cs">
+      <DependentUpon>201708301023181_Structure-to-StructureOwner-Relationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708301033114_Structure-to-StructureType-Relationship.cs" />
+    <Compile Include="Migrations\201708301033114_Structure-to-StructureType-Relationship.Designer.cs">
+      <DependentUpon>201708301033114_Structure-to-StructureType-Relationship.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Advert.cs" />
@@ -517,6 +533,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708282132074_User-Management.resx">
       <DependentUpon>201708282132074_User-Management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708301015478_Structure.resx">
+      <DependentUpon>201708301015478_Structure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708301020110_Structure-to-Face-Relationship.resx">
+      <DependentUpon>201708301020110_Structure-to-Face-Relationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708301023181_Structure-to-StructureOwner-Relationship.resx">
+      <DependentUpon>201708301023181_Structure-to-StructureOwner-Relationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708301033114_Structure-to-StructureType-Relationship.resx">
+      <DependentUpon>201708301033114_Structure-to-StructureType-Relationship.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

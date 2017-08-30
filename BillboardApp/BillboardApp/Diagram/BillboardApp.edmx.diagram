@@ -8,29 +8,29 @@
         <EntityTypeShape EntityType="Model.Advert" Width="1.5" PointX="9.75" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Advertiser" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Agency" Width="1.5" PointX="5.25" PointY="27.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Backlight" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Backlight" Width="1.5" PointX="12.125" PointY="22.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Campaign" Width="1.5" PointX="7.5" PointY="29.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.CampaignDevice" Width="1.5" PointX="12.25" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CampaignDevice" Width="1.875" PointX="12.25" PointY="15.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.CampaignRoute" Width="1.5" PointX="9.75" PointY="30.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Clutter" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.conauth" Width="1.5" PointX="11.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Clutter" Width="1.5" PointX="12.125" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conauth" Width="1.5" PointX="11.375" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.concompany" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.conconfiguration" Width="1.75" PointX="12.5" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.conconfigurationtype" Width="1.875" PointX="13.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conconfigurationtype" Width="1.875" PointX="13" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.conindustry" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.conlife" Width="1.5" PointX="13.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.connotification" Width="1.5" PointX="15.875" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.conobjectright" Width="1.5" PointX="15.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conlife" Width="1.5" PointX="13" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.connotification" Width="1.5" PointX="15.125" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conobjectright" Width="1.5" PointX="15.125" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.conobject" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.conobjectscaption" Width="1.625" PointX="17.625" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.conprofile" Width="1.5" PointX="17.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.conrole" Width="1.5" PointX="14.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Constituency" Width="1.5" PointX="17.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conobjectscaption" Width="1.625" PointX="16.875" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conprofile" Width="1.5" PointX="13" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conrole" Width="1.5" PointX="16.875" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Constituency" Width="1.5" PointX="14.75" PointY="18.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.conuser" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.conuserrecovery" Width="1.75" PointX="9.75" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.conuserrecoverytype" Width="1.75" PointX="12" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.conuserrole" Width="1.5" PointX="16.75" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.County" Width="1.5" PointX="18.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conuserrecovery" Width="1.75" PointX="16.875" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conuserrecoverytype" Width="1.75" PointX="12.875" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conuserrole" Width="1.5" PointX="15.125" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.County" Width="1.5" PointX="16.5" PointY="18.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Device" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.DeviceStatus" Width="1.5" PointX="7.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Face" Width="2.625" PointX="6.75" PointY="8.875" IsExpanded="true" />
@@ -42,24 +42,24 @@
         <EntityTypeShape EntityType="Model.FaceOrientation" Width="1.5" PointX="5.25" PointY="20" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.FacePosition" Width="1.5" PointX="5.25" PointY="22.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.FaceSize" Width="1.5" PointX="5.25" PointY="24.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.FaceVisibilityRating" Width="1.5" PointX="9.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FaceVisibilityRating" Width="1.875" PointX="9.75" PointY="14.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Industry" Width="1.5" PointX="5.25" PointY="30.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Product" Width="1.5" PointX="5.25" PointY="33.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Role" Width="1.5" PointX="11.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Role" Width="1.5" PointX="1" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Route" Width="1.5" PointX="7.5" PointY="26.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.SiteLighting" Width="1.5" PointX="19.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.SiteRunUp" Width="1.5" PointX="19.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Street" Width="1.5" PointX="19.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Structure" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.StructureOwner" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.StructureType" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SiteLighting" Width="1.5" PointX="10" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SiteRunUp" Width="1.5" PointX="16.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Street" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Structure" Width="2.25" PointX="2.375" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.StructureOwner" Width="1.5" PointX="0.5" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.StructureType" Width="1.5" PointX="0.5" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Subscription" Width="1.5" PointX="7.5" PointY="22.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Sweep" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.SweepStructure" Width="1.5" PointX="4.875" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Traffic" Width="1.5" PointX="19.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="14" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.VegetationCover" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Ward" Width="1.5" PointX="20.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Traffic" Width="1.5" PointX="10" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="3.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.VegetationCover" Width="1.875" PointX="14.25" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Ward" Width="1.5" PointX="14.75" PointY="20.625" IsExpanded="true" />
         <AssociationConnector Association="Model.FK_dbo_Advert_dbo_Advertiser_AdvertiserID" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_dbo_Advert_dbo_Campaign_CampaignID" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_dbo_Advert_dbo_Face_FaceID" ManuallyRouted="false" />
