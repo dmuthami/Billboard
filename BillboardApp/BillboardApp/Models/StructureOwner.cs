@@ -12,8 +12,10 @@ namespace BillboardApp.Models
     {
         public StructureOwner()
         {
-            //this.Structures = new HashSet<Structure>();
+            this.Structures = new HashSet<Structure>();
         }
+
+        //public int Myid { get; set; }
         public int StructureOwnerID { get; set; }
 
         public string Name { get; set; }
@@ -25,7 +27,7 @@ namespace BillboardApp.Models
         public string MobileNumber { get; set; }
 
         //Navigation Property for Structures
-        //public virtual ICollection<Structure> Structures { get; set; }
+        public virtual ICollection<Structure> Structures { get; set; }
 
     }
 }

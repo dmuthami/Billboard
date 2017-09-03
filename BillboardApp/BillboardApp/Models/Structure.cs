@@ -46,9 +46,9 @@ namespace BillboardApp.Models
         public virtual StructureType StructureType { get; set; }
 
         //StructureOwners Relationship and Navigation Property
-        //public int StructureOwnerID { get; set; }
+        public int StructureOwnerID { get; set; }
 
-        //public virtual StructureOwner StructureOwner { get; set; }
+        public virtual StructureOwner StructureOwner { get; set; }
 
     }
 }

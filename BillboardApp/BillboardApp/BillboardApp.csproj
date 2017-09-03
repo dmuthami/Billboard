@@ -209,6 +209,7 @@
     <Compile Include="Controllers\SiteLightingsController.cs" />
     <Compile Include="Controllers\SiteRunUpsController.cs" />
     <Compile Include="Controllers\StreetsController.cs" />
+    <Compile Include="Controllers\StructureOwnersController.cs" />
     <Compile Include="Controllers\StructureTypesController.cs" />
     <Compile Include="Controllers\SubscriptionsController.cs" />
     <Compile Include="Controllers\SweepsController.cs" />
@@ -295,6 +296,14 @@
     <Compile Include="Migrations\201709031449258_DesignUpdates_V10.cs" />
     <Compile Include="Migrations\201709031449258_DesignUpdates_V10.Designer.cs">
       <DependentUpon>201709031449258_DesignUpdates_V10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709031504533_DesignUpdates_V11.cs" />
+    <Compile Include="Migrations\201709031504533_DesignUpdates_V11.Designer.cs">
+      <DependentUpon>201709031504533_DesignUpdates_V11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709031513035_DesignUpdates_V12.cs" />
+    <Compile Include="Migrations\201709031513035_DesignUpdates_V12.Designer.cs">
+      <DependentUpon>201709031513035_DesignUpdates_V12.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -636,6 +645,11 @@
     <Content Include="Views\Industries\Details.cshtml" />
     <Content Include="Views\Industries\Edit.cshtml" />
     <Content Include="Views\Industries\Index.cshtml" />
+    <Content Include="Views\StructureOwners\Create.cshtml" />
+    <Content Include="Views\StructureOwners\Delete.cshtml" />
+    <Content Include="Views\StructureOwners\Details.cshtml" />
+    <Content Include="Views\StructureOwners\Edit.cshtml" />
+    <Content Include="Views\StructureOwners\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -702,6 +716,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709031449258_DesignUpdates_V10.resx">
       <DependentUpon>201709031449258_DesignUpdates_V10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709031504533_DesignUpdates_V11.resx">
+      <DependentUpon>201709031504533_DesignUpdates_V11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709031513035_DesignUpdates_V12.resx">
+      <DependentUpon>201709031513035_DesignUpdates_V12.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
