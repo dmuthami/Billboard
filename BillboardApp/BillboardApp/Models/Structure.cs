@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -45,8 +46,9 @@ namespace BillboardApp.Models
         public virtual StructureType StructureType { get; set; }
 
         //StructureOwners Relationship and Navigation Property
-        public int StructureOwnerID { get; set; }
-        public virtual StructureOwner StructureOwner { get; set; }
+        //public int StructureOwnerID { get; set; }
+
+        //public virtual StructureOwner StructureOwner { get; set; }
 
     }
 }

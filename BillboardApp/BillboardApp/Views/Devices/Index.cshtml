@@ -1,0 +1,80 @@
+﻿@model X.PagedList.IPagedList<BillboardApp.ViewModels.DeviceViewModel>
+@using X.PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Device View";
+}
+
+<h2>Device View</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("Index", "Devices", FormMethod.Get))
+{     <p>
+        Find by IMEI/SerialNo @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Name", "Index",
+                new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+
+            @*@Html.DisplayNameFor(model => model.Name)*@
+        </th>
+        <th>
+            @Html.ActionLink("IMEI", "Index",
+                new { sortOrder = ViewBag.IMEISortParm, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.IMEI)*@
+        </th>
+        <th>
+            @Html.ActionLink("SerialNo", "Index",
+                new { sortOrder = ViewBag.SerialNoSortParm, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.SerialNo)*@
+        </th>
+        <th>
+            @Html.ActionLink("Status", "Index",
+                new { sortOrder = ViewBag.StatusSortParm, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.DeviceStatus.Status)*@
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IMEI)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.SerialNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DeviceID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DeviceID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DeviceID })
+        </td>
+    </tr>
+}
+
+</table>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of
+@Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new
+    {
+        page,
+        sortOrder = ViewBag.CurrentSort,
+        currentFilter =
+            ViewBag.CurrentFilter
+    }))

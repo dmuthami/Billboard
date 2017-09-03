@@ -1,0 +1,103 @@
+﻿@model X.PagedList.IPagedList<BillboardApp.ViewModels.AgencyViewModel>
+@using X.PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Agency";
+}
+
+<h2>Agency</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("Index", "Agencies", FormMethod.Get))
+{     <p>
+        Find by Agency/Contact Person @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Agency Name", "Index",
+                new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            
+            @*@Html.DisplayNameFor(model => model.Subscription.Name)*@
+        </th>
+        <th>
+            @Html.ActionLink("Contact Person", "Index",
+                new { sortOrder = ViewBag.ContactPersonSortParm, currentFilter = ViewBag.CurrentFilter })
+            
+        </th>
+        <th>
+            @Html.ActionLink("Email", "Index",
+                new { sortOrder = ViewBag.EmailSortParm, currentFilter = ViewBag.CurrentFilter })
+            
+        </th>
+        <th>
+            @Html.ActionLink("Phone", "Index",
+                new { sortOrder = ViewBag.PhoneNumberSortParm, currentFilter = ViewBag.CurrentFilter })
+            
+        </th>
+        <th>
+            @Html.ActionLink("Subscription", "Index",
+                new { sortOrder = ViewBag.DescriptionSortParm, currentFilter = ViewBag.CurrentFilter })
+            
+        </th>
+        <th>
+            @Html.ActionLink("Amount", "Index",
+                new { sortOrder = ViewBag.AmountSortParm, currentFilter = ViewBag.CurrentFilter })
+            
+        </th>
+        <th>
+            @Html.ActionLink("Paid", "Index",
+                new { sortOrder = ViewBag.PaidSortParm, currentFilter = ViewBag.CurrentFilter })
+           
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactPerson)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Paid)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AgencyID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AgencyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AgencyID })
+        </td>
+    </tr>
+}
+
+</table>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of
+@Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new
+    {
+        page,
+        sortOrder = ViewBag.CurrentSort,
+        currentFilter =
+            ViewBag.CurrentFilter
+    }))

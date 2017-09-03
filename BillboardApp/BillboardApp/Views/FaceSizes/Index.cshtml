@@ -1,0 +1,44 @@
+﻿@model X.PagedList.IPagedList<BillboardApp.ViewModels.FaceSizeViewModel>
+@using X.PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Face Size";
+}
+
+<h2>Face Size</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("Index", "FaceSizes", FormMethod.Get))
+{     <p>
+        Find by Size @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.ActionLink("Size", "Index",
+                new { sortOrder = ViewBag.SizeSortParm, currentFilter = ViewBag.CurrentFilter })
+            
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Size)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FaceSizeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FaceSizeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FaceSizeID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,54 @@
+﻿@model X.PagedList.IPagedList<BillboardApp.ViewModels.FaceOrientationViewModel>
+@using X.PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Face Orientation";
+}
+
+<h2>Face Orientation</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("Index", "FaceOrientations", FormMethod.Get))
+{     <p>
+        Find by Name/Contact @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Orientation", "Index",
+                new { sortOrder = ViewBag.OrientationSortParm, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.Orientation)*@
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Orientation)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FaceOrientationID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FaceOrientationID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FaceOrientationID })
+        </td>
+    </tr>
+}
+
+</table>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of
+@Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new
+    {
+        page,
+        sortOrder = ViewBag.CurrentSort,
+        currentFilter =
+            ViewBag.CurrentFilter
+    }))

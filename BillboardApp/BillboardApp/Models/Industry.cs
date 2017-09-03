@@ -20,5 +20,9 @@ namespace BillboardApp.Models
         public string Name { get; set; }
 
         public virtual ICollection<Campaign> Campaigns { get; set; }
+
+        //Industry Type Relationship and Navigation Property
+        public int IndustryTypeID { get; set; }
+        public  virtual IndustryType IndustryType { get; set; }
     }
 }

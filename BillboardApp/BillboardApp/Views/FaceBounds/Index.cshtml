@@ -1,0 +1,54 @@
+﻿@model X.PagedList.IPagedList<BillboardApp.ViewModels.FaceBoundViewModel>
+@using X.PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Face Bound";
+}
+
+<h2>Face Bound</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("Index", "FaceBounds", FormMethod.Get))
+{     <p>
+        Find by Face Bound @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Face Bound", "Index",
+             new { sortOrder = ViewBag.BoundSortParm, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.Bound)*@
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bound)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FaceBoundID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FaceBoundID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FaceBoundID })
+        </td>
+    </tr>
+}
+
+</table>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of
+@Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new
+    {
+        page,
+        sortOrder = ViewBag.CurrentSort,
+        currentFilter =
+            ViewBag.CurrentFilter
+    }))

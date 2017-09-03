@@ -1,0 +1,42 @@
+﻿@model BillboardApp.Models.Constituency
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Constituency</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Abbreviation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Abbreviation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Geom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Geom)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ConstituencyID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

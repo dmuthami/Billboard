@@ -11,7 +11,7 @@ namespace BillboardApp.Models
     {
         public int TrafficID { get; set; }
         [Required, DisplayName("Parameter")]
-        public int Paramameter { get; set; }
+        public int Parameter { get; set; }
         [Required]
         public int Score { get; set; }
     }

@@ -20,7 +20,7 @@ Update-Database -Verbose
 +
 
 
-#install pagedlist component
+#install async pagedlist component
 Install-Package PagedList.Mvc
 
 ##Restore to previous good migration

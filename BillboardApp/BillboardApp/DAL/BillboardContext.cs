@@ -79,7 +79,7 @@ namespace BillboardApp.DAL
         public DbSet<conuserrecovery> conuserrecoverys { get; set; }
         public DbSet<conuserrecoverytype> conuserrecoverytypes { get; set; }
         public DbSet<conuserroles> conuserroles { get; set; }
-
+        public System.Data.Entity.DbSet<BillboardApp.Models.IndustryType> IndustryTypes { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //base.OnModelCreating(modelBuilder);
@@ -104,5 +104,7 @@ namespace BillboardApp.DAL
                 .WithRequired(faceVisibilityRating => faceVisibilityRating.Face);
 
         }
+
+        
     }
 }

@@ -1,0 +1,26 @@
+﻿@model BillboardApp.Models.FaceOccupancy
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FaceOccupancy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Occupancy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Occupancy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FaceOccupancyID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

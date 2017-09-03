@@ -1,0 +1,69 @@
+﻿@model IEnumerable<BillboardApp.Models.FaceVisibilityRating>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Face.FaceID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VegetationCoverScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SightLightingScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BacklightScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnlightScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrafficScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClutterScore)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Face.FaceID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VegetationCoverScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SightLightingScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BacklightScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnlightScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrafficScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClutterScore)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FaceVisibilityRatingID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FaceVisibilityRatingID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FaceVisibilityRatingID })
+        </td>
+    </tr>
+}
+
+</table>

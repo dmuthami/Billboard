@@ -1,0 +1,68 @@
+﻿@model X.PagedList.IPagedList<BillboardApp.ViewModels.ConstituencyViewModel>
+@using X.PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Constituencies";
+}
+
+<h2>Constituencies</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("Index", "Constituencies", FormMethod.Get))
+{     <p>
+        Find by Name/Abbreviation @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Name", "Index",
+                new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.Name)*@
+        </th>
+        <th>
+            @Html.ActionLink("Abbreviation", "Index",
+                new { sortOrder = ViewBag.AbbreviationSortParm, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.Abbreviation)*@
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Geom)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Abbreviation)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Geom)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ConstituencyID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ConstituencyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ConstituencyID })
+        </td>
+    </tr>
+}
+
+</table>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of
+@Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new
+    {
+        page,
+        sortOrder = ViewBag.CurrentSort,
+        currentFilter =
+            ViewBag.CurrentFilter
+    }))

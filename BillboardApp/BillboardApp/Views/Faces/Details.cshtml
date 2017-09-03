@@ -1,0 +1,90 @@
+﻿@model BillboardApp.Models.Face
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Face</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FaceAvailability.AvailabilityType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FaceAvailability.AvailabilityType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FaceBound.Bound)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FaceBound.Bound)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FaceCondition.Condition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FaceCondition.Condition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FaceOccupancy.Occupancy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FaceOccupancy.Occupancy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FaceOrientation.Orientation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FaceOrientation.Orientation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FacePosition.Position)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FacePosition.Position)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FaceSize.FaceSizeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FaceSize.FaceSizeID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FaceVisibilityRating.FaceVisibilityRatingID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FaceVisibilityRating.FaceVisibilityRatingID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Structure.Comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Structure.Comment)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FaceID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

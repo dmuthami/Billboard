@@ -1,0 +1,85 @@
+﻿@model X.PagedList.IPagedList<BillboardApp.ViewModels.AdvertiserViewModel>
+@using X.PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Advertisers";
+}
+
+<h2>Advertisers</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("Index", "Advertisers", FormMethod.Get))
+{     <p>
+        Find by Name/Contact @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Name", "Index",
+                new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            
+            @*@Html.DisplayNameFor(model => model.Name)*@
+        </th>
+        <th>
+            @Html.ActionLink("Contact", "Index",
+                new { sortOrder = ViewBag.ContactSortParm, currentFilter = ViewBag.CurrentFilter })
+            
+        </th>
+        <th>
+            @Html.ActionLink("Email", "Index",
+                new { sortOrder = ViewBag.EmailSortParm, currentFilter = ViewBag.CurrentFilter })            
+        </th>
+        <th>
+            @Html.ActionLink("PhoneNumber", "Index",
+                new { sortOrder = ViewBag.PhoneNumberSortParm, currentFilter = ViewBag.CurrentFilter })
+             
+        </th>
+        <th>
+            @Html.ActionLink("Detail", "Index",
+                new { sortOrder = ViewBag.DetailSortParm, currentFilter = ViewBag.CurrentFilter })
+            
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Detail)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AdvertiserID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AdvertiserID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AdvertiserID })
+        </td>
+    </tr>
+}
+
+</table>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of
+@Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new
+    {
+        page,
+        sortOrder = ViewBag.CurrentSort,
+        currentFilter =
+            ViewBag.CurrentFilter
+    }))

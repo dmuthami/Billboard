@@ -1,0 +1,74 @@
+﻿@model BillboardApp.Models.FaceVisibilityRating
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FaceVisibilityRating</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Face.FaceID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Face.FaceID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VegetationCoverScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VegetationCoverScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SightLightingScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SightLightingScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BacklightScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BacklightScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnlightScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnlightScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrafficScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrafficScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClutterScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClutterScore)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FaceVisibilityRatingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

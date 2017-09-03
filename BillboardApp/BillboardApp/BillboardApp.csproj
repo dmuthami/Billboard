@@ -13,13 +13,14 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BillboardApp</RootNamespace>
     <AssemblyName>BillboardApp</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -86,6 +87,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -93,11 +95,8 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -139,8 +138,17 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="X.PagedList, Version=7.1.0.0, Culture=neutral, PublicKeyToken=00b6c4f97602e5e8, processorArchitecture=MSIL">
+      <HintPath>..\packages\X.PagedList.7.1.0\lib\net452\X.PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="X.PagedList.Mvc, Version=7.1.1.0, Culture=neutral, PublicKeyToken=c6e0b5b21f916f4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\X.PagedList.Mvc.7.1.1\lib\net452\X.PagedList.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -171,190 +179,44 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdvertisersController.cs" />
+    <Compile Include="Controllers\AgenciesController.cs" />
+    <Compile Include="Controllers\BacklightsController.cs" />
+    <Compile Include="Controllers\CampaignDevicesController.cs" />
+    <Compile Include="Controllers\CampaignRoutesController.cs" />
+    <Compile Include="Controllers\CampaignsController.cs" />
+    <Compile Include="Controllers\CluttersController.cs" />
+    <Compile Include="Controllers\ConstituenciesController.cs" />
+    <Compile Include="Controllers\CountiesController.cs" />
+    <Compile Include="Controllers\DevicesController.cs" />
+    <Compile Include="Controllers\DeviceStatusController.cs" />
+    <Compile Include="Controllers\FaceAvailabilitiesController.cs" />
+    <Compile Include="Controllers\FaceBoundsController.cs" />
+    <Compile Include="Controllers\FaceConditionsController.cs" />
+    <Compile Include="Controllers\FaceImagesController.cs" />
+    <Compile Include="Controllers\FaceOccupanciesController.cs" />
+    <Compile Include="Controllers\FaceOrientationsController.cs" />
+    <Compile Include="Controllers\FacePositionsController.cs" />
+    <Compile Include="Controllers\FacesController.cs" />
+    <Compile Include="Controllers\FaceSizesController.cs" />
+    <Compile Include="Controllers\FaceVisibilityRatingsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndustriesController.cs" />
+    <Compile Include="Controllers\IndustryTypesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\RoutesController.cs" />
+    <Compile Include="Controllers\SiteLightingsController.cs" />
+    <Compile Include="Controllers\SiteRunUpsController.cs" />
+    <Compile Include="Controllers\StreetsController.cs" />
+    <Compile Include="Controllers\StructureTypesController.cs" />
+    <Compile Include="Controllers\SubscriptionsController.cs" />
+    <Compile Include="Controllers\SweepsController.cs" />
+    <Compile Include="Controllers\TrafficController.cs" />
+    <Compile Include="Controllers\VegetationCoversController.cs" />
+    <Compile Include="Controllers\WardsController.cs" />
     <Compile Include="DAL\BillboardContext.cs" />
     <Compile Include="DAL\BillboardInitializer.cs" />
-    <Compile Include="Diagram\Advert.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\Advertiser.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\Agency.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\Backlight.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\BillboardApp.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BillboardApp.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\BillboardApp.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\BillboardApp.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BillboardApp.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\Campaign.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\CampaignDevice.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\CampaignRoute.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\Clutter.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\conauth.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\concompany.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\conconfiguration.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\conconfigurationtype.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\conindustry.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\conlife.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\connotification.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\conobject.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\conobjectright.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\conobjectscaption.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\conprofile.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\conrole.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\Constituency.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\conuser.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\conuserrecovery.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\conuserrecoverytype.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\conuserrole.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\County.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\Device.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\DeviceStatus.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\Face.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\FaceAvailability.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\FaceBound.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\FaceCondition.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\FaceImage.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\FaceOccupancy.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\FaceOrientation.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\FacePosition.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\FaceSize.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\FaceVisibilityRating.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\Industry.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\Product.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\Role.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\Route.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\SiteLighting.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\SiteRunUp.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\Street.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\Structure.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\StructureOwner.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\StructureType.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\Subscription.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\Sweep.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\SweepStructure.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\Traffic.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\User.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\VegetationCover.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Diagram\Ward.cs">
-      <DependentUpon>BillboardApp.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -385,6 +247,54 @@
     <Compile Include="Migrations\201708301033114_Structure-to-StructureType-Relationship.cs" />
     <Compile Include="Migrations\201708301033114_Structure-to-StructureType-Relationship.Designer.cs">
       <DependentUpon>201708301033114_Structure-to-StructureType-Relationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709022255487_Design-Updates_V0.cs" />
+    <Compile Include="Migrations\201709022255487_Design-Updates_V0.Designer.cs">
+      <DependentUpon>201709022255487_Design-Updates_V0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709030248158_Design-Updates_V1.cs" />
+    <Compile Include="Migrations\201709030248158_Design-Updates_V1.Designer.cs">
+      <DependentUpon>201709030248158_Design-Updates_V1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709030312366_Design-Updates_V2.cs" />
+    <Compile Include="Migrations\201709030312366_Design-Updates_V2.Designer.cs">
+      <DependentUpon>201709030312366_Design-Updates_V2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709031121030_Added-IndustryType-Entity.cs" />
+    <Compile Include="Migrations\201709031121030_Added-IndustryType-Entity.Designer.cs">
+      <DependentUpon>201709031121030_Added-IndustryType-Entity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709031310244_DesignUpdates_V3.cs" />
+    <Compile Include="Migrations\201709031310244_DesignUpdates_V3.Designer.cs">
+      <DependentUpon>201709031310244_DesignUpdates_V3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709031317123_DesignUpdates_V4.cs" />
+    <Compile Include="Migrations\201709031317123_DesignUpdates_V4.Designer.cs">
+      <DependentUpon>201709031317123_DesignUpdates_V4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709031318585_DesignUpdates_V5.cs" />
+    <Compile Include="Migrations\201709031318585_DesignUpdates_V5.Designer.cs">
+      <DependentUpon>201709031318585_DesignUpdates_V5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709031326585_DesignUpdates_V6.cs" />
+    <Compile Include="Migrations\201709031326585_DesignUpdates_V6.Designer.cs">
+      <DependentUpon>201709031326585_DesignUpdates_V6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709031356274_DesignUpdates_V7.cs" />
+    <Compile Include="Migrations\201709031356274_DesignUpdates_V7.Designer.cs">
+      <DependentUpon>201709031356274_DesignUpdates_V7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709031403454_DesignUpdates_V8.cs" />
+    <Compile Include="Migrations\201709031403454_DesignUpdates_V8.Designer.cs">
+      <DependentUpon>201709031403454_DesignUpdates_V8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709031405532_DesignUpdates_V9.cs" />
+    <Compile Include="Migrations\201709031405532_DesignUpdates_V9.Designer.cs">
+      <DependentUpon>201709031405532_DesignUpdates_V9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709031449258_DesignUpdates_V10.cs" />
+    <Compile Include="Migrations\201709031449258_DesignUpdates_V10.Designer.cs">
+      <DependentUpon>201709031449258_DesignUpdates_V10.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -428,6 +338,7 @@
     <Compile Include="Models\FaceVisibilityRating.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Industry.cs" />
+    <Compile Include="Models\IndustryType.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Role.cs" />
@@ -448,34 +359,45 @@
     <Compile Include="Model_Logic\StructureLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\AdvertiserViewModel.cs" />
+    <Compile Include="ViewModels\AgencyViewModel.cs" />
+    <Compile Include="ViewModels\CampaignViewModel.cs" />
+    <Compile Include="ViewModels\ClutterViewModel.cs" />
+    <Compile Include="ViewModels\ConstituencyViewModel.cs" />
+    <Compile Include="ViewModels\CountyViewModel.cs" />
+    <Compile Include="ViewModels\DeviceStatusViewModel.cs" />
+    <Compile Include="ViewModels\DeviceViewModel.cs" />
+    <Compile Include="ViewModels\FaceAvailabilityViewModel.cs" />
+    <Compile Include="ViewModels\FaceBoundViewModel.cs" />
+    <Compile Include="ViewModels\FaceConditionViewModel.cs" />
+    <Compile Include="ViewModels\FaceImageViewModel.cs" />
+    <Compile Include="ViewModels\FaceOccupancyViewModel.cs" />
+    <Compile Include="ViewModels\FaceOrientationViewModel.cs" />
+    <Compile Include="ViewModels\FacePositionViewModel.cs" />
+    <Compile Include="ViewModels\FaceSizeViewModel.cs" />
+    <Compile Include="ViewModels\IndustryTypeViewModel.cs" />
+    <Compile Include="ViewModels\IndustryViewModel.cs" />
+    <Compile Include="ViewModels\ProductViewModel.cs" />
+    <Compile Include="ViewModels\RouteViewModel.cs" />
+    <Compile Include="ViewModels\SiteLightingViewModel.cs" />
+    <Compile Include="ViewModels\SiteRunUpViewModel.cs" />
+    <Compile Include="ViewModels\StreetViewModel.cs" />
+    <Compile Include="ViewModels\StructureOwnerViewModel.cs" />
+    <Compile Include="ViewModels\StructureViewModel.cs" />
+    <Compile Include="ViewModels\TrafficViewModel.cs" />
+    <Compile Include="ViewModels\VegetationCoverViewModel.cs" />
+    <Compile Include="ViewModels\WardViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Diagram\BillboardApp.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BillboardApp.edmx</DependentUpon>
-      <LastGenOutput>BillboardApp.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Diagram\BillboardApp.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BillboardApp.edmx</DependentUpon>
-      <LastGenOutput>BillboardApp.cs</LastGenOutput>
-    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="ReadMe.txt" />
-    <EntityDeploy Include="Diagram\BillboardApp.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BillboardApp.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Diagram\BillboardApp.edmx.diagram">
-      <DependentUpon>BillboardApp.edmx</DependentUpon>
-    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -484,6 +406,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <None Include="Properties\PublishProfiles\Billboard.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -538,9 +461,185 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Advertisers\Create.cshtml" />
+    <Content Include="Views\Advertisers\Delete.cshtml" />
+    <Content Include="Views\Advertisers\Details.cshtml" />
+    <Content Include="Views\Advertisers\Edit.cshtml" />
+    <Content Include="Views\Advertisers\Index.cshtml" />
+    <Content Include="Views\Agencies\Create.cshtml" />
+    <Content Include="Views\Agencies\Delete.cshtml" />
+    <Content Include="Views\Agencies\Details.cshtml" />
+    <Content Include="Views\Agencies\Edit.cshtml" />
+    <Content Include="Views\Agencies\Index.cshtml" />
+    <Content Include="Views\Backlights\Create.cshtml" />
+    <Content Include="Views\Backlights\Delete.cshtml" />
+    <Content Include="Views\Backlights\Details.cshtml" />
+    <Content Include="Views\Backlights\Edit.cshtml" />
+    <Content Include="Views\Backlights\Index.cshtml" />
+    <Content Include="Views\Campaigns\Create.cshtml" />
+    <Content Include="Views\Campaigns\Delete.cshtml" />
+    <Content Include="Views\Campaigns\Details.cshtml" />
+    <Content Include="Views\Campaigns\Edit.cshtml" />
+    <Content Include="Views\Campaigns\Index.cshtml" />
+    <Content Include="Views\CampaignDevices\Create.cshtml" />
+    <Content Include="Views\CampaignDevices\Delete.cshtml" />
+    <Content Include="Views\CampaignDevices\Details.cshtml" />
+    <Content Include="Views\CampaignDevices\Edit.cshtml" />
+    <Content Include="Views\CampaignDevices\Index.cshtml" />
+    <Content Include="Views\CampaignRoutes\Create.cshtml" />
+    <Content Include="Views\CampaignRoutes\Delete.cshtml" />
+    <Content Include="Views\CampaignRoutes\Details.cshtml" />
+    <Content Include="Views\CampaignRoutes\Edit.cshtml" />
+    <Content Include="Views\CampaignRoutes\Index.cshtml" />
+    <Content Include="Views\Clutters\Create.cshtml" />
+    <Content Include="Views\Clutters\Delete.cshtml" />
+    <Content Include="Views\Clutters\Details.cshtml" />
+    <Content Include="Views\Clutters\Edit.cshtml" />
+    <Content Include="Views\Clutters\Index.cshtml" />
+    <Content Include="Views\Constituencies\Create.cshtml" />
+    <Content Include="Views\Constituencies\Delete.cshtml" />
+    <Content Include="Views\Constituencies\Details.cshtml" />
+    <Content Include="Views\Constituencies\Edit.cshtml" />
+    <Content Include="Views\Constituencies\Index.cshtml" />
+    <Content Include="Views\Counties\Create.cshtml" />
+    <Content Include="Views\Counties\Delete.cshtml" />
+    <Content Include="Views\Counties\Details.cshtml" />
+    <Content Include="Views\Counties\Edit.cshtml" />
+    <Content Include="Views\Counties\Index.cshtml" />
+    <Content Include="Views\Devices\Create.cshtml" />
+    <Content Include="Views\Devices\Delete.cshtml" />
+    <Content Include="Views\Devices\Details.cshtml" />
+    <Content Include="Views\Devices\Edit.cshtml" />
+    <Content Include="Views\Devices\Index.cshtml" />
+    <Content Include="Views\DeviceStatus\Create.cshtml" />
+    <Content Include="Views\DeviceStatus\Delete.cshtml" />
+    <Content Include="Views\DeviceStatus\Details.cshtml" />
+    <Content Include="Views\DeviceStatus\Edit.cshtml" />
+    <Content Include="Views\DeviceStatus\Index.cshtml" />
+    <Content Include="Views\Faces\Create.cshtml" />
+    <Content Include="Views\Faces\Delete.cshtml" />
+    <Content Include="Views\Faces\Details.cshtml" />
+    <Content Include="Views\Faces\Edit.cshtml" />
+    <Content Include="Views\Faces\Index.cshtml" />
+    <Content Include="Views\FaceAvailabilities\Create.cshtml" />
+    <Content Include="Views\FaceAvailabilities\Delete.cshtml" />
+    <Content Include="Views\FaceAvailabilities\Details.cshtml" />
+    <Content Include="Views\FaceAvailabilities\Edit.cshtml" />
+    <Content Include="Views\FaceAvailabilities\Index.cshtml" />
+    <Content Include="Views\FaceBounds\Create.cshtml" />
+    <Content Include="Views\FaceBounds\Delete.cshtml" />
+    <Content Include="Views\FaceBounds\Details.cshtml" />
+    <Content Include="Views\FaceBounds\Edit.cshtml" />
+    <Content Include="Views\FaceBounds\Index.cshtml" />
+    <Content Include="Views\FaceConditions\Create.cshtml" />
+    <Content Include="Views\FaceConditions\Delete.cshtml" />
+    <Content Include="Views\FaceConditions\Details.cshtml" />
+    <Content Include="Views\FaceConditions\Edit.cshtml" />
+    <Content Include="Views\FaceConditions\Index.cshtml" />
+    <Content Include="Views\FaceImages\Create.cshtml" />
+    <Content Include="Views\FaceImages\Delete.cshtml" />
+    <Content Include="Views\FaceImages\Details.cshtml" />
+    <Content Include="Views\FaceImages\Edit.cshtml" />
+    <Content Include="Views\FaceImages\Index.cshtml" />
+    <Content Include="Views\FaceOccupancies\Create.cshtml" />
+    <Content Include="Views\FaceOccupancies\Delete.cshtml" />
+    <Content Include="Views\FaceOccupancies\Details.cshtml" />
+    <Content Include="Views\FaceOccupancies\Edit.cshtml" />
+    <Content Include="Views\FaceOccupancies\Index.cshtml" />
+    <Content Include="Views\FaceOrientations\Create.cshtml" />
+    <Content Include="Views\FaceOrientations\Delete.cshtml" />
+    <Content Include="Views\FaceOrientations\Details.cshtml" />
+    <Content Include="Views\FaceOrientations\Edit.cshtml" />
+    <Content Include="Views\FaceOrientations\Index.cshtml" />
+    <Content Include="Views\FacePositions\Create.cshtml" />
+    <Content Include="Views\FacePositions\Delete.cshtml" />
+    <Content Include="Views\FacePositions\Details.cshtml" />
+    <Content Include="Views\FacePositions\Edit.cshtml" />
+    <Content Include="Views\FacePositions\Index.cshtml" />
+    <Content Include="Views\FaceSizes\Create.cshtml" />
+    <Content Include="Views\FaceSizes\Delete.cshtml" />
+    <Content Include="Views\FaceSizes\Details.cshtml" />
+    <Content Include="Views\FaceSizes\Edit.cshtml" />
+    <Content Include="Views\FaceSizes\Index.cshtml" />
+    <Content Include="Views\FaceVisibilityRatings\Create.cshtml" />
+    <Content Include="Views\FaceVisibilityRatings\Delete.cshtml" />
+    <Content Include="Views\FaceVisibilityRatings\Details.cshtml" />
+    <Content Include="Views\FaceVisibilityRatings\Edit.cshtml" />
+    <Content Include="Views\FaceVisibilityRatings\Index.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Routes\Create.cshtml" />
+    <Content Include="Views\Routes\Delete.cshtml" />
+    <Content Include="Views\Routes\Details.cshtml" />
+    <Content Include="Views\Routes\Edit.cshtml" />
+    <Content Include="Views\Routes\Index.cshtml" />
+    <Content Include="Views\SiteLightings\Create.cshtml" />
+    <Content Include="Views\SiteLightings\Delete.cshtml" />
+    <Content Include="Views\SiteLightings\Details.cshtml" />
+    <Content Include="Views\SiteLightings\Edit.cshtml" />
+    <Content Include="Views\SiteLightings\Index.cshtml" />
+    <Content Include="Views\SiteRunUps\Create.cshtml" />
+    <Content Include="Views\SiteRunUps\Delete.cshtml" />
+    <Content Include="Views\SiteRunUps\Details.cshtml" />
+    <Content Include="Views\SiteRunUps\Edit.cshtml" />
+    <Content Include="Views\SiteRunUps\Index.cshtml" />
+    <Content Include="Views\Streets\Create.cshtml" />
+    <Content Include="Views\Streets\Delete.cshtml" />
+    <Content Include="Views\Streets\Details.cshtml" />
+    <Content Include="Views\Streets\Edit.cshtml" />
+    <Content Include="Views\Streets\Index.cshtml" />
+    <Content Include="Views\Structures\Create.cshtml" />
+    <Content Include="Views\Structures\Delete.cshtml" />
+    <Content Include="Views\Structures\Details.cshtml" />
+    <Content Include="Views\Structures\Edit.cshtml" />
+    <Content Include="Views\Structures\Index.cshtml" />
+    <Content Include="Views\StructureTypes\Create.cshtml" />
+    <Content Include="Views\StructureTypes\Delete.cshtml" />
+    <Content Include="Views\StructureTypes\Details.cshtml" />
+    <Content Include="Views\StructureTypes\Edit.cshtml" />
+    <Content Include="Views\StructureTypes\Index.cshtml" />
+    <Content Include="Views\Subscriptions\Create.cshtml" />
+    <Content Include="Views\Subscriptions\Delete.cshtml" />
+    <Content Include="Views\Subscriptions\Details.cshtml" />
+    <Content Include="Views\Subscriptions\Edit.cshtml" />
+    <Content Include="Views\Subscriptions\Index.cshtml" />
+    <Content Include="Views\Sweeps\Create.cshtml" />
+    <Content Include="Views\Sweeps\Delete.cshtml" />
+    <Content Include="Views\Sweeps\Details.cshtml" />
+    <Content Include="Views\Sweeps\Edit.cshtml" />
+    <Content Include="Views\Sweeps\Index.cshtml" />
+    <Content Include="Views\Traffic\Create.cshtml" />
+    <Content Include="Views\Traffic\Delete.cshtml" />
+    <Content Include="Views\Traffic\Details.cshtml" />
+    <Content Include="Views\Traffic\Edit.cshtml" />
+    <Content Include="Views\Traffic\Index.cshtml" />
+    <Content Include="Views\VegetationCovers\Create.cshtml" />
+    <Content Include="Views\VegetationCovers\Delete.cshtml" />
+    <Content Include="Views\VegetationCovers\Details.cshtml" />
+    <Content Include="Views\VegetationCovers\Edit.cshtml" />
+    <Content Include="Views\VegetationCovers\Index.cshtml" />
+    <Content Include="Views\Wards\Create.cshtml" />
+    <Content Include="Views\Wards\Delete.cshtml" />
+    <Content Include="Views\Wards\Details.cshtml" />
+    <Content Include="Views\Wards\Edit.cshtml" />
+    <Content Include="Views\Wards\Index.cshtml" />
+    <Content Include="Views\IndustryTypes\Create.cshtml" />
+    <Content Include="Views\IndustryTypes\Delete.cshtml" />
+    <Content Include="Views\IndustryTypes\Details.cshtml" />
+    <Content Include="Views\IndustryTypes\Edit.cshtml" />
+    <Content Include="Views\IndustryTypes\Index.cshtml" />
+    <Content Include="Views\Industries\Create.cshtml" />
+    <Content Include="Views\Industries\Delete.cshtml" />
+    <Content Include="Views\Industries\Details.cshtml" />
+    <Content Include="Views\Industries\Edit.cshtml" />
+    <Content Include="Views\Industries\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Diagram\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -567,6 +666,42 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708301033114_Structure-to-StructureType-Relationship.resx">
       <DependentUpon>201708301033114_Structure-to-StructureType-Relationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709022255487_Design-Updates_V0.resx">
+      <DependentUpon>201709022255487_Design-Updates_V0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709030248158_Design-Updates_V1.resx">
+      <DependentUpon>201709030248158_Design-Updates_V1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709030312366_Design-Updates_V2.resx">
+      <DependentUpon>201709030312366_Design-Updates_V2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709031121030_Added-IndustryType-Entity.resx">
+      <DependentUpon>201709031121030_Added-IndustryType-Entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709031310244_DesignUpdates_V3.resx">
+      <DependentUpon>201709031310244_DesignUpdates_V3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709031317123_DesignUpdates_V4.resx">
+      <DependentUpon>201709031317123_DesignUpdates_V4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709031318585_DesignUpdates_V5.resx">
+      <DependentUpon>201709031318585_DesignUpdates_V5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709031326585_DesignUpdates_V6.resx">
+      <DependentUpon>201709031326585_DesignUpdates_V6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709031356274_DesignUpdates_V7.resx">
+      <DependentUpon>201709031356274_DesignUpdates_V7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709031403454_DesignUpdates_V8.resx">
+      <DependentUpon>201709031403454_DesignUpdates_V8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709031405532_DesignUpdates_V9.resx">
+      <DependentUpon>201709031405532_DesignUpdates_V9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709031449258_DesignUpdates_V10.resx">
+      <DependentUpon>201709031449258_DesignUpdates_V10.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

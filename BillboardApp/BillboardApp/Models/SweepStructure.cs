@@ -13,7 +13,7 @@ namespace BillboardApp.Models
         public int StructureID { get; set; }
         public virtual Structure Structure { get; set; }
 
-        //Sweep TypeRelationship and Navigation Property
+        //Sweep Relationship and Navigation Property
         public int SweepID { get; set; }
         public virtual Sweep Sweep { get; set; }
 

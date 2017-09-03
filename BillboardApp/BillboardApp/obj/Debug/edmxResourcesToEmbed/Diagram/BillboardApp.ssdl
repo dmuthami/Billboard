@@ -1,0 +1,1165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Advert">
+    <Key>
+      <PropertyRef Name="AdvertID" />
+    </Key>
+    <Property Name="AdvertID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FaceID" Type="int" Nullable="false" />
+    <Property Name="AdvertiserID" Type="int" Nullable="false" />
+    <Property Name="CampaignID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Advertiser">
+    <Key>
+      <PropertyRef Name="AdvertiserID" />
+    </Key>
+    <Property Name="AdvertiserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Contact" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="Detail" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Agency">
+    <Key>
+      <PropertyRef Name="AgencyID" />
+    </Key>
+    <Property Name="AgencyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="ContactPerson" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Backlight">
+    <Key>
+      <PropertyRef Name="BacklightID" />
+    </Key>
+    <Property Name="BacklightID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Parameter" Type="int" Nullable="false" />
+    <Property Name="Score" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Campaign">
+    <Key>
+      <PropertyRef Name="CampaignID" />
+    </Key>
+    <Property Name="CampaignID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CampaignName" Type="nvarchar(max)" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="AgencyID" Type="int" Nullable="false" />
+    <Property Name="Advertiser_AdvertiserID" Type="int" />
+    <Property Name="Industry_IndustryID" Type="int" />
+  </EntityType>
+  <EntityType Name="CampaignDevice">
+    <Key>
+      <PropertyRef Name="CampaignDeviceID" />
+    </Key>
+    <Property Name="CampaignDeviceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CampaignID" Type="int" Nullable="false" />
+    <Property Name="DeviceID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CampaignRoute">
+    <Key>
+      <PropertyRef Name="CampaignRouteID" />
+    </Key>
+    <Property Name="CampaignRouteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CampaignID" Type="int" Nullable="false" />
+    <Property Name="RouteID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clutter">
+    <Key>
+      <PropertyRef Name="ClutterID" />
+    </Key>
+    <Property Name="ClutterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Parameter" Type="int" Nullable="false" />
+    <Property Name="Score" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="conauth">
+    <Key>
+      <PropertyRef Name="authId" />
+    </Key>
+    <Property Name="authId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="200" />
+    <Property Name="password" Type="nvarchar" MaxLength="200" />
+    <Property Name="loginKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="profileId" Type="int" Nullable="false" />
+    <Property Name="statusId" Type="int" Nullable="false" />
+    <Property Name="customerId" Type="int" Nullable="false" />
+    <Property Name="supplierId" Type="int" Nullable="false" />
+    <Property Name="employeeId" Type="int" Nullable="false" />
+    <Property Name="branchId" Type="int" Nullable="false" />
+    <Property Name="life" Type="int" Nullable="false" />
+    <Property Name="createbyId" Type="int" Nullable="false" />
+    <Property Name="createdt" Type="datetime" Nullable="false" />
+    <Property Name="writebyId" Type="int" Nullable="false" />
+    <Property Name="writedt" Type="int" Nullable="false" />
+    <Property Name="companyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="concompany">
+    <Key>
+      <PropertyRef Name="companyId" />
+    </Key>
+    <Property Name="companyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="logo" Type="nvarchar" MaxLength="100" />
+    <Property Name="regDate" Type="datetime" Nullable="false" />
+    <Property Name="companyNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="startDate" Type="datetime" />
+    <Property Name="companyName" Type="nvarchar" MaxLength="100" />
+    <Property Name="companyInitials" Type="nvarchar" MaxLength="40" />
+    <Property Name="taxpinNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="branches" Type="nvarchar" MaxLength="3" />
+    <Property Name="memo" Type="nvarchar" MaxLength="200" />
+    <Property Name="age" Type="int" Nullable="false" />
+    <Property Name="countryId" Type="int" Nullable="false" />
+    <Property Name="industryId" Type="int" Nullable="false" />
+    <Property Name="physicalAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="primaryMobileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="otherMobileNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="primaryLandline" Type="nvarchar" MaxLength="50" />
+    <Property Name="otherLandline" Type="nvarchar" MaxLength="50" />
+    <Property Name="primaryEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="otherEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="boxAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="boxAddressCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="boxAddressTown" Type="nvarchar" MaxLength="50" />
+    <Property Name="websiteUrl" Type="nvarchar" MaxLength="50" />
+    <Property Name="life" Type="int" Nullable="false" />
+    <Property Name="createbyId" Type="int" Nullable="false" />
+    <Property Name="createdt" Type="datetime" />
+    <Property Name="writebyId" Type="int" Nullable="false" />
+    <Property Name="writedt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="conconfigurations">
+    <Key>
+      <PropertyRef Name="configurationsId" />
+    </Key>
+    <Property Name="configurationsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="configkey" Type="nvarchar" MaxLength="50" />
+    <Property Name="configvalue" Type="nvarchar(max)" />
+    <Property Name="configurationTypeId" Type="int" Nullable="false" />
+    <Property Name="life" Type="int" Nullable="false" />
+    <Property Name="createbyId" Type="int" Nullable="false" />
+    <Property Name="createdt" Type="datetime" />
+    <Property Name="writebyId" Type="int" Nullable="false" />
+    <Property Name="writedt" Type="datetime" Nullable="false" />
+    <Property Name="companyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="conconfigurationtype">
+    <Key>
+      <PropertyRef Name="configurationTypeId" />
+    </Key>
+    <Property Name="configurationTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="configurationTypeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="life" Type="int" Nullable="false" />
+    <Property Name="createbyId" Type="int" Nullable="false" />
+    <Property Name="createDt" Type="datetime" Nullable="false" />
+    <Property Name="writebyId" Type="int" Nullable="false" />
+    <Property Name="writedt" Type="datetime" />
+    <Property Name="companyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="conindustry">
+    <Key>
+      <PropertyRef Name="industryId" />
+    </Key>
+    <Property Name="industryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="industry" Type="nvarchar" MaxLength="100" />
+    <Property Name="industryCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="life" Type="int" Nullable="false" />
+    <Property Name="createbyId" Type="int" Nullable="false" />
+    <Property Name="createdt" Type="datetime" Nullable="false" />
+    <Property Name="writebyId" Type="int" Nullable="false" />
+    <Property Name="writedt" Type="datetime" Nullable="false" />
+    <Property Name="companyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="conlife">
+    <Key>
+      <PropertyRef Name="lifeId" />
+    </Key>
+    <Property Name="lifeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descriprion" Type="nvarchar" MaxLength="30" />
+    <Property Name="system" Type="int" Nullable="false" />
+    <Property Name="life" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="connotifications">
+    <Key>
+      <PropertyRef Name="notificationsId" />
+    </Key>
+    <Property Name="notificationsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="objectId" Type="int" Nullable="false" />
+    <Property Name="notifTableName" Type="nvarchar" MaxLength="50" />
+    <Property Name="notifColumnName" Type="nvarchar" MaxLength="50" />
+    <Property Name="notifCriteria" Type="nvarchar(max)" />
+    <Property Name="life" Type="int" Nullable="false" />
+    <Property Name="createbyId" Type="int" Nullable="false" />
+    <Property Name="createdt" Type="datetime" />
+    <Property Name="writebyId" Type="int" Nullable="false" />
+    <Property Name="writedt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="conobjectrights">
+    <Key>
+      <PropertyRef Name="objectRightsId" />
+    </Key>
+    <Property Name="objectRightsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="profileId" Type="int" Nullable="false" />
+    <Property Name="objectId" Type="int" Nullable="false" />
+    <Property Name="canview" Type="int" Nullable="false" />
+    <Property Name="canadd" Type="int" Nullable="false" />
+    <Property Name="canedit" Type="int" Nullable="false" />
+    <Property Name="candel" Type="int" Nullable="false" />
+    <Property Name="canauthorize" Type="int" Nullable="false" />
+    <Property Name="canapprove" Type="int" Nullable="false" />
+    <Property Name="canexport" Type="int" Nullable="false" />
+    <Property Name="life" Type="int" Nullable="false" />
+    <Property Name="createbyId" Type="int" Nullable="false" />
+    <Property Name="createdt" Type="datetime" Nullable="false" />
+    <Property Name="writebyId" Type="int" Nullable="false" />
+    <Property Name="writedt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="conobjects">
+    <Key>
+      <PropertyRef Name="objectId" />
+    </Key>
+    <Property Name="objectId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="objectCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="level" Type="int" Nullable="false" />
+    <Property Name="parentObjectId" Type="int" Nullable="false" />
+    <Property Name="isreport" Type="int" Nullable="false" />
+    <Property Name="isgraph" Type="int" Nullable="false" />
+    <Property Name="isbuttonselect" Type="int" Nullable="false" />
+    <Property Name="isbuttonselectwithmenu" Type="int" Nullable="false" />
+    <Property Name="hasnotification" Type="int" Nullable="false" />
+    <Property Name="hasreportsubmenu" Type="int" Nullable="false" />
+    <Property Name="life" Type="int" Nullable="false" />
+    <Property Name="createbyId" Type="int" Nullable="false" />
+    <Property Name="createdt" Type="datetime" />
+    <Property Name="writebyId" Type="int" Nullable="false" />
+    <Property Name="writedt" Type="datetime" Nullable="false" />
+    <Property Name="objectName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="conobjectscaption">
+    <Key>
+      <PropertyRef Name="objectCaptionId" />
+    </Key>
+    <Property Name="objectCaptionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="objectId" Type="int" Nullable="false" />
+    <Property Name="industryId" Type="int" Nullable="false" />
+    <Property Name="objectCaptionName" Type="nvarchar(max)" />
+    <Property Name="icons" Type="nvarchar" MaxLength="100" />
+    <Property Name="islarge" Type="nvarchar" MaxLength="50" />
+    <Property Name="quicklink" Type="int" Nullable="false" />
+    <Property Name="setpath" Type="nvarchar(max)" />
+    <Property Name="reportpath" Type="nvarchar(max)" />
+    <Property Name="objectCaptionSort" Type="int" Nullable="false" />
+    <Property Name="available" Type="int" Nullable="false" />
+    <Property Name="life" Type="int" Nullable="false" />
+    <Property Name="createbyId" Type="int" Nullable="false" />
+    <Property Name="createdt" Type="datetime" />
+    <Property Name="writebyId" Type="int" Nullable="false" />
+    <Property Name="writedt" Type="datetime" />
+    <Property Name="companyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="conprofiles">
+    <Key>
+      <PropertyRef Name="profileId" />
+    </Key>
+    <Property Name="profileId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="profilename" Type="nvarchar" MaxLength="30" />
+    <Property Name="companyId" Type="int" Nullable="false" />
+    <Property Name="life" Type="int" Nullable="false" />
+    <Property Name="createbyId" Type="int" Nullable="false" />
+    <Property Name="createdt" Type="datetime" />
+    <Property Name="writebyId" Type="int" Nullable="false" />
+    <Property Name="writedt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="conroles">
+    <Key>
+      <PropertyRef Name="roleid" />
+    </Key>
+    <Property Name="roleid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rolename" Type="nvarchar" MaxLength="50" />
+    <Property Name="homepage" Type="nvarchar" MaxLength="50" />
+    <Property Name="dashboard" Type="nvarchar" MaxLength="100" />
+    <Property Name="companyId" Type="int" Nullable="false" />
+    <Property Name="life" Type="int" Nullable="false" />
+    <Property Name="createbyId" Type="int" Nullable="false" />
+    <Property Name="createdt" Type="datetime" />
+    <Property Name="writebyId" Type="int" Nullable="false" />
+    <Property Name="writedt" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Constituency">
+    <Key>
+      <PropertyRef Name="ConstituencyID" />
+    </Key>
+    <Property Name="ConstituencyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Abbreviation" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Geom" Type="geometry" />
+  </EntityType>
+  <EntityType Name="conuser">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="surname" Type="nvarchar(max)" />
+    <Property Name="otherName" Type="nvarchar(max)" />
+    <Property Name="recoveryphone" Type="nvarchar(max)" />
+    <Property Name="recoveryemail" Type="nvarchar(max)" />
+    <Property Name="profileId" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="companyId" Type="int" Nullable="false" />
+    <Property Name="life" Type="int" Nullable="false" />
+    <Property Name="createbyId" Type="int" Nullable="false" />
+    <Property Name="createdt" Type="datetime" />
+    <Property Name="writebyId" Type="int" Nullable="false" />
+    <Property Name="writedt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="conuserrecovery">
+    <Key>
+      <PropertyRef Name="userRecoveryId" />
+    </Key>
+    <Property Name="userRecoveryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="userRecoveryTypeId" Type="int" Nullable="false" />
+    <Property Name="recoveryCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="expiryDateTime" Type="datetime" />
+    <Property Name="isRecovered" Type="int" Nullable="false" />
+    <Property Name="dateTimeRecovered" Type="datetime" Nullable="false" />
+    <Property Name="life" Type="int" Nullable="false" />
+    <Property Name="createbyId" Type="int" Nullable="false" />
+    <Property Name="createdt" Type="datetime" Nullable="false" />
+    <Property Name="writebyId" Type="int" Nullable="false" />
+    <Property Name="writedt" Type="datetime" Nullable="false" />
+    <Property Name="companyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="conuserrecoverytype">
+    <Key>
+      <PropertyRef Name="userRecoveryTypeId" />
+    </Key>
+    <Property Name="userRecoveryTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="recoveryTypeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="life" Type="int" Nullable="false" />
+    <Property Name="createbyId" Type="int" Nullable="false" />
+    <Property Name="createdt" Type="datetime" />
+    <Property Name="writebyId" Type="int" Nullable="false" />
+    <Property Name="writedt" Type="datetime" />
+    <Property Name="companyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="conuserroles">
+    <Key>
+      <PropertyRef Name="userroleid" />
+    </Key>
+    <Property Name="userroleid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="roleid" Type="int" Nullable="false" />
+    <Property Name="mainrole" Type="int" Nullable="false" />
+    <Property Name="companyId" Type="int" Nullable="false" />
+    <Property Name="life" Type="int" Nullable="false" />
+    <Property Name="createbyId" Type="int" Nullable="false" />
+    <Property Name="createdt" Type="datetime" />
+    <Property Name="writebyId" Type="int" Nullable="false" />
+    <Property Name="writedt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="County">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="DateRetired" Type="datetime" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Abbreviation" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Geom" Type="geometry" />
+  </EntityType>
+  <EntityType Name="Device">
+    <Key>
+      <PropertyRef Name="DeviceID" />
+    </Key>
+    <Property Name="DeviceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IMEI" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="SerialNo" Type="nvarchar(max)" />
+    <Property Name="DeviceStatusID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeviceStatus">
+    <Key>
+      <PropertyRef Name="DeviceStatusID" />
+    </Key>
+    <Property Name="DeviceStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Face">
+    <Key>
+      <PropertyRef Name="FaceID" />
+    </Key>
+    <Property Name="FaceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FaceOccupancyID" Type="int" Nullable="false" />
+    <Property Name="FaceSizeID" Type="int" Nullable="false" />
+    <Property Name="FaceConditionID" Type="int" Nullable="false" />
+    <Property Name="FaceBoundID" Type="int" Nullable="false" />
+    <Property Name="FacePositionID" Type="int" Nullable="false" />
+    <Property Name="FaceAvailabilityID" Type="int" Nullable="false" />
+    <Property Name="StructureID" Type="int" Nullable="false" />
+    <Property Name="FaceOrientationID" Type="int" Nullable="false" />
+    <Property Name="StructureOwner_StructureOwnerID" Type="int" />
+  </EntityType>
+  <EntityType Name="FaceAvailability">
+    <Key>
+      <PropertyRef Name="FaceAvailabilityID" />
+    </Key>
+    <Property Name="FaceAvailabilityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AvailabilityType" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="FaceBound">
+    <Key>
+      <PropertyRef Name="FaceBoundID" />
+    </Key>
+    <Property Name="FaceBoundID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Bound" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="FaceCondition">
+    <Key>
+      <PropertyRef Name="FaceConditionID" />
+    </Key>
+    <Property Name="FaceConditionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Condition" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="FaceImage">
+    <Key>
+      <PropertyRef Name="FaceImageID" />
+    </Key>
+    <Property Name="FaceImageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="FaceID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FaceOccupancy">
+    <Key>
+      <PropertyRef Name="FaceOccupancyID" />
+    </Key>
+    <Property Name="FaceOccupancyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Occupancy" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="FaceOrientation">
+    <Key>
+      <PropertyRef Name="FaceOrientationID" />
+    </Key>
+    <Property Name="FaceOrientationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Orientation" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="FacePosition">
+    <Key>
+      <PropertyRef Name="FacePositionID" />
+    </Key>
+    <Property Name="FacePositionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Position" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="FaceSize">
+    <Key>
+      <PropertyRef Name="FaceSizeID" />
+    </Key>
+    <Property Name="FaceSizeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Height" Type="float" Nullable="false" />
+    <Property Name="Width" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FaceVisibilityRating">
+    <Key>
+      <PropertyRef Name="FaceVisibilityRatingID" />
+    </Key>
+    <Property Name="FaceVisibilityRatingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VegetationCoverScore" Type="float" />
+    <Property Name="SightLightingScore" Type="float" />
+    <Property Name="BacklightScore" Type="float" />
+    <Property Name="UnlightScore" Type="float" />
+    <Property Name="TrafficScore" Type="float" />
+    <Property Name="ClutterScore" Type="float" />
+  </EntityType>
+  <EntityType Name="Industry">
+    <Key>
+      <PropertyRef Name="IndustryID" />
+    </Key>
+    <Property Name="IndustryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Route">
+    <Key>
+      <PropertyRef Name="RouteID" />
+    </Key>
+    <Property Name="RouteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SiteLighting">
+    <Key>
+      <PropertyRef Name="SiteLightingID" />
+    </Key>
+    <Property Name="SiteLightingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Parameter" Type="int" Nullable="false" />
+    <Property Name="Score" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SiteRunUp">
+    <Key>
+      <PropertyRef Name="SiteRunUpID" />
+    </Key>
+    <Property Name="SiteRunUpID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DistanceOption" Type="int" Nullable="false" />
+    <Property Name="Score" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Street">
+    <Key>
+      <PropertyRef Name="StreetID" />
+    </Key>
+    <Property Name="StreetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Geom" Type="geometry" />
+  </EntityType>
+  <EntityType Name="Structure">
+    <Key>
+      <PropertyRef Name="StructureID" />
+    </Key>
+    <Property Name="StructureID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FaceCount" Type="int" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Latitude" Type="float" />
+    <Property Name="Longitude" Type="float" />
+    <Property Name="Geom" Type="geometry" />
+    <Property Name="StructureTypeID" Type="int" Nullable="false" />
+    <Property Name="StructureOwnerID" Type="int" Nullable="false" />
+    <Property Name="StructureOwner_StructureOwnerID" Type="int" />
+  </EntityType>
+  <EntityType Name="StructureOwner">
+    <Key>
+      <PropertyRef Name="StructureOwnerID" />
+    </Key>
+    <Property Name="StructureOwnerID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="MobileNumber" Type="nvarchar(max)" />
+    <Property Name="Structure_StructureID" Type="int" />
+  </EntityType>
+  <EntityType Name="StructureType">
+    <Key>
+      <PropertyRef Name="StructureTypeID" />
+    </Key>
+    <Property Name="StructureTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Subscription">
+    <Key>
+      <PropertyRef Name="SubscriptionID" />
+    </Key>
+    <Property Name="SubscriptionID" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="float" />
+    <Property Name="Paid" Type="float" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="ExpiryDate" Type="datetime" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Sweep">
+    <Key>
+      <PropertyRef Name="SweepID" />
+    </Key>
+    <Property Name="SweepID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SweepStructure">
+    <Key>
+      <PropertyRef Name="SweepStructureID" />
+    </Key>
+    <Property Name="SweepStructureID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StructureID" Type="int" Nullable="false" />
+    <Property Name="SweepID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Traffic">
+    <Key>
+      <PropertyRef Name="TrafficID" />
+    </Key>
+    <Property Name="TrafficID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Paramameter" Type="int" Nullable="false" />
+    <Property Name="Score" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar(max)" />
+    <Property Name="KRA_Pin" Type="nvarchar(max)" />
+    <Property Name="RoleID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VegetationCover">
+    <Key>
+      <PropertyRef Name="VegetationCoverID" />
+    </Key>
+    <Property Name="VegetationCoverID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Score" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ward">
+    <Key>
+      <PropertyRef Name="WardID" />
+    </Key>
+    <Property Name="WardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Abbreviation" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Geom" Type="geometry" />
+  </EntityType>
+  <Association Name="FK_dbo_Advert_dbo_Advertiser_AdvertiserID">
+    <End Role="Advertiser" Type="Self.Advertiser" Multiplicity="1" />
+    <End Role="Advert" Type="Self.Advert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Advertiser">
+        <PropertyRef Name="AdvertiserID" />
+      </Principal>
+      <Dependent Role="Advert">
+        <PropertyRef Name="AdvertiserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Advert_dbo_Campaign_CampaignID">
+    <End Role="Campaign" Type="Self.Campaign" Multiplicity="1" />
+    <End Role="Advert" Type="Self.Advert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Campaign">
+        <PropertyRef Name="CampaignID" />
+      </Principal>
+      <Dependent Role="Advert">
+        <PropertyRef Name="CampaignID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Advert_dbo_Face_FaceID">
+    <End Role="Face" Type="Self.Face" Multiplicity="1" />
+    <End Role="Advert" Type="Self.Advert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Face">
+        <PropertyRef Name="FaceID" />
+      </Principal>
+      <Dependent Role="Advert">
+        <PropertyRef Name="FaceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Campaign_dbo_Advertiser_Advertiser_AdvertiserID">
+    <End Role="Advertiser" Type="Self.Advertiser" Multiplicity="0..1" />
+    <End Role="Campaign" Type="Self.Campaign" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Advertiser">
+        <PropertyRef Name="AdvertiserID" />
+      </Principal>
+      <Dependent Role="Campaign">
+        <PropertyRef Name="Advertiser_AdvertiserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Campaign_dbo_Agency_AgencyID">
+    <End Role="Agency" Type="Self.Agency" Multiplicity="1" />
+    <End Role="Campaign" Type="Self.Campaign" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Agency">
+        <PropertyRef Name="AgencyID" />
+      </Principal>
+      <Dependent Role="Campaign">
+        <PropertyRef Name="AgencyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Campaign_dbo_Industry_Industry_IndustryID">
+    <End Role="Industry" Type="Self.Industry" Multiplicity="0..1" />
+    <End Role="Campaign" Type="Self.Campaign" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Industry">
+        <PropertyRef Name="IndustryID" />
+      </Principal>
+      <Dependent Role="Campaign">
+        <PropertyRef Name="Industry_IndustryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Campaign_dbo_Product_ProductID">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Campaign" Type="Self.Campaign" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Campaign">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_CampaignDevice_dbo_Campaign_CampaignID">
+    <End Role="Campaign" Type="Self.Campaign" Multiplicity="1" />
+    <End Role="CampaignDevice" Type="Self.CampaignDevice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Campaign">
+        <PropertyRef Name="CampaignID" />
+      </Principal>
+      <Dependent Role="CampaignDevice">
+        <PropertyRef Name="CampaignID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_CampaignDevice_dbo_Device_DeviceID">
+    <End Role="Device" Type="Self.Device" Multiplicity="1" />
+    <End Role="CampaignDevice" Type="Self.CampaignDevice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="DeviceID" />
+      </Principal>
+      <Dependent Role="CampaignDevice">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_CampaignRoute_dbo_Campaign_CampaignID">
+    <End Role="Campaign" Type="Self.Campaign" Multiplicity="1" />
+    <End Role="CampaignRoute" Type="Self.CampaignRoute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Campaign">
+        <PropertyRef Name="CampaignID" />
+      </Principal>
+      <Dependent Role="CampaignRoute">
+        <PropertyRef Name="CampaignID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_CampaignRoute_dbo_Route_RouteID">
+    <End Role="Route" Type="Self.Route" Multiplicity="1" />
+    <End Role="CampaignRoute" Type="Self.CampaignRoute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Route">
+        <PropertyRef Name="RouteID" />
+      </Principal>
+      <Dependent Role="CampaignRoute">
+        <PropertyRef Name="RouteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Device_dbo_DeviceStatus_DeviceStatusID">
+    <End Role="DeviceStatus" Type="Self.DeviceStatus" Multiplicity="1" />
+    <End Role="Device" Type="Self.Device" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeviceStatus">
+        <PropertyRef Name="DeviceStatusID" />
+      </Principal>
+      <Dependent Role="Device">
+        <PropertyRef Name="DeviceStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Face_dbo_FaceAvailability_FaceAvailabilityID">
+    <End Role="FaceAvailability" Type="Self.FaceAvailability" Multiplicity="1" />
+    <End Role="Face" Type="Self.Face" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FaceAvailability">
+        <PropertyRef Name="FaceAvailabilityID" />
+      </Principal>
+      <Dependent Role="Face">
+        <PropertyRef Name="FaceAvailabilityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Face_dbo_FaceBound_FaceBoundID">
+    <End Role="FaceBound" Type="Self.FaceBound" Multiplicity="1" />
+    <End Role="Face" Type="Self.Face" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FaceBound">
+        <PropertyRef Name="FaceBoundID" />
+      </Principal>
+      <Dependent Role="Face">
+        <PropertyRef Name="FaceBoundID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Face_dbo_FaceCondition_FaceConditionID">
+    <End Role="FaceCondition" Type="Self.FaceCondition" Multiplicity="1" />
+    <End Role="Face" Type="Self.Face" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FaceCondition">
+        <PropertyRef Name="FaceConditionID" />
+      </Principal>
+      <Dependent Role="Face">
+        <PropertyRef Name="FaceConditionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Face_dbo_FaceOccupancy_FaceOccupancyID">
+    <End Role="FaceOccupancy" Type="Self.FaceOccupancy" Multiplicity="1" />
+    <End Role="Face" Type="Self.Face" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FaceOccupancy">
+        <PropertyRef Name="FaceOccupancyID" />
+      </Principal>
+      <Dependent Role="Face">
+        <PropertyRef Name="FaceOccupancyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Face_dbo_FaceOrientation_FaceOrientationID">
+    <End Role="FaceOrientation" Type="Self.FaceOrientation" Multiplicity="1" />
+    <End Role="Face" Type="Self.Face" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FaceOrientation">
+        <PropertyRef Name="FaceOrientationID" />
+      </Principal>
+      <Dependent Role="Face">
+        <PropertyRef Name="FaceOrientationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Face_dbo_FacePosition_FacePositionID">
+    <End Role="FacePosition" Type="Self.FacePosition" Multiplicity="1" />
+    <End Role="Face" Type="Self.Face" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FacePosition">
+        <PropertyRef Name="FacePositionID" />
+      </Principal>
+      <Dependent Role="Face">
+        <PropertyRef Name="FacePositionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Face_dbo_FaceSize_FaceSizeID">
+    <End Role="FaceSize" Type="Self.FaceSize" Multiplicity="1" />
+    <End Role="Face" Type="Self.Face" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FaceSize">
+        <PropertyRef Name="FaceSizeID" />
+      </Principal>
+      <Dependent Role="Face">
+        <PropertyRef Name="FaceSizeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Face_dbo_Structure_StructureID">
+    <End Role="Structure" Type="Self.Structure" Multiplicity="1" />
+    <End Role="Face" Type="Self.Face" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Structure">
+        <PropertyRef Name="StructureID" />
+      </Principal>
+      <Dependent Role="Face">
+        <PropertyRef Name="StructureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Face_dbo_StructureOwner_StructureOwner_StructureOwnerID">
+    <End Role="StructureOwner" Type="Self.StructureOwner" Multiplicity="0..1" />
+    <End Role="Face" Type="Self.Face" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StructureOwner">
+        <PropertyRef Name="StructureOwnerID" />
+      </Principal>
+      <Dependent Role="Face">
+        <PropertyRef Name="StructureOwner_StructureOwnerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_FaceImage_dbo_Face_FaceID">
+    <End Role="Face" Type="Self.Face" Multiplicity="1" />
+    <End Role="FaceImage" Type="Self.FaceImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Face">
+        <PropertyRef Name="FaceID" />
+      </Principal>
+      <Dependent Role="FaceImage">
+        <PropertyRef Name="FaceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_FaceVisibilityRating_dbo_Face_FaceVisibilityRatingID">
+    <End Role="Face" Type="Self.Face" Multiplicity="1" />
+    <End Role="FaceVisibilityRating" Type="Self.FaceVisibilityRating" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Face">
+        <PropertyRef Name="FaceID" />
+      </Principal>
+      <Dependent Role="FaceVisibilityRating">
+        <PropertyRef Name="FaceVisibilityRatingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Structure_dbo_StructureOwner_StructureOwner_StructureOwnerID">
+    <End Role="StructureOwner" Type="Self.StructureOwner" Multiplicity="0..1" />
+    <End Role="Structure" Type="Self.Structure" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StructureOwner">
+        <PropertyRef Name="StructureOwnerID" />
+      </Principal>
+      <Dependent Role="Structure">
+        <PropertyRef Name="StructureOwner_StructureOwnerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Structure_dbo_StructureType_StructureTypeID">
+    <End Role="StructureType" Type="Self.StructureType" Multiplicity="1" />
+    <End Role="Structure" Type="Self.Structure" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StructureType">
+        <PropertyRef Name="StructureTypeID" />
+      </Principal>
+      <Dependent Role="Structure">
+        <PropertyRef Name="StructureTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_StructureOwner_dbo_Structure_Structure_StructureID">
+    <End Role="Structure" Type="Self.Structure" Multiplicity="0..1" />
+    <End Role="StructureOwner" Type="Self.StructureOwner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Structure">
+        <PropertyRef Name="StructureID" />
+      </Principal>
+      <Dependent Role="StructureOwner">
+        <PropertyRef Name="Structure_StructureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Subscription_dbo_Agency_SubscriptionID">
+    <End Role="Agency" Type="Self.Agency" Multiplicity="1" />
+    <End Role="Subscription" Type="Self.Subscription" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Agency">
+        <PropertyRef Name="AgencyID" />
+      </Principal>
+      <Dependent Role="Subscription">
+        <PropertyRef Name="SubscriptionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SweepStructure_dbo_Structure_StructureID">
+    <End Role="Structure" Type="Self.Structure" Multiplicity="1" />
+    <End Role="SweepStructure" Type="Self.SweepStructure" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Structure">
+        <PropertyRef Name="StructureID" />
+      </Principal>
+      <Dependent Role="SweepStructure">
+        <PropertyRef Name="StructureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SweepStructure_dbo_Sweep_SweepID">
+    <End Role="Sweep" Type="Self.Sweep" Multiplicity="1" />
+    <End Role="SweepStructure" Type="Self.SweepStructure" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sweep">
+        <PropertyRef Name="SweepID" />
+      </Principal>
+      <Dependent Role="SweepStructure">
+        <PropertyRef Name="SweepID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_User_dbo_Role_RoleID">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Advert" EntityType="Self.Advert" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Advertiser" EntityType="Self.Advertiser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Agency" EntityType="Self.Agency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Backlight" EntityType="Self.Backlight" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Campaign" EntityType="Self.Campaign" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CampaignDevice" EntityType="Self.CampaignDevice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CampaignRoute" EntityType="Self.CampaignRoute" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clutter" EntityType="Self.Clutter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conauth" EntityType="Self.conauth" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="concompany" EntityType="Self.concompany" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conconfigurations" EntityType="Self.conconfigurations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conconfigurationtype" EntityType="Self.conconfigurationtype" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conindustry" EntityType="Self.conindustry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conlife" EntityType="Self.conlife" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="connotifications" EntityType="Self.connotifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conobjectrights" EntityType="Self.conobjectrights" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conobjects" EntityType="Self.conobjects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conobjectscaption" EntityType="Self.conobjectscaption" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conprofiles" EntityType="Self.conprofiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conroles" EntityType="Self.conroles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Constituency" EntityType="Self.Constituency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conuser" EntityType="Self.conuser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conuserrecovery" EntityType="Self.conuserrecovery" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conuserrecoverytype" EntityType="Self.conuserrecoverytype" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="conuserroles" EntityType="Self.conuserroles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="County" EntityType="Self.County" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Device" EntityType="Self.Device" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DeviceStatus" EntityType="Self.DeviceStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Face" EntityType="Self.Face" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FaceAvailability" EntityType="Self.FaceAvailability" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FaceBound" EntityType="Self.FaceBound" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FaceCondition" EntityType="Self.FaceCondition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FaceImage" EntityType="Self.FaceImage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FaceOccupancy" EntityType="Self.FaceOccupancy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FaceOrientation" EntityType="Self.FaceOrientation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FacePosition" EntityType="Self.FacePosition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FaceSize" EntityType="Self.FaceSize" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FaceVisibilityRating" EntityType="Self.FaceVisibilityRating" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Industry" EntityType="Self.Industry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Route" EntityType="Self.Route" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SiteLighting" EntityType="Self.SiteLighting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SiteRunUp" EntityType="Self.SiteRunUp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Street" EntityType="Self.Street" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Structure" EntityType="Self.Structure" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StructureOwner" EntityType="Self.StructureOwner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StructureType" EntityType="Self.StructureType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subscription" EntityType="Self.Subscription" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sweep" EntityType="Self.Sweep" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SweepStructure" EntityType="Self.SweepStructure" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Traffic" EntityType="Self.Traffic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VegetationCover" EntityType="Self.VegetationCover" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ward" EntityType="Self.Ward" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_Advert_dbo_Advertiser_AdvertiserID" Association="Self.FK_dbo_Advert_dbo_Advertiser_AdvertiserID">
+      <End Role="Advertiser" EntitySet="Advertiser" />
+      <End Role="Advert" EntitySet="Advert" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Advert_dbo_Campaign_CampaignID" Association="Self.FK_dbo_Advert_dbo_Campaign_CampaignID">
+      <End Role="Campaign" EntitySet="Campaign" />
+      <End Role="Advert" EntitySet="Advert" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Advert_dbo_Face_FaceID" Association="Self.FK_dbo_Advert_dbo_Face_FaceID">
+      <End Role="Face" EntitySet="Face" />
+      <End Role="Advert" EntitySet="Advert" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Campaign_dbo_Advertiser_Advertiser_AdvertiserID" Association="Self.FK_dbo_Campaign_dbo_Advertiser_Advertiser_AdvertiserID">
+      <End Role="Advertiser" EntitySet="Advertiser" />
+      <End Role="Campaign" EntitySet="Campaign" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Campaign_dbo_Agency_AgencyID" Association="Self.FK_dbo_Campaign_dbo_Agency_AgencyID">
+      <End Role="Agency" EntitySet="Agency" />
+      <End Role="Campaign" EntitySet="Campaign" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Campaign_dbo_Industry_Industry_IndustryID" Association="Self.FK_dbo_Campaign_dbo_Industry_Industry_IndustryID">
+      <End Role="Industry" EntitySet="Industry" />
+      <End Role="Campaign" EntitySet="Campaign" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Campaign_dbo_Product_ProductID" Association="Self.FK_dbo_Campaign_dbo_Product_ProductID">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Campaign" EntitySet="Campaign" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_CampaignDevice_dbo_Campaign_CampaignID" Association="Self.FK_dbo_CampaignDevice_dbo_Campaign_CampaignID">
+      <End Role="Campaign" EntitySet="Campaign" />
+      <End Role="CampaignDevice" EntitySet="CampaignDevice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_CampaignDevice_dbo_Device_DeviceID" Association="Self.FK_dbo_CampaignDevice_dbo_Device_DeviceID">
+      <End Role="Device" EntitySet="Device" />
+      <End Role="CampaignDevice" EntitySet="CampaignDevice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_CampaignRoute_dbo_Campaign_CampaignID" Association="Self.FK_dbo_CampaignRoute_dbo_Campaign_CampaignID">
+      <End Role="Campaign" EntitySet="Campaign" />
+      <End Role="CampaignRoute" EntitySet="CampaignRoute" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_CampaignRoute_dbo_Route_RouteID" Association="Self.FK_dbo_CampaignRoute_dbo_Route_RouteID">
+      <End Role="Route" EntitySet="Route" />
+      <End Role="CampaignRoute" EntitySet="CampaignRoute" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Device_dbo_DeviceStatus_DeviceStatusID" Association="Self.FK_dbo_Device_dbo_DeviceStatus_DeviceStatusID">
+      <End Role="DeviceStatus" EntitySet="DeviceStatus" />
+      <End Role="Device" EntitySet="Device" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Face_dbo_FaceAvailability_FaceAvailabilityID" Association="Self.FK_dbo_Face_dbo_FaceAvailability_FaceAvailabilityID">
+      <End Role="FaceAvailability" EntitySet="FaceAvailability" />
+      <End Role="Face" EntitySet="Face" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Face_dbo_FaceBound_FaceBoundID" Association="Self.FK_dbo_Face_dbo_FaceBound_FaceBoundID">
+      <End Role="FaceBound" EntitySet="FaceBound" />
+      <End Role="Face" EntitySet="Face" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Face_dbo_FaceCondition_FaceConditionID" Association="Self.FK_dbo_Face_dbo_FaceCondition_FaceConditionID">
+      <End Role="FaceCondition" EntitySet="FaceCondition" />
+      <End Role="Face" EntitySet="Face" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Face_dbo_FaceOccupancy_FaceOccupancyID" Association="Self.FK_dbo_Face_dbo_FaceOccupancy_FaceOccupancyID">
+      <End Role="FaceOccupancy" EntitySet="FaceOccupancy" />
+      <End Role="Face" EntitySet="Face" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Face_dbo_FaceOrientation_FaceOrientationID" Association="Self.FK_dbo_Face_dbo_FaceOrientation_FaceOrientationID">
+      <End Role="FaceOrientation" EntitySet="FaceOrientation" />
+      <End Role="Face" EntitySet="Face" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Face_dbo_FacePosition_FacePositionID" Association="Self.FK_dbo_Face_dbo_FacePosition_FacePositionID">
+      <End Role="FacePosition" EntitySet="FacePosition" />
+      <End Role="Face" EntitySet="Face" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Face_dbo_FaceSize_FaceSizeID" Association="Self.FK_dbo_Face_dbo_FaceSize_FaceSizeID">
+      <End Role="FaceSize" EntitySet="FaceSize" />
+      <End Role="Face" EntitySet="Face" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Face_dbo_Structure_StructureID" Association="Self.FK_dbo_Face_dbo_Structure_StructureID">
+      <End Role="Structure" EntitySet="Structure" />
+      <End Role="Face" EntitySet="Face" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Face_dbo_StructureOwner_StructureOwner_StructureOwnerID" Association="Self.FK_dbo_Face_dbo_StructureOwner_StructureOwner_StructureOwnerID">
+      <End Role="StructureOwner" EntitySet="StructureOwner" />
+      <End Role="Face" EntitySet="Face" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_FaceImage_dbo_Face_FaceID" Association="Self.FK_dbo_FaceImage_dbo_Face_FaceID">
+      <End Role="Face" EntitySet="Face" />
+      <End Role="FaceImage" EntitySet="FaceImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_FaceVisibilityRating_dbo_Face_FaceVisibilityRatingID" Association="Self.FK_dbo_FaceVisibilityRating_dbo_Face_FaceVisibilityRatingID">
+      <End Role="Face" EntitySet="Face" />
+      <End Role="FaceVisibilityRating" EntitySet="FaceVisibilityRating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Structure_dbo_StructureOwner_StructureOwner_StructureOwnerID" Association="Self.FK_dbo_Structure_dbo_StructureOwner_StructureOwner_StructureOwnerID">
+      <End Role="StructureOwner" EntitySet="StructureOwner" />
+      <End Role="Structure" EntitySet="Structure" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Structure_dbo_StructureType_StructureTypeID" Association="Self.FK_dbo_Structure_dbo_StructureType_StructureTypeID">
+      <End Role="StructureType" EntitySet="StructureType" />
+      <End Role="Structure" EntitySet="Structure" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_StructureOwner_dbo_Structure_Structure_StructureID" Association="Self.FK_dbo_StructureOwner_dbo_Structure_Structure_StructureID">
+      <End Role="Structure" EntitySet="Structure" />
+      <End Role="StructureOwner" EntitySet="StructureOwner" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Subscription_dbo_Agency_SubscriptionID" Association="Self.FK_dbo_Subscription_dbo_Agency_SubscriptionID">
+      <End Role="Agency" EntitySet="Agency" />
+      <End Role="Subscription" EntitySet="Subscription" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SweepStructure_dbo_Structure_StructureID" Association="Self.FK_dbo_SweepStructure_dbo_Structure_StructureID">
+      <End Role="Structure" EntitySet="Structure" />
+      <End Role="SweepStructure" EntitySet="SweepStructure" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SweepStructure_dbo_Sweep_SweepID" Association="Self.FK_dbo_SweepStructure_dbo_Sweep_SweepID">
+      <End Role="Sweep" EntitySet="Sweep" />
+      <End Role="SweepStructure" EntitySet="SweepStructure" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_User_dbo_Role_RoleID" Association="Self.FK_dbo_User_dbo_Role_RoleID">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
