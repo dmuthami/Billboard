@@ -13,6 +13,7 @@ namespace BillboardApp.Models
         {
             this.Adverts = new HashSet<Advert>();
             this.Campaigns = new HashSet<Campaign>();
+            this.Products = new HashSet<Product>();
 
         }
 
@@ -33,10 +34,12 @@ namespace BillboardApp.Models
         [DisplayName("Detail")]
         public string Detail { get; set; }
 
-
         public virtual ICollection<Advert> Adverts { get; set; }
       
         public virtual ICollection<Campaign> Campaigns { get; set; }
+
+        //Navigation property to Products
+        public virtual ICollection<Product> Products { get; set; }
 
     }
 }

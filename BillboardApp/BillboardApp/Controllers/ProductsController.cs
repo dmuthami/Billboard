@@ -21,21 +21,25 @@ namespace BillboardApp.Controllers
         // GET: Products
         public async Task<ActionResult> Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
+            //var products = db.Products.Include(p => p.Advertiser);
+            //return View(await products.ToListAsync());
 
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "Name_desc" : "";
+            ViewBag.ProductNameSortParm = String.IsNullOrEmpty(sortOrder) ? "ProductName_desc" : "";
+            ViewBag.AdvertiserNameSortParm = sortOrder == "AdvertiserName" ? "AdvertiserName_desc" : "AdvertiserName";
 
-            IQueryable<ProductViewModel> productsData = from products in db.Products
-                                                           select new ProductViewModel()
-                                                              {
-                                                                  ProductID = products.ProductID,
-                                                                  Name = products.Name
-                                                             };
+            IQueryable<ProductViewModel> productsData = from products in db.Products.Include(p => p.Advertiser)
+                                                        select new ProductViewModel()
+                                                        {
+                                                            ProductID = products.ProductID,
+                                                            ProductName = products.Name,
+                                                            AdvertiserName = products.Advertiser.Name
+                                                        };
             //Paging
             if (searchString != null)
             {
                 page = 1;
             }
-            else { searchString = currentFilter; }
+            else { searchString = currentFilter;}
 
             ViewBag.CurrentFilter = searchString;
 
@@ -43,17 +47,23 @@ namespace BillboardApp.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 productsData = productsData.Where
-                    (s => s.Name.ToString().ToUpper().Contains(searchString.ToUpper())
-                    //|| s.PhoneNumber.ToString().ToUpper().Contains(searchString.ToUpper())
+                    (s => s.ProductName.ToString().ToUpper().Contains(searchString.ToUpper())
+                    || s.AdvertiserName.ToString().ToUpper().Contains(searchString.ToUpper())
                     );
             }
             switch (sortOrder)
             {
-                case "Name_desc":
-                    productsData = productsData.OrderByDescending(s => s.Name);
+                case "ProductName_desc":
+                    productsData = productsData.OrderByDescending(s => s.ProductName);
+                    break;
+                case "AdvertiserName_desc":
+                    productsData = productsData.OrderByDescending(s => s.ProductName);
+                    break;
+                case "AdvertiserName":
+                    productsData = productsData.OrderBy(s => s.ProductName);
                     break;
                 default:
-                    productsData = productsData.OrderBy(s => s.Name);
+                    productsData = productsData.OrderBy(s => s.ProductName);
                     break;
             }
             int pageSize = 15;
@@ -80,6 +90,7 @@ namespace BillboardApp.Controllers
         // GET: Products/Create
         public ActionResult Create()
         {
+            ViewBag.AdvertiserID = new SelectList(db.Advertisers, "AdvertiserID", "Name");
             return View();
         }
 
@@ -88,7 +99,7 @@ namespace BillboardApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "ProductID,Name")] Product product)
+        public async Task<ActionResult> Create([Bind(Include = "ProductID,Name,AdvertiserID")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -97,6 +108,7 @@ namespace BillboardApp.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.AdvertiserID = new SelectList(db.Advertisers, "AdvertiserID", "Name", product.AdvertiserID);
             return View(product);
         }
 
@@ -112,6 +124,7 @@ namespace BillboardApp.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.AdvertiserID = new SelectList(db.Advertisers, "AdvertiserID", "Name", product.AdvertiserID);
             return View(product);
         }
 
@@ -120,7 +133,7 @@ namespace BillboardApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "ProductID,Name")] Product product)
+        public async Task<ActionResult> Edit([Bind(Include = "ProductID,Name,AdvertiserID")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -128,6 +141,7 @@ namespace BillboardApp.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
+            ViewBag.AdvertiserID = new SelectList(db.Advertisers, "AdvertiserID", "Name", product.AdvertiserID);
             return View(product);
         }
 

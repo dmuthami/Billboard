@@ -21,16 +21,18 @@ namespace BillboardApp.Controllers
         // GET: VegetationCovers
         public async Task<ActionResult> Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            ViewBag.TypeSortParm = String.IsNullOrEmpty(sortOrder) ? "Type_desc" : "";
+            //
+
+            ViewBag.ParameterSortParm = String.IsNullOrEmpty(sortOrder) ? "Parameter_desc" : "";
             ViewBag.ScoreSortParm = sortOrder == "Score" ? "Score_desc" : "Score";
 
             IQueryable<VegetationCoverViewModel> vegetationCoversData = from vegetationCovers in db.VegetationCovers
-                                                                   select new VegetationCoverViewModel()
-                                                              {
-                                                                  VegetationCoverID = vegetationCovers.VegetationCoverID,
-                                                                  Type = vegetationCovers.Type,
-                                                                  Score = vegetationCovers.Score
-                                                              };
+                                                                        select new VegetationCoverViewModel()
+                                                                        {
+                                                                            VegetationCoverID = vegetationCovers.VegetationCoverID,
+                                                                            Parameter = vegetationCovers.Parameter,
+                                                                            Score = vegetationCovers.Score
+                                                                        };
             //Paging
             if (searchString != null)
             {
@@ -44,14 +46,14 @@ namespace BillboardApp.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 vegetationCoversData = vegetationCoversData.Where
-                    (s => s.Type.ToString().ToUpper().Contains(searchString.ToUpper())
+                    (s => s.Parameter.ToString().ToUpper().Contains(searchString.ToUpper())
                     || s.Score.ToString().ToUpper().Contains(searchString.ToUpper())
                     );
             }
             switch (sortOrder)
             {
-                case "Type_desc":
-                    vegetationCoversData = vegetationCoversData.OrderByDescending(s => s.Type);
+                case "Parameter_desc":
+                    vegetationCoversData = vegetationCoversData.OrderByDescending(s => s.Parameter);
                     break;
                 case "Score":
                     vegetationCoversData = vegetationCoversData.OrderBy(s => s.Score);
@@ -60,7 +62,7 @@ namespace BillboardApp.Controllers
                     vegetationCoversData = vegetationCoversData.OrderByDescending(s => s.Score);
                     break;
                 default:
-                    vegetationCoversData = vegetationCoversData.OrderBy(s => s.Type);
+                    vegetationCoversData = vegetationCoversData.OrderBy(s => s.Parameter);
                     break;
             }
             int pageSize = 15;
@@ -95,7 +97,7 @@ namespace BillboardApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "VegetationCoverID,Type,Score")] VegetationCover vegetationCover)
+        public async Task<ActionResult> Create([Bind(Include = "VegetationCoverID,Parameter,Score")] VegetationCover vegetationCover)
         {
             if (ModelState.IsValid)
             {
@@ -127,7 +129,7 @@ namespace BillboardApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "VegetationCoverID,Type,Score")] VegetationCover vegetationCover)
+        public async Task<ActionResult> Edit([Bind(Include = "VegetationCoverID,Parameter,Score")] VegetationCover vegetationCover)
         {
             if (ModelState.IsValid)
             {

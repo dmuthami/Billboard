@@ -21,10 +21,6 @@ namespace BillboardApp.Models
         public virtual ICollection<Advert> Adverts { get; set; }
         public virtual ICollection<FaceImage> FaceImages { get; set; }
 
-        //Face Occupancy Relationship
-        public int FaceOccupancyID { get; set; }
-        public virtual FaceOccupancy FaceOccupancy { get; set; }
-
         //Face Size Relationship
         public int FaceSizeID { get; set; }
         public virtual FaceSize FaceSize { get; set; }
@@ -41,9 +37,9 @@ namespace BillboardApp.Models
         public int FacePositionID { get; set; }
         public virtual FacePosition FacePosition { get; set; }
 
-        //Face availability Relationship
-        public int FaceAvailabilityID { get; set; }
-        public virtual FaceAvailability FaceAvailability { get; set; }
+        //Face Occupancy Relationship
+        public int FaceOccupancyID { get; set; }
+        public virtual FaceOccupancy FaceAvailability { get; set; }
 
         //Structure Relationship
         public int StructureID { get; set; }

@@ -2,45 +2,46 @@
 @using X.PagedList.Mvc;
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
-@{
-    ViewBag.Title = "Face Occupancy";
-}
+    @{
+        ViewBag.Title = "Face Occupancy";
+    }
 
-<h2>Face Occupancy</h2>
+    <h2>Face Occupancy</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
 @using (Html.BeginForm("Index", "FaceOccupancies", FormMethod.Get))
 {     <p>
-        Find by Occupancy @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        Find by Type @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
         <input type="submit" value="Search" />
     </p>
 }
-<table class="table">
-    <tr>
-        <th>
-            @Html.ActionLink("Occupancy", "Index",
-             new { sortOrder = ViewBag.OccupancySortParm, currentFilter = ViewBag.CurrentFilter })
-            @*@Html.DisplayNameFor(model => model.Occupancy)*@
-        </th>
-        <th></th>
-    </tr>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.ActionLink("Occupancy Type", "Index",
+                    new { sortOrder = ViewBag.OccupancyTypeSortParm, currentFilter = ViewBag.CurrentFilter })
+                @*@Html.DisplayNameFor(model => model.AvailabilityType)*@
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Occupancy)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.FaceOccupancyID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.FaceOccupancyID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.FaceOccupancyID })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OccupancyType)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.FaceOccupancyID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.FaceOccupancyID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.FaceOccupancyID })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
 Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of
 @Model.PageCount
 

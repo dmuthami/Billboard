@@ -11,6 +11,7 @@ namespace BillboardApp.Models
         public Route()
         {
             this.CampaignRoutes = new HashSet<CampaignRoute>();
+            this.Streets = new HashSet<Street>();
         }
         public int RouteID { get; set; }
 
@@ -19,5 +20,8 @@ namespace BillboardApp.Models
         public string Description { get; set; }
 
         public virtual ICollection<CampaignRoute> CampaignRoutes { get; set; }
+
+        //Navigation property to Streets
+        public virtual ICollection<Street> Streets { get; set; }
     }
 }

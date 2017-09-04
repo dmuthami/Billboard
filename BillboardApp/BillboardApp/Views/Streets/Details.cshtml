@@ -11,19 +11,27 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.Route.Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Name)
+            @Html.DisplayFor(model => model.Route.Name)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Geom)
+            @Html.DisplayNameFor(model => model.StreetNameByCollector)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Geom)
+            @Html.DisplayFor(model => model.StreetNameByCollector)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetNameByGIS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StreetNameByGIS)
         </dd>
 
     </dl>

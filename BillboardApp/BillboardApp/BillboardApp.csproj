@@ -185,19 +185,19 @@
     <Compile Include="Controllers\CampaignDevicesController.cs" />
     <Compile Include="Controllers\CampaignRoutesController.cs" />
     <Compile Include="Controllers\CampaignsController.cs" />
-    <Compile Include="Controllers\CluttersController.cs" />
+    <Compile Include="Controllers\FaceCluttersController.cs" />
     <Compile Include="Controllers\ConstituenciesController.cs" />
     <Compile Include="Controllers\CountiesController.cs" />
     <Compile Include="Controllers\DevicesController.cs" />
     <Compile Include="Controllers\DeviceStatusController.cs" />
-    <Compile Include="Controllers\FaceAvailabilitiesController.cs" />
     <Compile Include="Controllers\FaceBoundsController.cs" />
     <Compile Include="Controllers\FaceConditionsController.cs" />
     <Compile Include="Controllers\FaceImagesController.cs" />
-    <Compile Include="Controllers\FaceOccupanciesController.cs" />
+    <Compile Include="Controllers\FaceOccupanciesController.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Controllers\FaceOrientationsController.cs" />
     <Compile Include="Controllers\FacePositionsController.cs" />
-    <Compile Include="Controllers\FacesController.cs" />
     <Compile Include="Controllers\FaceSizesController.cs" />
     <Compile Include="Controllers\FaceVisibilityRatingsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -206,14 +206,14 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\RoutesController.cs" />
-    <Compile Include="Controllers\SiteLightingsController.cs" />
-    <Compile Include="Controllers\SiteRunUpsController.cs" />
+    <Compile Include="Controllers\FaceLightingsController.cs" />
+    <Compile Include="Controllers\FaceRunUpsController.cs" />
     <Compile Include="Controllers\StreetsController.cs" />
     <Compile Include="Controllers\StructureOwnersController.cs" />
     <Compile Include="Controllers\StructureTypesController.cs" />
     <Compile Include="Controllers\SubscriptionsController.cs" />
     <Compile Include="Controllers\SweepsController.cs" />
-    <Compile Include="Controllers\TrafficController.cs" />
+    <Compile Include="Controllers\FaceTrafficController.cs" />
     <Compile Include="Controllers\VegetationCoversController.cs" />
     <Compile Include="Controllers\WardsController.cs" />
     <Compile Include="DAL\BillboardContext.cs" />
@@ -305,6 +305,74 @@
     <Compile Include="Migrations\201709031513035_DesignUpdates_V12.Designer.cs">
       <DependentUpon>201709031513035_DesignUpdates_V12.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709041023039_DesignUpdates_V13.cs" />
+    <Compile Include="Migrations\201709041023039_DesignUpdates_V13.Designer.cs">
+      <DependentUpon>201709041023039_DesignUpdates_V13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709041031448_DesignUpdates_V14.cs" />
+    <Compile Include="Migrations\201709041031448_DesignUpdates_V14.Designer.cs">
+      <DependentUpon>201709041031448_DesignUpdates_V14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709041104128_DesignUpdates_V15.cs" />
+    <Compile Include="Migrations\201709041104128_DesignUpdates_V15.Designer.cs">
+      <DependentUpon>201709041104128_DesignUpdates_V15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709041105441_DesignUpdates_V16.cs" />
+    <Compile Include="Migrations\201709041105441_DesignUpdates_V16.Designer.cs">
+      <DependentUpon>201709041105441_DesignUpdates_V16.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709041112025_DesignUpdates_V17.cs" />
+    <Compile Include="Migrations\201709041112025_DesignUpdates_V17.Designer.cs">
+      <DependentUpon>201709041112025_DesignUpdates_V17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709041220333_DesignUpdates_V18.cs" />
+    <Compile Include="Migrations\201709041220333_DesignUpdates_V18.Designer.cs">
+      <DependentUpon>201709041220333_DesignUpdates_V18.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709041525432_DesignUpdates_V19.cs" />
+    <Compile Include="Migrations\201709041525432_DesignUpdates_V19.Designer.cs">
+      <DependentUpon>201709041525432_DesignUpdates_V19.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709041537599_DesignUpdates_V20.cs" />
+    <Compile Include="Migrations\201709041537599_DesignUpdates_V20.Designer.cs">
+      <DependentUpon>201709041537599_DesignUpdates_V20.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709041602599_DesignUpdates_V21.cs" />
+    <Compile Include="Migrations\201709041602599_DesignUpdates_V21.Designer.cs">
+      <DependentUpon>201709041602599_DesignUpdates_V21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709041701507_DesignUpdates_V22.cs" />
+    <Compile Include="Migrations\201709041701507_DesignUpdates_V22.Designer.cs">
+      <DependentUpon>201709041701507_DesignUpdates_V22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709041832182_DesignUpdates_V23.cs" />
+    <Compile Include="Migrations\201709041832182_DesignUpdates_V23.Designer.cs">
+      <DependentUpon>201709041832182_DesignUpdates_V23.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709041850241_DesignUpdates_V24.cs" />
+    <Compile Include="Migrations\201709041850241_DesignUpdates_V24.Designer.cs">
+      <DependentUpon>201709041850241_DesignUpdates_V24.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709041943458_DesignUpdates_V25.cs" />
+    <Compile Include="Migrations\201709041943458_DesignUpdates_V25.Designer.cs">
+      <DependentUpon>201709041943458_DesignUpdates_V25.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709041948329_DesignUpdates_V26.cs" />
+    <Compile Include="Migrations\201709041948329_DesignUpdates_V26.Designer.cs">
+      <DependentUpon>201709041948329_DesignUpdates_V26.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709042027177_DesignUpdates_V27.cs" />
+    <Compile Include="Migrations\201709042027177_DesignUpdates_V27.Designer.cs">
+      <DependentUpon>201709042027177_DesignUpdates_V27.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709042158137_DesignUpdates_V28.cs" />
+    <Compile Include="Migrations\201709042158137_DesignUpdates_V28.Designer.cs">
+      <DependentUpon>201709042158137_DesignUpdates_V28.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709042226293_DesignUpdates_V29.cs" />
+    <Compile Include="Migrations\201709042226293_DesignUpdates_V29.Designer.cs">
+      <DependentUpon>201709042226293_DesignUpdates_V29.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Advert.cs" />
@@ -314,7 +382,7 @@
     <Compile Include="Models\Campaign.cs" />
     <Compile Include="Models\CampaignDevice.cs" />
     <Compile Include="Models\CampaignRoute.cs" />
-    <Compile Include="Models\Clutter.cs" />
+    <Compile Include="Models\FaceClutter.cs" />
     <Compile Include="Models\conauth.cs" />
     <Compile Include="Models\concompany.cs" />
     <Compile Include="Models\conconfigurations.cs" />
@@ -336,11 +404,10 @@
     <Compile Include="Models\Device.cs" />
     <Compile Include="Models\DeviceStatus.cs" />
     <Compile Include="Models\Face.cs" />
-    <Compile Include="Models\FaceAvailability.cs" />
+    <Compile Include="Models\FaceOccupancy.cs" />
     <Compile Include="Models\FaceBound.cs" />
     <Compile Include="Models\FaceCondition.cs" />
     <Compile Include="Models\FaceImage.cs" />
-    <Compile Include="Models\FaceOccupancy.cs" />
     <Compile Include="Models\FaceOrientation.cs" />
     <Compile Include="Models\FacePosition.cs" />
     <Compile Include="Models\FaceSize.cs" />
@@ -352,16 +419,17 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Route.cs" />
-    <Compile Include="Models\SiteLighting.cs" />
-    <Compile Include="Models\SiteRunUp.cs" />
+    <Compile Include="Models\FaceLighting.cs" />
+    <Compile Include="Models\FaceRunUp.cs" />
     <Compile Include="Models\Street.cs" />
+    <Compile Include="Models\StreetGIS.cs" />
     <Compile Include="Models\Structure.cs" />
     <Compile Include="Models\StructureOwner.cs" />
     <Compile Include="Models\StructureType.cs" />
     <Compile Include="Models\Subscription.cs" />
     <Compile Include="Models\Sweep.cs" />
     <Compile Include="Models\SweepStructure.cs" />
-    <Compile Include="Models\Traffic.cs" />
+    <Compile Include="Models\FaceTraffic.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\VegetationCover.cs" />
     <Compile Include="Models\Ward.cs" />
@@ -371,12 +439,11 @@
     <Compile Include="ViewModels\AdvertiserViewModel.cs" />
     <Compile Include="ViewModels\AgencyViewModel.cs" />
     <Compile Include="ViewModels\CampaignViewModel.cs" />
-    <Compile Include="ViewModels\ClutterViewModel.cs" />
+    <Compile Include="ViewModels\FaceClutterViewModel.cs" />
     <Compile Include="ViewModels\ConstituencyViewModel.cs" />
     <Compile Include="ViewModels\CountyViewModel.cs" />
     <Compile Include="ViewModels\DeviceStatusViewModel.cs" />
     <Compile Include="ViewModels\DeviceViewModel.cs" />
-    <Compile Include="ViewModels\FaceAvailabilityViewModel.cs" />
     <Compile Include="ViewModels\FaceBoundViewModel.cs" />
     <Compile Include="ViewModels\FaceConditionViewModel.cs" />
     <Compile Include="ViewModels\FaceImageViewModel.cs" />
@@ -388,12 +455,13 @@
     <Compile Include="ViewModels\IndustryViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="ViewModels\RouteViewModel.cs" />
-    <Compile Include="ViewModels\SiteLightingViewModel.cs" />
-    <Compile Include="ViewModels\SiteRunUpViewModel.cs" />
+    <Compile Include="ViewModels\FaceLightingViewModel.cs" />
+    <Compile Include="ViewModels\FaceRunUpViewModel.cs" />
     <Compile Include="ViewModels\StreetViewModel.cs" />
     <Compile Include="ViewModels\StructureOwnerViewModel.cs" />
+    <Compile Include="ViewModels\StructureTypeViewModel.cs" />
     <Compile Include="ViewModels\StructureViewModel.cs" />
-    <Compile Include="ViewModels\TrafficViewModel.cs" />
+    <Compile Include="ViewModels\FaceTrafficViewModel.cs" />
     <Compile Include="ViewModels\VegetationCoverViewModel.cs" />
     <Compile Include="ViewModels\WardViewModel.cs" />
   </ItemGroup>
@@ -436,6 +504,11 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\FaceOccupancies\Create.cshtml" />
+    <Content Include="Views\FaceOccupancies\Delete.cshtml" />
+    <Content Include="Views\FaceOccupancies\Details.cshtml" />
+    <Content Include="Views\FaceOccupancies\Edit.cshtml" />
+    <Content Include="Views\FaceOccupancies\Index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -500,11 +573,11 @@
     <Content Include="Views\CampaignRoutes\Details.cshtml" />
     <Content Include="Views\CampaignRoutes\Edit.cshtml" />
     <Content Include="Views\CampaignRoutes\Index.cshtml" />
-    <Content Include="Views\Clutters\Create.cshtml" />
-    <Content Include="Views\Clutters\Delete.cshtml" />
-    <Content Include="Views\Clutters\Details.cshtml" />
-    <Content Include="Views\Clutters\Edit.cshtml" />
-    <Content Include="Views\Clutters\Index.cshtml" />
+    <Content Include="Views\FaceClutters\Create.cshtml" />
+    <Content Include="Views\FaceClutters\Delete.cshtml" />
+    <Content Include="Views\FaceClutters\Details.cshtml" />
+    <Content Include="Views\FaceClutters\Edit.cshtml" />
+    <Content Include="Views\FaceClutters\Index.cshtml" />
     <Content Include="Views\Constituencies\Create.cshtml" />
     <Content Include="Views\Constituencies\Delete.cshtml" />
     <Content Include="Views\Constituencies\Details.cshtml" />
@@ -525,16 +598,6 @@
     <Content Include="Views\DeviceStatus\Details.cshtml" />
     <Content Include="Views\DeviceStatus\Edit.cshtml" />
     <Content Include="Views\DeviceStatus\Index.cshtml" />
-    <Content Include="Views\Faces\Create.cshtml" />
-    <Content Include="Views\Faces\Delete.cshtml" />
-    <Content Include="Views\Faces\Details.cshtml" />
-    <Content Include="Views\Faces\Edit.cshtml" />
-    <Content Include="Views\Faces\Index.cshtml" />
-    <Content Include="Views\FaceAvailabilities\Create.cshtml" />
-    <Content Include="Views\FaceAvailabilities\Delete.cshtml" />
-    <Content Include="Views\FaceAvailabilities\Details.cshtml" />
-    <Content Include="Views\FaceAvailabilities\Edit.cshtml" />
-    <Content Include="Views\FaceAvailabilities\Index.cshtml" />
     <Content Include="Views\FaceBounds\Create.cshtml" />
     <Content Include="Views\FaceBounds\Delete.cshtml" />
     <Content Include="Views\FaceBounds\Details.cshtml" />
@@ -545,16 +608,6 @@
     <Content Include="Views\FaceConditions\Details.cshtml" />
     <Content Include="Views\FaceConditions\Edit.cshtml" />
     <Content Include="Views\FaceConditions\Index.cshtml" />
-    <Content Include="Views\FaceImages\Create.cshtml" />
-    <Content Include="Views\FaceImages\Delete.cshtml" />
-    <Content Include="Views\FaceImages\Details.cshtml" />
-    <Content Include="Views\FaceImages\Edit.cshtml" />
-    <Content Include="Views\FaceImages\Index.cshtml" />
-    <Content Include="Views\FaceOccupancies\Create.cshtml" />
-    <Content Include="Views\FaceOccupancies\Delete.cshtml" />
-    <Content Include="Views\FaceOccupancies\Details.cshtml" />
-    <Content Include="Views\FaceOccupancies\Edit.cshtml" />
-    <Content Include="Views\FaceOccupancies\Index.cshtml" />
     <Content Include="Views\FaceOrientations\Create.cshtml" />
     <Content Include="Views\FaceOrientations\Delete.cshtml" />
     <Content Include="Views\FaceOrientations\Details.cshtml" />
@@ -575,31 +628,26 @@
     <Content Include="Views\FaceVisibilityRatings\Details.cshtml" />
     <Content Include="Views\FaceVisibilityRatings\Edit.cshtml" />
     <Content Include="Views\FaceVisibilityRatings\Index.cshtml" />
-    <Content Include="Views\Products\Create.cshtml" />
-    <Content Include="Views\Products\Delete.cshtml" />
-    <Content Include="Views\Products\Details.cshtml" />
-    <Content Include="Views\Products\Edit.cshtml" />
-    <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Routes\Create.cshtml" />
     <Content Include="Views\Routes\Delete.cshtml" />
     <Content Include="Views\Routes\Details.cshtml" />
     <Content Include="Views\Routes\Edit.cshtml" />
     <Content Include="Views\Routes\Index.cshtml" />
-    <Content Include="Views\SiteLightings\Create.cshtml" />
-    <Content Include="Views\SiteLightings\Delete.cshtml" />
-    <Content Include="Views\SiteLightings\Details.cshtml" />
-    <Content Include="Views\SiteLightings\Edit.cshtml" />
-    <Content Include="Views\SiteLightings\Index.cshtml" />
-    <Content Include="Views\SiteRunUps\Create.cshtml" />
-    <Content Include="Views\SiteRunUps\Delete.cshtml" />
-    <Content Include="Views\SiteRunUps\Details.cshtml" />
-    <Content Include="Views\SiteRunUps\Edit.cshtml" />
-    <Content Include="Views\SiteRunUps\Index.cshtml" />
-    <Content Include="Views\Streets\Create.cshtml" />
-    <Content Include="Views\Streets\Delete.cshtml" />
-    <Content Include="Views\Streets\Details.cshtml" />
-    <Content Include="Views\Streets\Edit.cshtml" />
-    <Content Include="Views\Streets\Index.cshtml" />
+    <Content Include="Views\FaceLightings\Create.cshtml" />
+    <Content Include="Views\FaceLightings\Delete.cshtml" />
+    <Content Include="Views\FaceLightings\Details.cshtml" />
+    <Content Include="Views\FaceLightings\Edit.cshtml" />
+    <Content Include="Views\FaceLightings\Index.cshtml" />
+    <Content Include="Views\FaceRunUps\Create.cshtml" />
+    <Content Include="Views\FaceRunUps\Delete.cshtml" />
+    <Content Include="Views\FaceRunUps\Details.cshtml" />
+    <Content Include="Views\FaceRunUps\Edit.cshtml" />
+    <Content Include="Views\FaceRunUps\Index.cshtml" />
+    <Content Include="Views\Streets-ogn\Create.cshtml" />
+    <Content Include="Views\Streets-ogn\Delete.cshtml" />
+    <Content Include="Views\Streets-ogn\Details.cshtml" />
+    <Content Include="Views\Streets-ogn\Edit.cshtml" />
+    <Content Include="Views\Streets-ogn\Index.cshtml" />
     <Content Include="Views\Structures\Create.cshtml" />
     <Content Include="Views\Structures\Delete.cshtml" />
     <Content Include="Views\Structures\Details.cshtml" />
@@ -620,16 +668,11 @@
     <Content Include="Views\Sweeps\Details.cshtml" />
     <Content Include="Views\Sweeps\Edit.cshtml" />
     <Content Include="Views\Sweeps\Index.cshtml" />
-    <Content Include="Views\Traffic\Create.cshtml" />
-    <Content Include="Views\Traffic\Delete.cshtml" />
-    <Content Include="Views\Traffic\Details.cshtml" />
-    <Content Include="Views\Traffic\Edit.cshtml" />
-    <Content Include="Views\Traffic\Index.cshtml" />
-    <Content Include="Views\VegetationCovers\Create.cshtml" />
-    <Content Include="Views\VegetationCovers\Delete.cshtml" />
-    <Content Include="Views\VegetationCovers\Details.cshtml" />
-    <Content Include="Views\VegetationCovers\Edit.cshtml" />
-    <Content Include="Views\VegetationCovers\Index.cshtml" />
+    <Content Include="Views\FaceTraffic\Create.cshtml" />
+    <Content Include="Views\FaceTraffic\Delete.cshtml" />
+    <Content Include="Views\FaceTraffic\Details.cshtml" />
+    <Content Include="Views\FaceTraffic\Edit.cshtml" />
+    <Content Include="Views\FaceTraffic\Index.cshtml" />
     <Content Include="Views\Wards\Create.cshtml" />
     <Content Include="Views\Wards\Delete.cshtml" />
     <Content Include="Views\Wards\Details.cshtml" />
@@ -650,6 +693,26 @@
     <Content Include="Views\StructureOwners\Details.cshtml" />
     <Content Include="Views\StructureOwners\Edit.cshtml" />
     <Content Include="Views\StructureOwners\Index.cshtml" />
+    <Content Include="Views\FaceImages\Create.cshtml" />
+    <Content Include="Views\FaceImages\Delete.cshtml" />
+    <Content Include="Views\FaceImages\Details.cshtml" />
+    <Content Include="Views\FaceImages\Edit.cshtml" />
+    <Content Include="Views\FaceImages\Index.cshtml" />
+    <Content Include="Views\VegetationCovers\Create.cshtml" />
+    <Content Include="Views\VegetationCovers\Delete.cshtml" />
+    <Content Include="Views\VegetationCovers\Details.cshtml" />
+    <Content Include="Views\VegetationCovers\Edit.cshtml" />
+    <Content Include="Views\VegetationCovers\Index.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Streets\Create.cshtml" />
+    <Content Include="Views\Streets\Delete.cshtml" />
+    <Content Include="Views\Streets\Details.cshtml" />
+    <Content Include="Views\Streets\Edit.cshtml" />
+    <Content Include="Views\Streets\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -722,6 +785,57 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709031513035_DesignUpdates_V12.resx">
       <DependentUpon>201709031513035_DesignUpdates_V12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709041023039_DesignUpdates_V13.resx">
+      <DependentUpon>201709041023039_DesignUpdates_V13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709041031448_DesignUpdates_V14.resx">
+      <DependentUpon>201709041031448_DesignUpdates_V14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709041104128_DesignUpdates_V15.resx">
+      <DependentUpon>201709041104128_DesignUpdates_V15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709041105441_DesignUpdates_V16.resx">
+      <DependentUpon>201709041105441_DesignUpdates_V16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709041112025_DesignUpdates_V17.resx">
+      <DependentUpon>201709041112025_DesignUpdates_V17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709041220333_DesignUpdates_V18.resx">
+      <DependentUpon>201709041220333_DesignUpdates_V18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709041525432_DesignUpdates_V19.resx">
+      <DependentUpon>201709041525432_DesignUpdates_V19.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709041537599_DesignUpdates_V20.resx">
+      <DependentUpon>201709041537599_DesignUpdates_V20.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709041602599_DesignUpdates_V21.resx">
+      <DependentUpon>201709041602599_DesignUpdates_V21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709041701507_DesignUpdates_V22.resx">
+      <DependentUpon>201709041701507_DesignUpdates_V22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709041832182_DesignUpdates_V23.resx">
+      <DependentUpon>201709041832182_DesignUpdates_V23.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709041850241_DesignUpdates_V24.resx">
+      <DependentUpon>201709041850241_DesignUpdates_V24.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709041943458_DesignUpdates_V25.resx">
+      <DependentUpon>201709041943458_DesignUpdates_V25.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709041948329_DesignUpdates_V26.resx">
+      <DependentUpon>201709041948329_DesignUpdates_V26.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709042027177_DesignUpdates_V27.resx">
+      <DependentUpon>201709042027177_DesignUpdates_V27.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709042158137_DesignUpdates_V28.resx">
+      <DependentUpon>201709042158137_DesignUpdates_V28.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709042226293_DesignUpdates_V29.resx">
+      <DependentUpon>201709042226293_DesignUpdates_V29.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

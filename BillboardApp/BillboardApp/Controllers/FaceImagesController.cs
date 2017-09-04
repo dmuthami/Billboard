@@ -21,6 +21,8 @@ namespace BillboardApp.Controllers
         // GET: FaceImages
         public async Task<ActionResult> Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
+            //var faceImages = db.FaceImages.Include(f => f.Face);
+            //return View(await faceImages.ToListAsync());
 
             ViewBag.ImageSortParm = String.IsNullOrEmpty(sortOrder) ? "Image_desc" : "";
             ViewBag.TimeStampSortParm = sortOrder == "TimeStamp" ? "TimeStamp_desc" : "TimeStamp";
@@ -30,7 +32,8 @@ namespace BillboardApp.Controllers
                                                              select new FaceImageViewModel()
                                                               {
                                                                   FaceImageID = faceImages.FaceImageID,
-                                                                  Image = faceImages.Image,
+                                                                  FaceURL = faceImages.FaceURL,
+                                                                  Content = faceImages.Content,
                                                                   TimeStamp = faceImages.TimeStamp
                                                               };
             //Paging
@@ -46,14 +49,14 @@ namespace BillboardApp.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 faceImagesData = faceImagesData.Where
-                    (s => s.Image.ToString().ToUpper().Contains(searchString.ToUpper())
+                    (s => s.FaceURL.ToString().ToUpper().Contains(searchString.ToUpper())
                     || s.TimeStamp.ToString().ToUpper().Contains(searchString.ToUpper())
                     );
             }
             switch (sortOrder)
             {
                 case "Image_desc":
-                    faceImagesData = faceImagesData.OrderByDescending(s => s.Image);
+                    faceImagesData = faceImagesData.OrderByDescending(s => s.FaceURL);
                     break;
                 case "TimeStamp":
                     faceImagesData = faceImagesData.OrderBy(s => s.TimeStamp);
@@ -62,7 +65,7 @@ namespace BillboardApp.Controllers
                     faceImagesData = faceImagesData.OrderByDescending(s => s.TimeStamp);
                     break;
                 default:
-                    faceImagesData = faceImagesData.OrderBy(s => s.Image);
+                    faceImagesData = faceImagesData.OrderBy(s => s.FaceURL);
                     break;
             }
             int pageSize = 15;
@@ -98,7 +101,7 @@ namespace BillboardApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "FaceImageID,Image,TimeStamp,FaceID")] FaceImage faceImage)
+        public async Task<ActionResult> Create([Bind(Include = "FaceImageID,FaceURL,Content,TimeStamp,FaceID")] FaceImage faceImage)
         {
             if (ModelState.IsValid)
             {
@@ -132,7 +135,7 @@ namespace BillboardApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "FaceImageID,Image,TimeStamp,FaceID")] FaceImage faceImage)
+        public async Task<ActionResult> Edit([Bind(Include = "FaceImageID,FaceURL,Content,TimeStamp,FaceID")] FaceImage faceImage)
         {
             if (ModelState.IsValid)
             {

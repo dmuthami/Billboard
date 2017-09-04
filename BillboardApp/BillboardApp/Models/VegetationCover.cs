@@ -11,8 +11,8 @@ namespace BillboardApp.Models
     {
         public int VegetationCoverID { get; set; }
 
-        [Required,DisplayName("Vegetation Type")]
-        public string Type { get; set; }
+        [Required]
+        public string Parameter { get; set; }
 
         [Required]
         public double Score { get; set; }

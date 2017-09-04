@@ -1,0 +1,65 @@
+﻿@model X.PagedList.IPagedList<BillboardApp.ViewModels.FaceTrafficViewModel>
+@using X.PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Face Traffic";
+}
+
+<h2>Face Traffic</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("Index", "FaceTraffic", FormMethod.Get))
+{     <p>
+        Find by Traffic/Score @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Parameter", "Index",
+                        new { sortOrder = ViewBag.ParameterSortParm, currentFilter = ViewBag.CurrentFilter })
+
+            @*@Html.DisplayNameFor(model => model.Type)*@
+        </th>
+        <th>
+            @Html.ActionLink("Score", "Index",
+                         new { sortOrder = ViewBag.ScoreSortParm, currentFilter = ViewBag.CurrentFilter })
+
+            @*@Html.DisplayNameFor(model => model.Score)*@
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Parameter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Score)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.FaceTrafficID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.FaceTrafficID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.FaceTrafficID })
+            </td>
+        </tr>
+    }
+
+</table>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of
+@Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new
+    {
+        page,
+        sortOrder = ViewBag.CurrentSort,
+        currentFilter =
+            ViewBag.CurrentFilter
+    }))

@@ -13,30 +13,41 @@
 </p>
 @using (Html.BeginForm("Index", "Streets", FormMethod.Get))
 {     <p>
-        Find by Name @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        Find by Collector/GIS Name @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
         <input type="submit" value="Search" />
     </p>
 }
 <table class="table">
     <tr>
         <th>
-            @Html.ActionLink("Name", "Index",
-                new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            @Html.ActionLink("Route Name", "Index",
+                new { sortOrder = ViewBag.RouteSortParm, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.Route.Name)*@
         </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.Geom)
-        </th>*@
+        <th>
+            @Html.ActionLink("Collector Name", "Index",
+                new { sortOrder = ViewBag.StreetNameByCollectorSortParm, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.StreetNameByCollector)*@
+        </th>
+        <th>
+            @Html.ActionLink("GIS Name", "Index",
+                new { sortOrder = ViewBag.StreetNameByGISSortParm, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.StreetNameByGIS)*@
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.Route)
         </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.Geom)
-        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.StreetNameByCollector)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StreetNameByGIS)
+        </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.StreetID }) |
             @Html.ActionLink("Details", "Details", new { id=item.StreetID }) |

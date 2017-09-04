@@ -25,18 +25,17 @@ namespace BillboardApp.DAL
         public DbSet<Campaign> Campaigns { get; set; }
         public DbSet<CampaignDevice> CampaignDevices { get; set; }
         public DbSet<CampaignRoute> CampaignRoutes { get; set; }
-        public DbSet<Clutter> Clutters { get; set; }
+        public DbSet<FaceClutter> FaceClutters { get; set; }
         public DbSet<Constituency> Constituencys { get; set; }
         public DbSet<County> Countys { get; set; }
 
         public DbSet<Device> Devices { get; set; }
         public DbSet<DeviceStatus> DeviceStatuses { get; set; }
         public DbSet<Face> Faces { get; set; }
-        public DbSet<FaceAvailability> FaceAvailabilitys { get; set; }
+        public DbSet<FaceOccupancy> FaceOccupancies { get; set; }
         public DbSet<FaceBound> FaceBounds { get; set; }       
         public DbSet<FaceCondition> FaceConditions { get; set; }
         public DbSet<FaceImage> FaceImages { get; set; }
-        public DbSet<FaceOccupancy> FaceOccupancys { get; set; }
         public DbSet<FacePosition> FacePosition { get; set; }        
         public DbSet<FaceSize> FaceSize { get; set; }
 
@@ -44,7 +43,7 @@ namespace BillboardApp.DAL
         public DbSet<Industry> Industrys { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Route> Routes { get; set; }
-        public DbSet<SiteLighting> SiteLightings { get; set; }
+        public DbSet<FaceLighting> FaceLightings { get; set; }
         public DbSet<Street> Streets { get; set; }
         public DbSet<Structure> Structures { get; set; }
         public DbSet<StructureOwner> StructureOwners { get; set; }
@@ -53,13 +52,13 @@ namespace BillboardApp.DAL
 
         public DbSet<Sweep> Sweeps { get; set; }
         public DbSet<SweepStructure> SweepStructures { get; set; }
-        public DbSet<Traffic> Traffics { get; set; }
+        public DbSet<FaceTraffic> FaceTraffics { get; set; }
         public DbSet<VegetationCover> VegetationCovers { get; set; }
         public DbSet<Ward> Wards { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<FaceOrientation> FaceOrientations { get; set; }
-        public DbSet<SiteRunUp> SiteRunUps { get; set; }
+        public DbSet<FaceRunUp> SiteRunUps { get; set; }
         public DbSet<conauth> conauths { get; set; }
 
 
@@ -80,6 +79,7 @@ namespace BillboardApp.DAL
         public DbSet<conuserrecoverytype> conuserrecoverytypes { get; set; }
         public DbSet<conuserroles> conuserroles { get; set; }
         public System.Data.Entity.DbSet<BillboardApp.Models.IndustryType> IndustryTypes { get; set; }
+        public DbSet<StreetGIS> StreetGISz { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //base.OnModelCreating(modelBuilder);

@@ -22,14 +22,13 @@ namespace BillboardApp.Controllers
         public async Task<ActionResult> Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
 
-            ViewBag.OccupancySortParm = String.IsNullOrEmpty(sortOrder) ? "Occupancy_desc" : "";
+            ViewBag.OccupancyTypeSortParm = String.IsNullOrEmpty(sortOrder) ? "OccupancyType_desc" : "";
 
-
-            IQueryable<FaceOccupancyViewModel> faceOccupancysData = from faceOccupancys in db.FaceOccupancys
-                                                                 select new FaceOccupancyViewModel()
+            IQueryable<FaceOccupancyViewModel> FaceOccupanciesData = from FaceOccupancies in db.FaceOccupancies
+                                                                       select new FaceOccupancyViewModel()
                                                               {
-                                                                  FaceOccupancyID = faceOccupancys.FaceOccupancyID,
-                                                                  Occupancy = faceOccupancys.Occupancy
+                                                                  FaceOccupancyID = FaceOccupancies.FaceOccupancyID,
+                                                                  OccupancyType = FaceOccupancies.OccupancyType
                                                               };
             //Paging
             if (searchString != null)
@@ -43,24 +42,24 @@ namespace BillboardApp.Controllers
             //Filtering
             if (!String.IsNullOrEmpty(searchString))
             {
-                faceOccupancysData = faceOccupancysData.Where
-                    (s => s.Occupancy.ToString().ToUpper().Contains(searchString.ToUpper())
+                FaceOccupanciesData = FaceOccupanciesData.Where
+                    (s => s.OccupancyType.ToString().ToUpper().Contains(searchString.ToUpper())
                     //|| s.PhoneNumber.ToString().ToUpper().Contains(searchString.ToUpper())
                     );
             }
             switch (sortOrder)
             {
-                case "Occupancy_desc":
-                    faceOccupancysData = faceOccupancysData.OrderByDescending(s => s.Occupancy);
+                case "OccupancyType_desc":
+                    FaceOccupanciesData = FaceOccupanciesData.OrderByDescending(s => s.OccupancyType);
                     break;
                 default:
-                    faceOccupancysData = faceOccupancysData.OrderBy(s => s.Occupancy);
+                    FaceOccupanciesData = FaceOccupanciesData.OrderBy(s => s.OccupancyType);
                     break;
             }
             int pageSize = 15;
             int pageNumber = (page ?? 1);
 
-            return View(await faceOccupancysData.ToPagedListAsync(pageNumber, pageSize));
+            return View(await FaceOccupanciesData.ToPagedListAsync(pageNumber, pageSize));
         }
 
         // GET: FaceOccupancies/Details/5
@@ -70,7 +69,7 @@ namespace BillboardApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FaceOccupancy faceOccupancy = await db.FaceOccupancys.FindAsync(id);
+            FaceOccupancy faceOccupancy = await db.FaceOccupancies.FindAsync(id);
             if (faceOccupancy == null)
             {
                 return HttpNotFound();
@@ -89,11 +88,11 @@ namespace BillboardApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "FaceOccupancyID,Occupancy")] FaceOccupancy faceOccupancy)
+        public async Task<ActionResult> Create([Bind(Include = "FaceOccupancyID,OccupancyType")] FaceOccupancy faceOccupancy)
         {
             if (ModelState.IsValid)
             {
-                db.FaceOccupancys.Add(faceOccupancy);
+                db.FaceOccupancies.Add(faceOccupancy);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
@@ -108,7 +107,7 @@ namespace BillboardApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FaceOccupancy faceOccupancy = await db.FaceOccupancys.FindAsync(id);
+            FaceOccupancy faceOccupancy = await db.FaceOccupancies.FindAsync(id);
             if (faceOccupancy == null)
             {
                 return HttpNotFound();
@@ -121,7 +120,7 @@ namespace BillboardApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "FaceOccupancyID,Occupancy")] FaceOccupancy faceOccupancy)
+        public async Task<ActionResult> Edit([Bind(Include = "FaceOccupancyID,OccupancyType")] FaceOccupancy faceOccupancy)
         {
             if (ModelState.IsValid)
             {
@@ -139,7 +138,7 @@ namespace BillboardApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FaceOccupancy faceOccupancy = await db.FaceOccupancys.FindAsync(id);
+            FaceOccupancy faceOccupancy = await db.FaceOccupancies.FindAsync(id);
             if (faceOccupancy == null)
             {
                 return HttpNotFound();
@@ -152,8 +151,8 @@ namespace BillboardApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            FaceOccupancy faceOccupancy = await db.FaceOccupancys.FindAsync(id);
-            db.FaceOccupancys.Remove(faceOccupancy);
+            FaceOccupancy faceOccupancy = await db.FaceOccupancies.FindAsync(id);
+            db.FaceOccupancies.Remove(faceOccupancy);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

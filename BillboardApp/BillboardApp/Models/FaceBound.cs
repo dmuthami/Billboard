@@ -19,7 +19,6 @@ namespace BillboardApp.Models
         [DisplayName("Bound")]
         public string Bound { get; set; }
 
-
-        public virtual ICollection<Face> Faces { get; set; }
+        public virtual ICollection<Face> Faces { get; set;}
     }
 }

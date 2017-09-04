@@ -8,6 +8,6 @@ namespace BillboardApp.ViewModels
     public class FaceOccupancyViewModel
     {
         public int FaceOccupancyID { get; set; }
-        public string Occupancy { get; set; }
+        public string OccupancyType { get; set; }
     }
 }

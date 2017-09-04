@@ -9,6 +9,8 @@ using System.Web;
 using System.Web.Mvc;
 using BillboardApp.DAL;
 using BillboardApp.Models;
+using X.PagedList;
+using BillboardApp.ViewModels;
 
 namespace BillboardApp.Controllers
 {
@@ -17,9 +19,50 @@ namespace BillboardApp.Controllers
         private BillboardContext db = new BillboardContext();
 
         // GET: StructureTypes
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            return View(await db.StructureTypes.ToListAsync());
+            //return View(await db.StructureTypes.ToListAsync());
+
+            ViewBag.TypeSortParm = String.IsNullOrEmpty(sortOrder) ? "Type_desc" : "";
+
+            IQueryable<StructureTypeViewModel> structureTypesData = from structureTypes in db.StructureTypes
+                                                                 select new StructureTypeViewModel()
+                                                              {
+                                                                  StructureTypeID = structureTypes.StructureTypeID,
+                                                                  Type = structureTypes.Type
+                                                              };
+            //Paging
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else { searchString = currentFilter; }
+
+            ViewBag.CurrentFilter = searchString;
+
+            //Filtering
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                structureTypesData = structureTypesData.Where
+                    (s => s.Type.ToString().ToUpper().Contains(searchString.ToUpper())
+                    //|| s.PhoneNumber.ToString().ToUpper().Contains(searchString.ToUpper())
+                    );
+            }
+            switch (sortOrder)
+            {
+                case "Name_desc":
+                    structureTypesData = structureTypesData.OrderByDescending(s => s.Type);
+                    break;
+                default:
+                    structureTypesData = structureTypesData.OrderBy(s => s.Type);
+                    break;
+            }
+            int pageSize = 15;
+            int pageNumber = (page ?? 1);
+
+            return View(await structureTypesData.ToPagedListAsync(pageNumber, pageSize));
+
+
         }
 
         // GET: StructureTypes/Details/5

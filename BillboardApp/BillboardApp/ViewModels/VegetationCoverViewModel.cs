@@ -10,10 +10,8 @@ namespace BillboardApp.ViewModels
     {
         public int VegetationCoverID { get; set; }
 
-        [DisplayName("Vegetation Type")]
-        public string Type { get; set; }
+        public string Parameter { get; set; }
 
-      
         public double Score { get; set; }
     }
 }

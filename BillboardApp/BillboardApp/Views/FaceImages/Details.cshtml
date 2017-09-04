@@ -1,0 +1,50 @@
+﻿@model BillboardApp.Models.FaceImage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FaceImage</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Face.FaceID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Face.FaceID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FaceURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FaceURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeStamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeStamp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FaceImageID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

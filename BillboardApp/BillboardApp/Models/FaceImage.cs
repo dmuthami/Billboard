@@ -14,8 +14,11 @@ namespace BillboardApp.Models
         }
         public int FaceImageID { get; set; }
 
-        [DisplayName("Advert Image")]
-        public string Image { get; set; }
+        [DisplayName("Face URL")]
+        public string FaceURL { get; set; }
+
+        [DisplayName("Face Image")]
+        public byte[] Content { get; set; }
 
         [DisplayName("Date")]
         public System.DateTime TimeStamp { get; set; }

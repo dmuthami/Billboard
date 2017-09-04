@@ -22,13 +22,17 @@ namespace BillboardApp.Controllers
         public async Task<ActionResult> Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
 
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "Name_desc" : "";
+            ViewBag.StreetNameByCollectorSortParm = String.IsNullOrEmpty(sortOrder) ? "StreetNameByCollector_desc" : "";
+            ViewBag.StreetNameByGISSortParm = sortOrder == "StreetNameByGIS" ? "StreetNameByGIS_desc" : "StreetNameByGIS";
+            ViewBag.RouteSortParm = sortOrder == "Route" ? "Route_desc" : "Route";
 
-            IQueryable<StreetViewModel> streetsData = from streets in db.Streets
-                                                          select new StreetViewModel()
+            IQueryable<StreetViewModel> streetsData = from streets in db.Streets.Include(s => s.Route)
+                                                      select new StreetViewModel()
                                                               {
                                                                   StreetID = streets.StreetID,
-                                                                  Name = streets.Name
+                                                                  StreetNameByCollector = streets.StreetNameByCollector,
+                                                                  StreetNameByGIS = streets.StreetNameByGIS,
+                                                                  Route = streets.Route.Name
                                                               };
             //Paging
             if (searchString != null)
@@ -43,17 +47,29 @@ namespace BillboardApp.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 streetsData = streetsData.Where
-                    (s => s.Name.ToString().ToUpper().Contains(searchString.ToUpper())
-                    //|| s.PhoneNumber.ToString().ToUpper().Contains(searchString.ToUpper())
+                    (s => s.StreetNameByCollector.ToString().ToUpper().Contains(searchString.ToUpper())
+                    || s.StreetNameByGIS.ToString().ToUpper().Contains(searchString.ToUpper())
                     );
             }
             switch (sortOrder)
             {
-                case "Name_desc":
-                    streetsData = streetsData.OrderByDescending(s => s.Name);
+                case "StreetNameByCollector_desc":
+                    streetsData = streetsData.OrderByDescending(s => s.StreetNameByCollector);
+                    break;
+                case "StreetNameByGIS":
+                    streetsData = streetsData.OrderBy(s => s.StreetNameByGIS);
+                    break;
+                case "StreetNameByGIS_desc":
+                    streetsData = streetsData.OrderByDescending(s => s.StreetNameByGIS);
+                    break;
+                case "Route":
+                    streetsData = streetsData.OrderBy(s => s.Route);
+                    break;
+                case "Route_desc":
+                    streetsData = streetsData.OrderByDescending(s => s.Route);
                     break;
                 default:
-                    streetsData = streetsData.OrderBy(s => s.Name);
+                    streetsData = streetsData.OrderBy(s => s.StreetNameByCollector);
                     break;
             }
             int pageSize = 15;
@@ -80,6 +96,7 @@ namespace BillboardApp.Controllers
         // GET: Streets/Create
         public ActionResult Create()
         {
+            ViewBag.RouteID = new SelectList(db.Routes, "RouteID", "Name");
             return View();
         }
 
@@ -88,7 +105,7 @@ namespace BillboardApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "StreetID,Name,Geom")] Street street)
+        public async Task<ActionResult> Create([Bind(Include = "StreetID,StreetNameByCollector,StreetNameByGIS,RouteID")] Street street)
         {
             if (ModelState.IsValid)
             {
@@ -97,6 +114,7 @@ namespace BillboardApp.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.RouteID = new SelectList(db.Routes, "RouteID", "Name", street.RouteID);
             return View(street);
         }
 
@@ -112,6 +130,7 @@ namespace BillboardApp.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.RouteID = new SelectList(db.Routes, "RouteID", "Name", street.RouteID);
             return View(street);
         }
 
@@ -120,7 +139,7 @@ namespace BillboardApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "StreetID,Name,Geom")] Street street)
+        public async Task<ActionResult> Edit([Bind(Include = "StreetID,StreetNameByCollector,StreetNameByGIS,RouteID")] Street street)
         {
             if (ModelState.IsValid)
             {
@@ -128,6 +147,7 @@ namespace BillboardApp.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
+            ViewBag.RouteID = new SelectList(db.Routes, "RouteID", "Name", street.RouteID);
             return View(street);
         }
 

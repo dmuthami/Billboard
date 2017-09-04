@@ -9,8 +9,10 @@ namespace BillboardApp.ViewModels
     {
         public int FaceImageID { get; set; }
 
-        public string Image { get; set; }
+        public string FaceURL { get; set; }
 
         public System.DateTime TimeStamp { get; set; }
+
+        public byte[] Content { get; set; }
     }
 }
