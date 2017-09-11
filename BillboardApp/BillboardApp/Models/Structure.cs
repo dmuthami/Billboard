@@ -17,10 +17,10 @@ namespace BillboardApp.Models
         }
         public int StructureID { get; set; }
 
-        [Required,DisplayName("No. of Faces")]
-        public int FaceCount { get; set; }
+        [DisplayName("No. of Faces")]
+        public int? FaceCount { get; set; }
 
-        [Required, DisplayName("Comments")]
+        [DisplayName("Comments")]
         public string Comment { get; set; }
 
         [DisplayName("Latitude")]
@@ -38,14 +38,28 @@ namespace BillboardApp.Models
             }
             set { }
         }
+
+        [DisplayName("Ward")]
+        [StringLength(80)]
+        public string Ward { get; set; }
+
+        [DisplayName("Constituency")]
+        [StringLength(80)]
+        public string Constituency { get; set; }
+
+        [DisplayName("County")]
+        [StringLength(50)]
+        public string County { get; set; }
         
         public virtual ICollection<Face> Faces { get; set; }
 
         //Structure TypeRelationship and Navigation Property
+        [DisplayName("Type")]
         public int StructureTypeID { get; set; }
         public virtual StructureType StructureType { get; set; }
 
         //StructureOwners Relationship and Navigation Property
+         [DisplayName("Owner")]
         public int StructureOwnerID { get; set; }
 
         public virtual StructureOwner StructureOwner { get; set; }

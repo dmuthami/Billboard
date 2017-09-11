@@ -21,11 +21,19 @@ namespace BillboardApp
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                       "~/Scripts/ol.js",
+                      "~/Scripts/popup2.js",
+                      "~/Scripts/map2.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/ol.css",
+                      "~/Content/map.css",
+                      "~/Content/popup.css"
+                      ));
         }
     }
 }

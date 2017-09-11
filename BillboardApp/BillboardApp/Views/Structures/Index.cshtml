@@ -13,43 +13,43 @@
 </p>
 @using (Html.BeginForm("Index", "Structures", FormMethod.Get))
 {     <p>
-        Find by Owner/Type @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        Find by Name/Type @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
         <input type="submit" value="Search" />
     </p>
 }
 <table class="table">
     <tr>
         <th>
-            @Html.ActionLink("Owner", "Index",
+            @Html.ActionLink("Structure Owner", "Index",
                 new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
-            
         </th>
         <th>
             @Html.ActionLink("Type", "Index",
-                new { sortOrder = ViewBag.TypeSortParm, currentFilter = ViewBag.CurrentFilter })
+                new { sortOrder = ViewBag.TypeSortParm, currentFilter = ViewBag.CurrentFilter })       
             
         </th>
         <th>
             @Html.ActionLink("Face Count", "Index",
                 new { sortOrder = ViewBag.FaceCountSortParm, currentFilter = ViewBag.CurrentFilter })
-            @*@Html.DisplayNameFor(model => model.FaceCount)*@
         </th>
         <th>
             @Html.ActionLink("Comment", "Index",
                 new { sortOrder = ViewBag.CommentSortParm, currentFilter = ViewBag.CurrentFilter })
+
+
+            @*@Html.DisplayNameFor(model => model.Comment)*@
         </th>
         <th>
             @Html.ActionLink("Latitude", "Index",
-                new { sortOrder = ViewBag.LatitudeSortParm, currentFilter = ViewBag.CurrentFilter })            
-            @*@Html.DisplayNameFor(model => model.Latitude)*@
+                new { sortOrder = ViewBag.LatitudeSortParm, currentFilter = ViewBag.CurrentFilter })  
         </th>
         <th>
             @Html.ActionLink("Longitude", "Index",
                 new { sortOrder = ViewBag.LongitudeSortParm, currentFilter = ViewBag.CurrentFilter })            
-            @*@Html.DisplayNameFor(model => model.Longitude)*@
         </th>
         <th>
-            View on Map     
+            Map
+            @*@Html.DisplayNameFor(model => model.Geom)*@
         </th>
         <th></th>
     </tr>
@@ -75,7 +75,10 @@
             @Html.DisplayFor(modelItem => item.Longitude)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.StructureID)
+            @Html.ActionLink("View on Map", "Index", "Map")
+            
+            @*@Html.DisplayFor(modelItem => item.Geom)*@
+
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.StructureID }) |

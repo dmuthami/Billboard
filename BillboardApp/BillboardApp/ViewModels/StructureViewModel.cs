@@ -15,10 +15,10 @@ namespace BillboardApp.ViewModels
 
         public string Type { get; set; }
 
-        [Required, DisplayName("No. of Faces")]
-        public int FaceCount { get; set; }
+        [ DisplayName("No. of Faces")]
+        public int? FaceCount { get; set; }
 
-        [Required, DisplayName("Comments")]
+        [DisplayName("Comments")]
         public string Comment { get; set; }
 
         [DisplayName("Latitude")]
@@ -28,6 +28,13 @@ namespace BillboardApp.ViewModels
 
         [DisplayName("View on Map")]
         public string Map { get; set; }
+
+        public string Ward { get; set; }
+
+        public string Constituency { get; set; }
+
+        public string County { get; set; }
+
 
     }
 }
