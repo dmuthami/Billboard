@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "GetRoles";
+}
+
+<h2>GetRoles</h2>
+@if (ViewBag.ResultMessage != null)
+{
+    <h3>@ViewBag.ResultMessage</h3>
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            Role
+            @*@Html.DisplayNameFor(model => model.)*@
+        </th>
+        <th></th>
+    </tr>
+    @if (ViewBag.RolesForThisUser != null)
+    {
+        foreach (string s in ViewBag.RolesForThisUser)
+        {
+
+            <tr>
+                <td>
+                    @s
+                </td>
+
+            </tr>
+        }
+    }
+
+
+</table>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

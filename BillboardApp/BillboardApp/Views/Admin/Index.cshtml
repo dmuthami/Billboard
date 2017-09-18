@@ -2,8 +2,8 @@
     ViewBag.Title = "Admin Settings";
 }
 
-<h2>Administer over the database from here</h2>
-
+<h2>Admin Settings Board</h2>
+<h3 style="color:#378940">Administer over the database from here</h3>
 <div class="row">
     <div class="col-xs-4">Database Table</div>
     <div class="col-xs-8 ">Description</div>
@@ -160,4 +160,14 @@
 <div class="row">
     <div class="col-xs-4">@Html.ActionLink("Counties", "Index", "Counties")</div>
     <div class="col-xs-8 ">A list of all counties in Kenya.</div>
+</div>
+
+<h3 style="color:#f510a3">Administer over the database from here</h3>
+<div class="row">
+    <div class="col-xs-4">@Html.ActionLink("Roles", "Index", "Role")</div>
+    <div class="col-xs-8 ">Manage All Roles</div>
+</div>
+<div class="row">
+    <div class="col-xs-4">@Html.ActionLink("Users", "Index", "Users")</div>
+    <div class="col-xs-8 ">Manage All Users</div>
 </div>

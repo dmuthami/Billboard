@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "AddRole";
+}
+
+<h2>Add Role to User @*: @ViewBag.ThisUser*@</h2> 
+
+@using (Html.BeginForm("AddRole", "Users"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <p>
+        Username : @Html.TextBox("UserName")
+        Role Name: @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select ...")
+    </p>
+
+    <input type="submit" value="Add Role" />
+}
+<div>
+    @Html.ActionLink("Back to List", "GetRoles")
+</div>

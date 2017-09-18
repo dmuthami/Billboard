@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "DeleteRole";
+}
+
+<h2>Delete Role for User : @ViewBag.UserName</h2>
+@using (Html.BeginForm())
+{
+    <table class="table">
+        <tr>
+            <th>
+                Role
+            </th>
+            <th></th>
+        </tr>
+        @if (ViewBag.RolesForThisUser != null)
+        {
+            foreach (string s in ViewBag.RolesForThisUser)
+            {
+
+                <tr>
+                    <td>
+                        @Html.ActionLink(
+                        linkText: s,
+                        actionName: "DeleteRole",
+                        controllerName: "Users",
+                        routeValues: new
+                           {
+                               UserName = ViewBag.UserName,
+                               RoleName = "wow"
+                           },
+                        htmlAttributes: null
+                        )
+
+                    </td>
+
+
+                </tr>
+            }
+        }
+
+
+    </table>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace BillboardApp.Controllers
 {
+    [Authorize(Roles = "Admin,Manager")]
     public class AdminController : Controller
     {
         // GET: Admin

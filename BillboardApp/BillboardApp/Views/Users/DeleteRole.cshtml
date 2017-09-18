@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "DeleteRole";
+}
+
+<h2>DeleteRole</h2>
+<h3>Are you sure you want to remove role from this user?</h3>
+@using (Html.BeginForm("DeleteRoleConfirmed", "Users"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <p>
+
+        
+        Username : @Html.TextBox("UserName", (string)ViewBag.UserName)
+        RoleName : @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select ...")
+    </p>
+
+    <input type="submit" value="Delete this user from Role" />
+}
