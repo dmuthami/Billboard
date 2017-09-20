@@ -7,16 +7,10 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Agency</h4>
+    <h4 style="color:#16e24c">Agency</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Subscription.Name)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Subscription.Name)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Name)
@@ -50,6 +44,52 @@
             @Html.DisplayFor(model => model.Phone)
         </dd>
 
+    </dl>
+    <h4 style="color:#16e24c">Subscription Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Subscription.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subscription.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Subscription.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subscription.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Subscription.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subscription.StartDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Subscription.ExpiryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subscription.ExpiryDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Subscription.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subscription.Amount)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Subscription.Paid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subscription.Paid)
+        </dd>
     </dl>
 </div>
 <p>

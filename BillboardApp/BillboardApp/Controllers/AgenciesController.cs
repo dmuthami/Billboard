@@ -28,7 +28,7 @@ namespace BillboardApp.Controllers
             ViewBag.ContactPersonSortParm = sortOrder == "ContactPerson" ? "ContactPerson_desc" : "ContactPerson";
             ViewBag.EmailSortParm = sortOrder == "Email" ? "Email_desc" : "Email";
             ViewBag.PhoneNumberSortParm = sortOrder == "Phone" ? "Phone_desc" : "Phone";
-            ViewBag.DescriptionSortParm = sortOrder == "Description" ? "Description_desc" : "Description";
+            ViewBag.SubscriptionSortParm = sortOrder == "Subscription" ? "Subscription_desc" : "Subscription";
             ViewBag.AmountSortParm = sortOrder == "Amount" ? "Amount_desc" : "Amount";
             ViewBag.PaidSortParm = sortOrder == "Paid" ? "Paid_desc" : "Paid";
 
@@ -40,7 +40,7 @@ namespace BillboardApp.Controllers
                                                                   ContactPerson = agencys.ContactPerson,
                                                                   Email = agencys.Email,
                                                                   Phone = agencys.Phone,
-                                                                  Description = agencys.Subscription.Description,
+                                                                  Subscription = agencys.Subscription.Name,
                                                                   Amount = agencys.Subscription.Amount,
                                                                   Paid = agencys.Subscription.Paid
                                                               };
@@ -84,11 +84,11 @@ namespace BillboardApp.Controllers
                 case "Phone_desc":
                     agencysData = agencysData.OrderByDescending(s => s.Phone);
                     break;
-                case "Description":
-                    agencysData = agencysData.OrderBy(s => s.Description);
+                case "Subscription":
+                    agencysData = agencysData.OrderBy(s => s.Subscription);
                     break;
-                case "Description_desc":
-                    agencysData = agencysData.OrderByDescending(s => s.Description);
+                case "Subscription_desc":
+                    agencysData = agencysData.OrderByDescending(s => s.Subscription);
                     break;
                 case "Amount":
                     agencysData = agencysData.OrderBy(s => s.Amount);
@@ -124,6 +124,7 @@ namespace BillboardApp.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.id = id;
             return View(agency);
         }
 
@@ -131,6 +132,26 @@ namespace BillboardApp.Controllers
         public ActionResult Create()
         {
             ViewBag.AgencyID = new SelectList(db.Subscriptions, "SubscriptionID", "Name");
+
+            return View();
+        }
+
+        public ActionResult Create2()
+        {
+            //AgencyIndexViewModel agencyIndexViewModel = new AgencyIndexViewModel();
+            //agencyIndexViewModel.Agency = db.Agencys;
+            //return View(agencyIndexViewModel);
+            return View();
+        }
+
+        public ActionResult Create3()
+        {
+            //ViewBag.AgencyID = new SelectList(db.Subscriptions, "SubscriptionID", "Name");
+
+            //AgencyIndexViewModel agencyIndexViewModel = new AgencyIndexViewModel();
+            //agencyIndexViewModel.Agencys = db.Agencys;
+            //agencyIndexViewModel.Subscription = db.Subscriptions;
+
             return View();
         }
 

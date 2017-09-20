@@ -17,7 +17,7 @@ namespace BillboardApp.ViewModels
 
         public string Phone { get; set; }
 
-        public string Description { get; set; }
+        public string Subscription { get; set; }
 
         public Nullable<double> Amount { get; set; }
 

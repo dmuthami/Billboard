@@ -42,7 +42,7 @@
         </th>
         <th>
             @Html.ActionLink("Subscription", "Index",
-                new { sortOrder = ViewBag.DescriptionSortParm, currentFilter = ViewBag.CurrentFilter })
+                new { sortOrder = ViewBag.SubscriptionSortParm, currentFilter = ViewBag.CurrentFilter })
             
         </th>
         <th>
@@ -73,7 +73,7 @@
             @Html.DisplayFor(modelItem => item.Phone)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Description)
+            @Html.DisplayFor(modelItem => item.Subscription)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Amount)

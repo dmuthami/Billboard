@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 
@@ -14,6 +15,7 @@ namespace BillboardApp.Models
 
         public string Name { get; set; }
 
+        [DisplayName("Contact Person")]
         public string ContactPerson { get; set; }
 
         public string Email { get; set; }

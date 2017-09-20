@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Agency</h4>
         <hr />
@@ -58,7 +58,8 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index")|
+    @Html.ActionLink("Edit Subscription", "Edit", "Subscriptions", new { id = @ViewBag.id },null)
 </div>
 
 @section Scripts {
