@@ -20,9 +20,6 @@ namespace BillboardApp.Models
 
         public DateTime ExpiryDate { get; set; }
 
-        [DisplayName("Subscription Name")]
-        public string Name { get; set; }
-
         public string Description { get; set; }
 
         public virtual Agency Agency { get; set; }

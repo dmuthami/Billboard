@@ -1,7 +1,7 @@
-﻿@model BillboardApp.Models.Campaign
+﻿@model BillboardApp.ViewModels.CampaignDetailData
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Campaigns";
 }
 
 <h2>Details</h2>
@@ -11,32 +11,70 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Agency.Name)
+            Campaign Name
+            @*@Html.DisplayNameFor(model => model.CampaignName)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Agency.Name)
+            @*@Html.DisplayFor(model => model.CampaignName)*@
+            @Html.DisplayFor(model => model.Campaign.CampaignName)
+
+        </dd>
+        <dt>
+            Agency Name
+            @*@Html.DisplayNameFor(model => model.Agency.Name)*@
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.Agency.Name)*@
+            @Html.DisplayFor(model => model.Campaign.Agency.Name)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Product.Name)
+            Advertiser Name
+            @*@Html.DisplayNameFor(model => model.Advertiser.Name)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Product.Name)
+            @Html.DisplayFor(model => model.Campaign.Advertiser.Name)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CampaignName)
+            Industry Name
+            @*@Html.DisplayNameFor(model => model.Industry.Name)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CampaignName)
+            @Html.DisplayFor(model => model.Campaign.Industry.Name)
         </dd>
-
     </dl>
 </div>
+@if (Model.Routes != null)
+{
+    <h3>Routes Selected in this Campaign</h3>
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        @foreach (var item in Model.Routes)
+        {
+            <tr >
+                <td>
+                    @*@Html.ActionLink("Streets", "Index", new { courseID = item.CourseID })*@
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Description
+                </td>
+            </tr>
+        }
+    </table>
+}
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CampaignID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = ViewBag.CampaignID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

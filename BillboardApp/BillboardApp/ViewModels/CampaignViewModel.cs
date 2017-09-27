@@ -13,6 +13,8 @@ namespace BillboardApp.ViewModels
 
         public string AgencyName { get; set; }
 
-        public string ProductName { get; set; }
+        public string AdvertiserName { get; set; }
+
+        public string IndustryName { get; set; }
     }
 }

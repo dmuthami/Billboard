@@ -11,7 +11,7 @@ namespace BillboardApp.Models
        
         public Product()
         {
-            this.Campaigns = new HashSet<Campaign>();
+            //this.Campaigns = new HashSet<Campaign>();
         }
 
         public int ProductID { get; set; }
@@ -19,7 +19,7 @@ namespace BillboardApp.Models
         [DisplayName("Product Name")]
         public string Name { get; set; }
 
-        public virtual ICollection<Campaign> Campaigns { get; set; }
+        //public virtual ICollection<Campaign> Campaigns { get; set; }
 
         //Advertiser Relationship and Navigation Property
         public int AdvertiserID { get; set; }

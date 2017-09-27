@@ -1,98 +1,98 @@
 ﻿@model BillboardApp.Models.Agency
 
 @{
-    ViewBag.Title = "Details";
+	ViewBag.Title = "Details";
 }
 
 <h2>Details</h2>
 
 <div>
-    <h4 style="color:#16e24c">Agency</h4>
-    <hr />
-    <dl class="dl-horizontal">
+	<h4 style="color:#16e24c">Agency</h4>
+	<hr />
+	<dl class="dl-horizontal">
 
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+		<dt>
+			@Html.DisplayNameFor(model => model.Name)
+		</dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+		<dd>
+			@Html.DisplayFor(model => model.Name)
+		</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactPerson)
-        </dt>
+		<dt>
+			@Html.DisplayNameFor(model => model.ContactPerson)
+		</dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ContactPerson)
-        </dd>
+		<dd>
+			@Html.DisplayFor(model => model.ContactPerson)
+		</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+		<dt>
+			@Html.DisplayNameFor(model => model.Email)
+		</dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+		<dd>
+			@Html.DisplayFor(model => model.Email)
+		</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
+		<dt>
+			@Html.DisplayNameFor(model => model.Phone)
+		</dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
+		<dd>
+			@Html.DisplayFor(model => model.Phone)
+		</dd>
 
-    </dl>
-    <h4 style="color:#16e24c">Subscription Details</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Subscription.Name)
-        </dt>
+	</dl>
+	<h4 style="color:#16e24c">Subscription Details</h4>
+	<hr />
+	<dl class="dl-horizontal">
+		@*<dt>
+			@Html.DisplayNameFor(model => model.Subscription.Name)
+		</dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Subscription.Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Subscription.Description)
-        </dt>
+		<dd>
+			@Html.DisplayFor(model => model.Subscription.Name)
+		</dd>*@
+		<dt>
+			@Html.DisplayNameFor(model => model.Subscription.Description)
+		</dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Subscription.Description)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Subscription.StartDate)
-        </dt>
+		<dd>
+			@Html.DisplayFor(model => model.Subscription.Description)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.Subscription.StartDate)
+		</dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Subscription.StartDate)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Subscription.ExpiryDate)
-        </dt>
+		<dd>
+			@Html.DisplayFor(model => model.Subscription.StartDate)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.Subscription.ExpiryDate)
+		</dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Subscription.ExpiryDate)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Subscription.Amount)
-        </dt>
+		<dd>
+			@Html.DisplayFor(model => model.Subscription.ExpiryDate)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.Subscription.Amount)
+		</dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Subscription.Amount)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Subscription.Paid)
-        </dt>
+		<dd>
+			@Html.DisplayFor(model => model.Subscription.Amount)
+		</dd>
+		<dt>
+			@Html.DisplayNameFor(model => model.Subscription.Paid)
+		</dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Subscription.Paid)
-        </dd>
-    </dl>
+		<dd>
+			@Html.DisplayFor(model => model.Subscription.Paid)
+		</dd>
+	</dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.AgencyID }) |
-    @Html.ActionLink("Back to List", "Index")
+	@Html.ActionLink("Edit", "Edit", new { id = Model.AgencyID }) |
+	@Html.ActionLink("Back to List", "Index")
 </p>

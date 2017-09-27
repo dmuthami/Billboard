@@ -4,6 +4,34 @@
     ViewBag.Title = "Error";
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<h1 class="text-danger">@Model.Exception.Message.ToString()</h1>
+<h2 class="text-danger">An error occurred while processing your request. See Details Below</h2>
+
+@*<div>
+        @Model.Exception.Message.ToString()
+
+        @Model.Exception.StackTrace.ToString()
+    </div>*@
+
+<div class="row">
+    <div class="col-xs-2">Controller Name</div>
+    <div class="col-xs-10 ">@Model.ControllerName.ToString()</div>
+</div>
+
+<div class="row">
+    <div class="col-xs-2">Action Name</div>
+    <div class="col-xs-10 ">@Model.ActionName.ToString()</div>
+</div>
+
+<div class="row">
+    <div class="col-xs-2">Inner Exception</div>
+    <div class="col-xs-10 ">@Model.Exception.InnerException.ToString()</div>
+</div>
+
+<div class="row">
+    <div class="col-xs-2">Stack Trace</div>
+    <div class="col-xs-10 ">@Model.Exception.StackTrace.ToString()</div>
+</div>
+
+
 

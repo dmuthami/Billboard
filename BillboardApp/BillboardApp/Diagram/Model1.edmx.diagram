@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6633b2d2c75845b29bc1fdb91089ae6a" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Advert" Width="1.5" PointX="7.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Advertiser" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Agency" Width="1.5" PointX="8.25" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetRole" Width="1.5" PointX="9.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetUserClaim" Width="1.5" PointX="14.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetUserLogin" Width="1.5" PointX="14.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetUser" Width="1.5" PointX="12" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Backlight" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Campaign" Width="1.5" PointX="9.875" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CampaignDevice" Width="1.75" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CampaignRoute" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conauth" Width="1.5" PointX="14.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.concompany" Width="1.5" PointX="16.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conconfiguration" Width="1.5" PointX="16.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conconfigurationtype" Width="1.5" PointX="17.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conindustry" Width="1.5" PointX="18.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conlife" Width="1.5" PointX="18.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.connotification" Width="1.5" PointX="18.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conobjectright" Width="1.5" PointX="18.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conobject" Width="1.5" PointX="20.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conobjectscaption" Width="1.5" PointX="20.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conprofile" Width="1.5" PointX="20.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conrole" Width="1.5" PointX="12.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Constituency" Width="1.5" PointX="14.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conuser" Width="1.5" PointX="20.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conuserrecovery" Width="1.5" PointX="16.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conuserrecoverytype" Width="1.5" PointX="18.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.conuserrole" Width="1.5" PointX="20.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.County" Width="1.5" PointX="22.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Device" Width="1.5" PointX="10.5" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DeviceStatu" Width="1.5" PointX="8.25" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Face" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FaceBound" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FaceClutter" Width="1.5" PointX="22.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FaceCondition" Width="1.5" PointX="3" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FaceImage" Width="1.5" PointX="7.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FaceLighting" Width="1.5" PointX="22.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FaceOccupancy" Width="1.5" PointX="3" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FaceOrientation" Width="1.5" PointX="3" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FacePosition" Width="1.5" PointX="3" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FaceRunUp" Width="1.5" PointX="22.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FaceSize" Width="1.5" PointX="3" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FaceTraffic" Width="1.5" PointX="22.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FaceVisibilityRating" Width="1.5" PointX="7.5" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Industry" Width="1.5" PointX="8.25" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.IndustryType" Width="1.5" PointX="6" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Product" Width="1.5" PointX="7.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Role" Width="1.5" PointX="12.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Route" Width="1.5" PointX="10.5" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Street" Width="1.5" PointX="12.75" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.StreetGI" Width="1.5" PointX="22.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Structure" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.StructureOwner" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.StructureType" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Subscription" Width="1.5" PointX="10.5" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Sweep" Width="1.5" PointX="6" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SweepStructure" Width="1.5" PointX="8.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="15" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.VegetationCover" Width="1.5" PointX="22.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Ward" Width="1.5" PointX="22.75" PointY="24.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_dbo_Advert_dbo_Advertiser_AdvertiserID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Advert_dbo_Face_FaceID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Campaign_dbo_Advertiser_AdvertiserID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Product_dbo_Advertiser_AdvertiserID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Campaign_dbo_Agency_AgencyID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Subscription_dbo_Agency_SubscriptionID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Campaign_dbo_Industry_IndustryID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_CampaignDevice_dbo_Campaign_CampaignID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_CampaignRoute_dbo_Campaign_CampaignID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_CampaignDevice_dbo_Device_DeviceID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_CampaignRoute_dbo_Route_RouteID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Device_dbo_DeviceStatus_DeviceStatusID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Face_dbo_FaceBound_FaceBoundID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Face_dbo_FaceCondition_FaceConditionID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Face_dbo_FaceOccupancy_FaceOccupancyID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Face_dbo_FaceOrientation_FaceOrientationID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Face_dbo_FacePosition_FacePositionID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Face_dbo_FaceSize_FaceSizeID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Face_dbo_Structure_StructureID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_FaceImage_dbo_Face_FaceID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_FaceVisibilityRating_dbo_Face_FaceVisibilityRatingID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Industry_dbo_IndustryType_IndustryTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_User_dbo_Role_RoleID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Street_dbo_Route_RouteID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Structure_dbo_StructureOwner_StructureOwnerID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Structure_dbo_StructureType_StructureTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_SweepStructure_dbo_Structure_StructureID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_SweepStructure_dbo_Sweep_SweepID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

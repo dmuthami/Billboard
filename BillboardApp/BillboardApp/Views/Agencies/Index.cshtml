@@ -9,11 +9,12 @@
 <h2>Agency</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create Agency", "Create")|
+    @Html.ActionLink("Create Agency with Subscription", "CreateAgencyWithSubscription")
 </p>
 @using (Html.BeginForm("Index", "Agencies", FormMethod.Get))
 {     <p>
-        Find by Agency/Contact Person @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        Find by @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
         <input type="submit" value="Search" />
     </p>
 }
@@ -40,11 +41,11 @@
                 new { sortOrder = ViewBag.PhoneNumberSortParm, currentFilter = ViewBag.CurrentFilter })
             
         </th>
-        <th>
+        @*<th>
             @Html.ActionLink("Subscription", "Index",
                 new { sortOrder = ViewBag.SubscriptionSortParm, currentFilter = ViewBag.CurrentFilter })
             
-        </th>
+        </th>*@
         <th>
             @Html.ActionLink("Amount", "Index",
                 new { sortOrder = ViewBag.AmountSortParm, currentFilter = ViewBag.CurrentFilter })
@@ -72,9 +73,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Phone)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Subscription)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Amount)
         </td>
@@ -83,7 +84,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.AgencyID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AgencyID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.AgencyID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.AgencyID })
         </td>
     </tr>

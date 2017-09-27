@@ -12,12 +12,13 @@ namespace BillboardApp.Models
 
         }
         public int CampaignRouteID { get; set; }
-        //Campaign Relationship and Navigation Property
-        public int CampaignID { get; set; }
-        public virtual Campaign Campaign { get; set; }
 
-        //Route Relationship and Navigation Property
-        public int RouteID { get; set; }
-        public virtual Route Route { get; set; }
+        ////Campaign Relationship and Navigation Property
+        //public int CampaignID { get; set; }
+        //public virtual Campaign Campaign { get; set; }
+
+        ////Route Relationship and Navigation Property
+        //public int RouteID { get; set; }
+        //public virtual Route Route { get; set; }
     }
 }

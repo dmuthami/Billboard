@@ -184,7 +184,6 @@
     <Compile Include="Controllers\AgenciesController.cs" />
     <Compile Include="Controllers\BacklightsController.cs" />
     <Compile Include="Controllers\CampaignDevicesController.cs" />
-    <Compile Include="Controllers\CampaignRoutesController.cs" />
     <Compile Include="Controllers\CampaignsController.cs" />
     <Compile Include="Controllers\FaceCluttersController.cs" />
     <Compile Include="Controllers\ConstituenciesController.cs" />
@@ -223,6 +222,201 @@
     <Compile Include="Controllers\WardsController.cs" />
     <Compile Include="DAL\BillboardContext.cs" />
     <Compile Include="DAL\BillboardInitializer.cs" />
+    <Compile Include="Diagram\Advert.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Advertiser.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Agency.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\AspNetRole.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\AspNetUser.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\AspNetUserClaim.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\AspNetUserLogin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Backlight.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Campaign.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\CampaignDevice.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\CampaignRoute.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\conauth.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\concompany.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\conconfiguration.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\conconfigurationtype.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\conindustry.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\conlife.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\connotification.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\conobject.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\conobjectright.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\conobjectscaption.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\conprofile.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\conrole.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Constituency.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\conuser.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\conuserrecovery.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\conuserrecoverytype.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\conuserrole.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\County.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Device.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\DeviceStatu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Face.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FaceBound.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FaceClutter.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FaceCondition.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FaceImage.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FaceLighting.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FaceOccupancy.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FaceOrientation.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FacePosition.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FaceRunUp.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FaceSize.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FaceTraffic.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\FaceVisibilityRating.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Industry.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\IndustryType.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Product.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Role.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Route.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Street.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\StreetGI.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Structure.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\StructureOwner.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\StructureType.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Subscription.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Sweep.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\SweepStructure.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\User.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\VegetationCover.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Diagram\Ward.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -390,6 +584,46 @@
     <Compile Include="Migrations\201709090725121_DesignUpdates_V32.Designer.cs">
       <DependentUpon>201709090725121_DesignUpdates_V32.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709202057045_DesignUpdates_V33.cs" />
+    <Compile Include="Migrations\201709202057045_DesignUpdates_V33.Designer.cs">
+      <DependentUpon>201709202057045_DesignUpdates_V33.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709202121342_DesignUpdates_V34.cs" />
+    <Compile Include="Migrations\201709202121342_DesignUpdates_V34.Designer.cs">
+      <DependentUpon>201709202121342_DesignUpdates_V34.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709202210212_DesignUpdates_V35.cs" />
+    <Compile Include="Migrations\201709202210212_DesignUpdates_V35.Designer.cs">
+      <DependentUpon>201709202210212_DesignUpdates_V35.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709202231350_DesignUpdates_V36.cs" />
+    <Compile Include="Migrations\201709202231350_DesignUpdates_V36.Designer.cs">
+      <DependentUpon>201709202231350_DesignUpdates_V36.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709202233089_DesignUpdates_V37.cs" />
+    <Compile Include="Migrations\201709202233089_DesignUpdates_V37.Designer.cs">
+      <DependentUpon>201709202233089_DesignUpdates_V37.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709202236525_DesignUpdates_V38.cs" />
+    <Compile Include="Migrations\201709202236525_DesignUpdates_V38.Designer.cs">
+      <DependentUpon>201709202236525_DesignUpdates_V38.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709212226295_DesignUpdates_V39.cs" />
+    <Compile Include="Migrations\201709212226295_DesignUpdates_V39.Designer.cs">
+      <DependentUpon>201709212226295_DesignUpdates_V39.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709212234243_DesignUpdates_V40.cs" />
+    <Compile Include="Migrations\201709212234243_DesignUpdates_V40.Designer.cs">
+      <DependentUpon>201709212234243_DesignUpdates_V40.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709212246219_DesignUpdates_V41.cs" />
+    <Compile Include="Migrations\201709212246219_DesignUpdates_V41.Designer.cs">
+      <DependentUpon>201709212246219_DesignUpdates_V41.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709231717167_Removed-CampaignRoutes-JoinTable_v0.cs" />
+    <Compile Include="Migrations\201709231717167_Removed-CampaignRoutes-JoinTable_v0.Designer.cs">
+      <DependentUpon>201709231717167_Removed-CampaignRoutes-JoinTable_v0.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Advert.cs" />
@@ -456,6 +690,8 @@
     <Compile Include="ViewModels\AdvertiserViewModel.cs" />
     <Compile Include="ViewModels\AgencyIndexViewModel.cs" />
     <Compile Include="ViewModels\AgencyViewModel.cs" />
+    <Compile Include="ViewModels\AssignedRoutesData.cs" />
+    <Compile Include="ViewModels\CampaignDetailData.cs" />
     <Compile Include="ViewModels\CampaignViewModel.cs" />
     <Compile Include="ViewModels\FaceClutterViewModel.cs" />
     <Compile Include="ViewModels\ConstituencyViewModel.cs" />
@@ -495,6 +731,16 @@
     <Content Include="Content\ol.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\popup.css" />
+    <Content Include="Diagram\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Diagram\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -508,6 +754,13 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <EntityDeploy Include="Diagram\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Diagram\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\Billboard.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -589,7 +842,7 @@
     <Content Include="Views\Backlights\Index.cshtml" />
     <Content Include="Views\Campaigns\Create.cshtml" />
     <Content Include="Views\Campaigns\Delete.cshtml" />
-    <Content Include="Views\Campaigns\Details.cshtml" />
+    <Content Include="Views\Campaigns\Details-ogn.cshtml" />
     <Content Include="Views\Campaigns\Edit.cshtml" />
     <Content Include="Views\Campaigns\Index.cshtml" />
     <Content Include="Views\CampaignDevices\Create.cshtml" />
@@ -750,11 +1003,11 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Users\Index2.cshtml" />
     <Content Include="Views\Users\ShowRolesToDelete.cshtml" />
-    <Content Include="Views\Agencies\Create2.cshtml" />
+    <Content Include="Views\Agencies\CreateAgencyWithSubscription.cshtml" />
+    <Content Include="Views\Campaigns\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Diagram\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -883,6 +1136,36 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709090725121_DesignUpdates_V32.resx">
       <DependentUpon>201709090725121_DesignUpdates_V32.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709202057045_DesignUpdates_V33.resx">
+      <DependentUpon>201709202057045_DesignUpdates_V33.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709202121342_DesignUpdates_V34.resx">
+      <DependentUpon>201709202121342_DesignUpdates_V34.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709202210212_DesignUpdates_V35.resx">
+      <DependentUpon>201709202210212_DesignUpdates_V35.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709202231350_DesignUpdates_V36.resx">
+      <DependentUpon>201709202231350_DesignUpdates_V36.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709202233089_DesignUpdates_V37.resx">
+      <DependentUpon>201709202233089_DesignUpdates_V37.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709202236525_DesignUpdates_V38.resx">
+      <DependentUpon>201709202236525_DesignUpdates_V38.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709212226295_DesignUpdates_V39.resx">
+      <DependentUpon>201709212226295_DesignUpdates_V39.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709212234243_DesignUpdates_V40.resx">
+      <DependentUpon>201709212234243_DesignUpdates_V40.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709212246219_DesignUpdates_V41.resx">
+      <DependentUpon>201709212246219_DesignUpdates_V41.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709231717167_Removed-CampaignRoutes-JoinTable_v0.resx">
+      <DependentUpon>201709231717167_Removed-CampaignRoutes-JoinTable_v0.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

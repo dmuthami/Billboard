@@ -21,14 +21,14 @@ namespace BillboardApp.Controllers
         // GET: Agencies
         public async Task<ActionResult> Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            
+
             //return View(await agencys.ToListAsync());
 
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "Name_desc" : "";
             ViewBag.ContactPersonSortParm = sortOrder == "ContactPerson" ? "ContactPerson_desc" : "ContactPerson";
             ViewBag.EmailSortParm = sortOrder == "Email" ? "Email_desc" : "Email";
             ViewBag.PhoneNumberSortParm = sortOrder == "Phone" ? "Phone_desc" : "Phone";
-            ViewBag.SubscriptionSortParm = sortOrder == "Subscription" ? "Subscription_desc" : "Subscription";
+            //ViewBag.SubscriptionSortParm = sortOrder == "Subscription" ? "Subscription_desc" : "Subscription";
             ViewBag.AmountSortParm = sortOrder == "Amount" ? "Amount_desc" : "Amount";
             ViewBag.PaidSortParm = sortOrder == "Paid" ? "Paid_desc" : "Paid";
 
@@ -40,7 +40,7 @@ namespace BillboardApp.Controllers
                                                                   ContactPerson = agencys.ContactPerson,
                                                                   Email = agencys.Email,
                                                                   Phone = agencys.Phone,
-                                                                  Subscription = agencys.Subscription.Name,
+                                                                  //Subscription = agencys.Subscription.Name,
                                                                   Amount = agencys.Subscription.Amount,
                                                                   Paid = agencys.Subscription.Paid
                                                               };
@@ -84,12 +84,12 @@ namespace BillboardApp.Controllers
                 case "Phone_desc":
                     agencysData = agencysData.OrderByDescending(s => s.Phone);
                     break;
-                case "Subscription":
-                    agencysData = agencysData.OrderBy(s => s.Subscription);
-                    break;
-                case "Subscription_desc":
-                    agencysData = agencysData.OrderByDescending(s => s.Subscription);
-                    break;
+                //case "Subscription":
+                //    agencysData = agencysData.OrderBy(s => s.Subscription);
+                //    break;
+                //case "Subscription_desc":
+                //    agencysData = agencysData.OrderByDescending(s => s.Subscription);
+                //    break;
                 case "Amount":
                     agencysData = agencysData.OrderBy(s => s.Amount);
                     break;
@@ -120,6 +120,7 @@ namespace BillboardApp.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Agency agency = await db.Agencys.FindAsync(id);
+
             if (agency == null)
             {
                 return HttpNotFound();
@@ -136,23 +137,10 @@ namespace BillboardApp.Controllers
             return View();
         }
 
-        public ActionResult Create2()
+        public ActionResult CreateAgencyWithSubscription()
         {
-            //AgencyIndexViewModel agencyIndexViewModel = new AgencyIndexViewModel();
-            //agencyIndexViewModel.Agency = db.Agencys;
-            //return View(agencyIndexViewModel);
-            return View();
-        }
-
-        public ActionResult Create3()
-        {
-            //ViewBag.AgencyID = new SelectList(db.Subscriptions, "SubscriptionID", "Name");
-
-            //AgencyIndexViewModel agencyIndexViewModel = new AgencyIndexViewModel();
-            //agencyIndexViewModel.Agencys = db.Agencys;
-            //agencyIndexViewModel.Subscription = db.Subscriptions;
-
-            return View();
+            AgencyIndexViewModel agencyIndexViewModel = new AgencyIndexViewModel();
+            return View(agencyIndexViewModel);
         }
 
         // POST: Agencies/Create
@@ -165,6 +153,24 @@ namespace BillboardApp.Controllers
             if (ModelState.IsValid)
             {
                 db.Agencys.Add(agency);
+                await db.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.AgencyID = new SelectList(db.Subscriptions, "SubscriptionID", "Name", agency.AgencyID);
+            return View(agency);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> CreateAgencyWithSubscription([Bind(Include = "AgencyID,Name,ContactPerson,Email,Phone")] Agency agency,
+            [Bind(Include = "SubscriptionID,Amount,Paid,StartDate,ExpiryDate,Description")] Subscription subscription)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Agencys.Add(agency);
+                db.Subscriptions.Add(subscription);
+
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
@@ -226,7 +232,10 @@ namespace BillboardApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
+            //Subscription subscription = await db.Subscriptions.FindAsync(1d);
             Agency agency = await db.Agencys.FindAsync(id);
+
+            //db.Subscriptions.Remove(subscription);
             db.Agencys.Remove(agency);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
@@ -239,6 +248,25 @@ namespace BillboardApp.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        /// <summary>
+        /// Error handler
+        /// </summary>
+        /// <param name="filterContext"></param>
+        protected override void OnException(ExceptionContext filterContext)
+        {
+            Exception exception = filterContext.Exception;
+            //Logging the Exception
+            filterContext.ExceptionHandled = true;
+
+
+            var Result = this.View("Error", new HandleErrorInfo(exception,
+                filterContext.RouteData.Values["controller"].ToString(),
+                filterContext.RouteData.Values["action"].ToString()));
+
+            filterContext.Result = Result;
+
         }
     }
 }

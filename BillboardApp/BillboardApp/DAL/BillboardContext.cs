@@ -24,7 +24,7 @@ namespace BillboardApp.DAL
         public DbSet<Backlight> Backlights { get; set; }
         public DbSet<Campaign> Campaigns { get; set; }
         public DbSet<CampaignDevice> CampaignDevices { get; set; }
-        public DbSet<CampaignRoute> CampaignRoutes { get; set; }
+        //public DbSet<CampaignRoute> CampaignRoutes { get; set; }
         public DbSet<FaceClutter> FaceClutters { get; set; }
         public DbSet<Constituency> Constituencys { get; set; }
         public DbSet<County> Countys { get; set; }
@@ -84,14 +84,15 @@ namespace BillboardApp.DAL
         {
             //base.OnModelCreating(modelBuilder);
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            //modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
 
             // Configure Agency & Subscription entity one to one
             modelBuilder.Entity<Agency>()
                         .HasOptional(s => s.Subscription) // Mark Subscription property optional in Agency entity
                         // mark Agency property as required in Subscription entity. 
                         //Cannot save Subscription without Agency
-                        .WithRequired(subscription => subscription.Agency);
+                        .WithRequired(subscription => subscription.Agency)
+                        .WillCascadeOnDelete(true);
         
             //County 
             modelBuilder.Entity<County>().HasKey(t => t.Code)

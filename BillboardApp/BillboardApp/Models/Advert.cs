@@ -17,8 +17,8 @@ namespace BillboardApp.Models
         public int AdvertiserID { get; set; }
         public virtual Advertiser Advertiser { get; set; }
 
-        //Campaign Relationship and Navigation Property
-        public int CampaignID { get; set; }
-        public virtual Campaign Campaign { get; set; }
+        ////Campaign Relationship and Navigation Property
+        //public int CampaignID { get; set; }
+        //public virtual Campaign Campaign { get; set; }
     }
 }

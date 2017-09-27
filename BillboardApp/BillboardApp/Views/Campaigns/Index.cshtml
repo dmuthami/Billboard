@@ -13,7 +13,7 @@
 </p>
 @using (Html.BeginForm("Index", "Campaigns", FormMethod.Get))
 {     <p>
-        Find by Campaign/Contact Names @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        Find @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
         <input type="submit" value="Search" />
     </p>
 }
@@ -31,9 +31,12 @@
             @*@Html.DisplayNameFor(model => model.Agency.Name)*@
         </th>
         <th>
-            @Html.ActionLink("Product Name", "Index",
-                new { sortOrder = ViewBag.ProductNameSortParm, currentFilter = ViewBag.CurrentFilter })
-            @*@Html.DisplayNameFor(model => model.Product.Name)*@
+            @Html.ActionLink("Advertiser Name", "Index",
+                new { sortOrder = ViewBag.AdvertiserNameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Industry Name", "Index",
+                new { sortOrder = ViewBag.IndustryNameSortParm, currentFilter = ViewBag.CurrentFilter })
         </th>
         <th></th>
     </tr>
@@ -47,7 +50,10 @@
             @Html.DisplayFor(modelItem => item.AgencyName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ProductName)
+            @Html.DisplayFor(modelItem => item.AdvertiserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IndustryName)
         </td>
 
         <td>

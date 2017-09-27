@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Campaign</h4>
         <hr />
@@ -26,15 +26,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ProductID, "ProductID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("ProductID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ProductID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.AgencyID, "AgencyID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.AgencyID, "Agency", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("AgencyID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.AgencyID, "", new { @class = "text-danger" })
@@ -42,10 +34,57 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+            @Html.LabelFor(model => model.AdvertiserID, "Advertiser", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("AdvertiserID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AdvertiserID, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IndustryID, "Industry", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IndustryID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IndustryID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <table>
+                    <tr>
+                        @{
+                            int cnt = 0;
+                            List<BillboardApp.ViewModels.AssignedRoutesData> routes = ViewBag.Routes;
+
+                            foreach (var route in routes)
+                            {
+                                if (cnt++ % 3 == 0)
+                                {
+                                    @:</tr><tr>
+                                }
+                                @:<td>
+                                    <input type="checkbox"
+                                            name="selectedRoutes"
+                                            value="@route.RouteID"
+                                            @(Html.Raw(route.Assigned ? "checked=\"checked\"" : "")) />
+                                            @route.RouteID @:  @route.Name
+                                @:</td>
+                            }
+                            @:</tr>
+                        }
+                    </table>
+                </div>
+            </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default"/>
+            </div>
+        </div>
+
     </div>
 }
 
